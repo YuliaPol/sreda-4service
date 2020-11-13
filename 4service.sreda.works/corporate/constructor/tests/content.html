@@ -1,0 +1,641 @@
+<html lang="ru"><head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конструктор - тесты - редактирование - содержание</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../style/libs/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../style/roman.css">
+    <link rel="stylesheet" href="../../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+<body>
+<div id="background" class="bg-blue"></div>
+<div id="papa">
+    <header id="header">
+        <div class="logo">
+            <a href="../courses.html"><img src="../../../img/logo.png" alt=""></a>
+            <div id="menu-3-lines" class="menu-absolute">
+                <div class="line top-line"></div>
+                <div class="line mid-line"></div>
+                <div class="line bot-line"></div>
+            </div>
+        </div>
+        <div class="right-block flex a-c">
+            <nav class="header-navigation" id="left-menu">
+                <ul class="menu">
+                    <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                    <li><a class="menu-item" href="">Консалтинг</a></li>
+                    <li><a class="menu-item" href="">О нас</a></li>
+                    <li><a class="menu-item" href="">Контакты</a></li>
+                </ul>
+            </nav>
+            <div id="header-bell" class="bell p-r">
+                <div class="bell-notifications">3</div>
+                <a href="../../profile/notifications.html"><i class="bell-img i-bell"></i></a>
+            </div>
+        </div>
+    </header>
+    <aside id="left-side-bar">
+        <div id="mobile-menu">
+        </div>
+        <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+            <div class="pearson-photo">
+                <img src="../../../img/corp/avatar.png" alt="">
+            </div>
+            <div class="pearson-name">
+                Протасова Александра
+            </div>
+        </div>
+        <nav id="pearson-nav">
+            <ul>
+                <li>
+                    <a href="../../ratings/general.html">
+                        <img src="../../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                        <span>Рейтинги</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../constructor/courses.html">
+                        <img src="../../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                        <span class="active-menu">Конструктор</span>
+                    </a>
+                </li>
+                <li style="display: none;">
+                    <a href="#">
+                        <img src="../../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                        <span>Корпоративное обучение</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../../courses.html">
+                        <img src="../../../img/icon/book.png" alt="icon" class="icon-li">
+                        <span>Мое обучение</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../vacancies/vacancies.html">
+                        <img src="../../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                        <span>Вакансии</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../payment-rent.html">
+                        <img src="../../../img/icon/money.png" alt="icon" class="icon-li">
+                        <span>Оплата</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../../faq.html">
+                        <img src="../../../img/icon/info.png" alt="icon" class="icon-li">
+                        <span>Помощь</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../profile/data.html">
+                        <img src="../../../img/icon/user.png" alt="icon" class="icon-li">
+                        <span>Профиль</span>
+                    </a>
+                </li>
+                <li>
+                    <a href="../../communication/students.html">
+                        <img src="../../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                        <span>Общение</span>
+                    </a>
+                </li>
+            </ul>
+        </nav>
+    </aside>
+    <main id="main">
+
+        <!-- Top Buttons Container Start -->
+        <div class="top-buttons-wrappper flex f-w">
+            <a href="settings.html" class="a-btn box-shadow">
+                Настройки
+            </a>
+            <a href="../webinars/descr.html" class="a-btn box-shadow">
+                Описание
+            </a>
+            <a href="content.html" class="a-btn blue-gradient-background box-shadow">
+                Содержание
+            </a>
+        </div>
+        <!--  Top Buttons Container End  -->
+
+        <!-- Content -->
+        <div class="content-container candidate-container">
+
+            <!-- Breadcrumbs -->
+            <div class="vacancy-wrapper">
+                <ul class="vacancy_list">
+                    <li class="vacancy_item"><a class="vacancy_item_link" href="../../vacancies/candidates.html">Все тесты</a></li>
+                </ul>
+            </div><!-- /Breadcrumbs -->
+
+            <div class="vacancy-settings">
+                <form action="">
+                    <div class="vac-about vac-settings__block">
+
+                        <h4 class="title">
+                            Тест
+                        </h4>
+                        <div class="vac-settings__block-content">
+                            <div class="input-group">
+                                <textarea class="message-test-form-1" placeholder="Введите вступительное слово"></textarea>
+                                <p class="alert-error " style="display: none;">Заполните, пожалуйста, поле</p>
+                                <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/ 300 </span></h6>
+                            </div>
+                        </div>
+                    </div>
+
+
+                    <div class="vac-settings__block-content">
+
+
+                        <div class="table-wrap">
+                            <div
+                                class="custom-table test-edit test-edit-constructor test-table-constructor">
+                                <div class="custom-table__header flex j-s-b">
+                                    <div class="custom-table__col">Вопрос</div>
+                                    <div class="custom-table__col">Тип вопроса</div>
+                                    <div class="custom-table__col">Ответы</div>
+                                    <div class="custom-table__col">Баллы</div>
+                                    <div class="custom-table__col"></div>
+                                </div>
+                                <div class="custom-table__body">
+                                    <div class="custom-table__row flex j-s-b">
+                                        <div class="title">
+                                            <span>Раздел 1: </span>
+                                            <input type="text" class="answer input-shdw" value="«Название»"
+                                                id="section_1" name="section_1">
+                                        </div>
+                                    </div>
+                                    <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                        <div class="custom-table__cell">
+                                            <div class="input-group">
+                                                <div class="input-cont-constructor-test">
+                                                    <span>1/1.</span>
+                                                    <input type="text" placeholder="Введите ваш вопрос"
+                                                        class="input-shdw" value="Метод Mystery Shopping"
+                                                        id="question_1_1" name="question_1_1">
+                                                </div>
+                                                <p class="alert-error" style="display: none;">Заполните,
+                                                    пожалуйста, поле..</p>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                    placeholder="Описание вопроса (необязательно)"
+                                                    class="input-shdw" value="Описание вопроса"
+                                                    id="questionDesc_1_1" name="questionDesc_1_1">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell">
+                                            <select id="typeQuestion_1_1" name="typeQuestion_1_1"
+                                                style="display: none;">
+                                                <option value="0" selected="">Один из списка</option>
+                                                <option value="1">Множественный выбор</option>
+                                                <option value="2">Шкала</option>
+                                                <option value="3">Закрытый "Да\Нет"</option>
+                                                <option value="4">Открытый вопрос</option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-table__cell opened">
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionRadio_1_1_1"
+                                                    id="questionRadio_1_1_1" checked>
+                                                <div class="test-radio__answer"></div>
+                                                <label>
+                                                    <input type="text" class="answer input-shdw"
+                                                        value="file-name"
+                                                        name="item_1_1_1" id="item_1_1_1">
+                                                        <div class="preview-img">
+                                                            <div class="img-answer" style="background-image: url(./../../../img/certificate.png); padding-bottom: 60px;"></div>
+                                                        </div>
+                                                </label>
+                                                <input class="scores input-shdw" type="text" value="0"
+                                                    name="itemScore_1_1_1" id="itemScore_1_1_1">
+                                            </label>
+
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionRadio_1_1_2"
+                                                    id="questionRadio_1_1_2" checked>
+                                                <div class="test-radio__answer"></div>
+                                                <label>
+                                                    <input type="text" class="answer input-shdw"
+                                                        value="метод сбора информации о конкретных случаях"
+                                                        name="item_1_1_2" id="item_1_1_2">
+                                                </label>
+                                                <input class="scores input-shdw" type="text" value="100"
+                                                    name="itemScore_1_1_2" id="itemScore_1_1_2">
+                                            </label>
+                                            <a href="#" class="circle-add add-answer add-questions-item"
+                                                data-section="1" data-question="1" data-item="3">+</a>
+                                        </div>
+                                        <div class="custom-table__cell ">
+                                            <div class="upload-answer">
+                                                <div class="input-group" style="padding-bottom: 60px;">
+                                                    <input id="file-name_1_1_1" type="file"
+                                                        name="file-name_1_1_1" class="test-answer">
+                                                    <label for="file-name_1_1_1"><img class="upload-image"
+                                                            src="../../../img/corp/icons/download-arrow_blue.png"></label>
+                                                </div>
+                                            </div>
+                                            <div class="upload-answer">
+                                                <div class="input-group">
+                                                    <input id="file-name_1_1_2" type="file"
+                                                        name="file-name_1_1_2" class="test-answer">
+                                                    <label for="file-name_1_1_2"><img class="upload-image"
+                                                            src="../../../img/corp/icons/download-arrow_blue.png"></label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell">
+                                            <a href="#" title="Edit">
+                                                <img src="../../../img/corp/icons/pencil.png" alt="Edit">
+                                            </a>
+                                            <a href="#" title="Delete" class="delete-sections-question">
+                                                <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                            </a>
+                                            <a href="#" title="Move" class="move-question">
+                                                <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                        <div class="custom-table__cell">
+                                            <div class="input-group">
+                                                <div class="input-cont-constructor-test">
+                                                    <span>1/2.</span>
+                                                    <input type="text" placeholder="Введите ваш вопрос"
+                                                        class="input-shdw" id="question_1_2"
+                                                        name="question_1_2">
+                                                </div>
+                                                <p class="alert-error" style="display: none;">Заполните,
+                                                    пожалуйста, поле..</p>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                    placeholder="Описание вопроса (необязательно)"
+                                                    class="input-shdw" id="questionDesc_1_2"
+                                                    name="questionDesc_1_2">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell"> <select id="typeQuestion_1_2"
+                                                name="typeQuestion_1_2" style="display: none;">
+                                                <option value="0">Один из списка</option>
+                                                <option value="1" selected="">Множественный выбор</option>
+                                                <option value="2">Шкала</option>
+                                                <option value="3">Закрытый "ДаНет"</option>
+                                                <option value="4">Открытый вопрос</option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-table__cell opened">
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionRadio_1_2_1"
+                                                    id="questionRadio_1_2_1" checked>
+                                                <div class="test-radio__answer"></div>
+                                                <label>
+                                                    <input type="text" class="answer input-shdw"
+                                                        placeholder="Введите вариант ответа"
+                                                        name="item_1_2_1" id="item_1_2_1">
+                                                </label>
+                                                <input class="scores input-shdw" type="text" value="0"
+                                                    name="itemScore_1_2_1" id="itemScore_1_2_1">
+                                            </label>
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionRadio_1_2_2"
+                                                    id="questionRadio_1_2_2" checked>
+                                                <div class="test-radio__answer"></div>
+                                                <label>
+                                                    <input type="text" class="answer input-shdw"
+                                                        placeholder="Введите вариант ответа"
+                                                        name="item_1_2_2" id="item_1_2_2">
+                                                </label>
+                                                <input class="scores input-shdw" type="text" value="0"
+                                                    name="itemScore_1_2_2" id="itemScore_1_2_2">
+                                            </label>
+                                            <a href="#"
+                                                class="circle-add add-answer add-questions-item-check"
+                                                data-section="1" data-question="2" data-item="2">+</a>
+                                        </div>
+                                        <div class="custom-table__cell ">
+                                            <div class="upload-answer">
+                                                <div class="input-group">
+                                                    <input id="file-name_1_2_1" type="file"
+                                                        name="file-name_1_2_1" class="test-answer">
+                                                    <label for="file-name_1_2_1">
+                                                        <img class="upload-image"
+                                                            src="../../../img/corp/icons/download-arrow_blue.png">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <div class="upload-answer">
+                                                <div class="input-group">
+                                                    <input id="file-name_1_2_2" type="file"
+                                                        name="file-name_1_2_2" class="test-answer">
+                                                    <label for="file-name_1_2_2">
+                                                        <img class="upload-image"
+                                                            src="../../../img/corp/icons/download-arrow_blue.png">
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell">
+                                            <a href="#" title="Edit">
+                                                <img src="../../../img/corp/icons/pencil.png" alt="Edit">
+                                            </a>
+                                            <a href="#" title="Delete" class="delete-sections-question">
+                                                <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                            </a>
+                                            <a href="#" title="Move" class="move-question">
+                                                <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                        <div class="custom-table__cell">
+                                            <div class="input-group">
+                                                <div class="input-cont-constructor-test">
+                                                    <span>1/3.</span>
+                                                    <input type="text" placeholder="Введите ваш вопрос"
+                                                        class="input-shdw" id="question_1_3"
+                                                        name="question_1_3">
+                                                </div>
+                                                <p class="alert-error" style="display: none;">Заполните,
+                                                    пожалуйста, поле..</p>
+                                            </div>
+                                            <div class="input-group"> <input type="text"
+                                                    placeholder="Описание вопроса (необязательно)"
+                                                    class="input-shdw" id="questionDesc_1_3"
+                                                    name="questionDesc_1_3">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell"> <select id="typeQuestion_1_3"
+                                                name="typeQuestion_1_3" style="display: none;">
+                                                <option value="0">Один из списка</option>
+                                                <option value="1">Множественный выбор</option>
+                                                <option value="2" selected="">Шкала</option>
+                                                <option value="3">Закрытый "ДаНет"</option>
+                                                <option value="4">Открытый вопрос</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="custom-table__cell ">
+                                            <div class="input-group test-scale">
+                                                <span>От <input type="number" min="1" max="10" value="1"
+                                                        name="questionScale_1_3_1"
+                                                        id="questionScale_1_3_1"></span>
+                                                <input type="text" class="input-shdw answer"
+                                                    placeholder="Подпись (необязательно)"
+                                                    name="questionScaleDesc_1_3_1"
+                                                    id="questionScaleDesc_1_3_1">
+                                                <input class="scores input-shdw" type="text" value="0"
+                                                    name="itemScore_1_3_1" id="itemScore_1_3_1">
+                                            </div>
+                                            <div class="input-group test-scale">
+                                                <span>До <input type="number" min="1" max="10" value="10"
+                                                        name="questionScale_1_3_2"
+                                                        id="questionScale_1_3_2"></span>
+                                                <input type="text" class="input-shdw answer"
+                                                    placeholder="Подпись (необязательно)"
+                                                    name="questionScaleDesc_1_3_2"
+                                                    id="questionScaleDesc_1_3_2">
+                                                <input class="scores input-shdw" type="text" value="10"
+                                                    name="itemScore_1_3_2" id="itemScore_1_3_2">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell "> </div>
+                                        <div class="custom-table__cell">
+                                            <a href="#" title="Edit">
+                                                <img src="../../../img/corp/icons/pencil.png" alt="Edit">
+                                            </a>
+                                            <a href="#" title="Delete" class="delete-sections-question">
+                                                <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                            </a>
+                                            <a href="#" title="Move" class="move-question">
+                                                <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                        <div class="custom-table__cell">
+                                            <div class="input-group">
+                                                <div class="input-cont-constructor-test">
+                                                    <span>1/4.</span>
+                                                    <input type="text" placeholder="Введите ваш вопрос"
+                                                        class="input-shdw" id="question_1_4"
+                                                        name="question_1_4">
+                                                </div>
+                                                <p class="alert-error" style="display: none;">Заполните,
+                                                    пожалуйста, поле..</p>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                    placeholder="Описание вопроса (необязательно)"
+                                                    class="input-shdw" id="questionDesc_1_4"
+                                                    name="questionDesc_1_4">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell"> <select id="typeQuestion_1_4"
+                                                name="typeQuestion_1_4" style="display: none;">
+                                                <option value="0">Один из списка</option>
+                                                <option value="1">Множественный выбор</option>
+                                                <option value="2">Шкала</option>
+                                                <option value="3" selected="">Закрытый "ДаНет"</option>
+                                                <option value="4">Открытый вопрос</option>
+                                            </select>
+                                        </div>
+                                        <div class="custom-table__cell ">
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionYesNot_1_4"
+                                                    id="questionYesNot_1_4_1" checked>
+                                                <div class="test-radio__answer">
+                                                    <span class="answer">Да</span>
+                                                    <input class="scores input-shdw" type="text" value="0"
+                                                        name="itemScore_1_4_1" id="itemScore_1_4_1">
+                                                </div>
+                                            </label>
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="questionYesNot_1_4"
+                                                    id="questionYesNot_1_4_2" checked>
+                                                <div class="test-radio__answer">
+                                                    <span class="answer">Нет</span>
+                                                    <input class="scores input-shdw" type="text" value="100"
+                                                        name="itemScore_1_4_2" id="itemScore_1_4_2">
+                                                </div>
+                                            </label>
+                                        </div>
+                                        <div class="custom-table__cell "> </div>
+                                        <div class="custom-table__cell">
+                                            <a href="#" title="Edit">
+                                                <img src="../../../img/corp/icons/pencil.png" alt="Edit">
+                                            </a>
+                                            <a href="#" title="Delete" class="delete-sections-question">
+                                                <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                            </a>
+                                            <a href="#" title="Move" class="move-question">
+                                                <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                            </a>
+                                        </div>
+                                    </div>
+                                    <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                        <div class="custom-table__cell">
+                                            <div class="input-group">
+                                                <div class="input-cont-constructor-test"> <span>1/5.</span>
+                                                    <input type="text" placeholder="Введите ваш вопрос"
+                                                        class="input-shdw" id="question_1_5"
+                                                        name="question_1_5">
+                                                </div>
+                                                <p class="alert-error" style="display: none;">Заполните,
+                                                    пожалуйста, поле..</p>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="text"
+                                                    placeholder="Описание вопроса (необязательно)"
+                                                    class="input-shdw" id="questionDesc_1_5"
+                                                    name="questionDesc_1_5">
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell"> <select id="typeQuestion_1_5"
+                                                name="typeQuestion_1_5" style="display: none;">
+                                                <option value="0">Один из списка</option>
+                                                <option value="1">Множественный выбор</option>
+                                                <option value="2">Шкала</option>
+                                                <option value="3">Закрытый "ДаНет"</option>
+                                                <option value="4" selected="">Открытый вопрос</option>
+                                            </select>
+
+                                        </div>
+                                        <div class="custom-table__cell ">
+                                            <div class="input-group">
+                                                <label>
+                                                    <input type="text" class="input-shdw answer open-question"
+                                                        value="15+ символов" name="question_1_5"
+                                                        id="question_1_5">
+                                                </label>
+                                            </div>
+                                        </div>
+                                        <div class="custom-table__cell "> </div>
+                                        <div class="custom-table__cell">
+                                            <a href="#" title="Edit">
+                                                <img src="../../../img/corp/icons/pencil.png" alt="Edit">
+                                            </a>
+                                            <a href="#" title="Delete" class="delete-sections-question">
+                                                <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                            </a>
+                                            <a href="#" title="Move" class="move-question">
+                                                <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                            </a>
+                                        </div>
+                                    </div><a href="#" class="circle-add add-chapter-question"
+                                        data-section="1" data-question="5">+</a>
+                                </div>
+                                <!-- Chapter 2 -->
+                                <div class="custom-table__body">
+                                    <div class="custom-table__row flex j-s-b">
+                                        <h4 class="title add-chapter">
+                                            <a href="#" class="circle-add add-chapter-constructor">
+                                                <img src="../../../img/corp/icons/chapter-img02.png"
+                                                    alt="" />
+                                            </a>
+                                        </h4>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="design-content__row">
+                        <input type="submit" value="Сохранить" class="btn btn-submit submit-test-form" />
+                    </div>
+                </form>
+
+                </div>
+
+
+        </div><!-- /Content -->
+
+    </main>
+</div>
+
+<script src="../../../script/libs/jquery.custom-select.js"></script>
+<script src="../../../script/libs/jquery-ui.js"></script>
+<script src="../../../script/inner.js"></script>
+<script src="../../../script/resp-menu.js"></script>
+<script src="../../../script/common.js"></script>
+<script src="../../../script/course-contstructor.js"></script>
+
+<script>
+    jQuery(function ($) {
+        $(document).ready(function () {
+            $('.vac-test__descr select').customSelect();
+            $('.custom-table__edit-row select').customSelect();
+
+            //Upload image as test answer
+            $('.test-answer').change(function() {
+                let elemId = $(this).attr('id'),
+                    arr = elemId.split("_"),
+                    answerNum = arr[1];
+
+                if (this.files[0]) { // если выбрали файл
+                    $('#test-label_'+ answerNum +' .answer').val(this.files[0].name);
+                }
+            });
+        });
+    });
+</script>
+<script>
+    $(function () {
+        $(".test-edit").sortable();
+        $(".test-edit").disableSelection();
+    });
+</script>
+<script>
+    // Valid form 
+    $('.submit-test-form').click(function (e) {
+        $('.message-test-form-1 + p').hide();
+        $('.message-test-form-1').parent().removeClass('has-error');
+        $('.message-test-form-2 + p').hide();
+        $('.message-test-form-2').parent().removeClass('has-error');
+        $('.message-test-form-3 + p').hide();
+        $('.message-test-form-3').parent().removeClass('has-error');
+        $('.message-test-form-4 + p').hide();
+        $('.message-test-form-4').parent().removeClass('has-error');
+        $('.message-test-form-5 + p').hide();
+        $('.message-test-form-5').parent().removeClass('has-error');
+        $('.message-test-form-6 + p').hide();
+        $('.message-test-form-6').parent().removeClass('has-error');
+        if ($('.message-test-form-1').val() == '') {
+            $('.message-test-form-1').parent().addClass('has-error');
+            $('.message-test-form-1 + p').show();
+        }
+        if ($('.message-test-form-2').val() == '') {
+            $('.message-test-form-2').parent().addClass('has-error');
+            $('.message-test-form-2 + p').show();
+        }
+        if ($('.message-test-form-3').val() == '') {
+            $('.message-test-form-3').parent().addClass('has-error');
+            $('.message-test-form-3 + p').show();
+        }
+        if ($('.message-test-form-4').val() == '') {
+            $('.message-test-form-4').parent().addClass('has-error');
+            $('.message-test-form-4 + p').show();
+        }
+        if ($('.message-test-form-5').val() == '') {
+            $('.message-test-form-5').parent().addClass('has-error');
+            $('.message-test-form-5 + p').show();
+        }
+        if ($('.message-test-form-6').val() == '') {
+            $('.message-test-form-6').parent().addClass('has-error');
+            $('.message-test-form-6 + p').show();
+        }
+        //end valid form
+    });
+</script>
+</body>
+</html>

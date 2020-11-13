@@ -1,0 +1,376 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конструктор - курсы - редактирование - содержание</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../style/libs/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../style/libs/magnific-popup.css">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../style/roman.css">
+    <link rel="stylesheet" href="../../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../courses.html"><img src="../../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../profile/notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="../../ratings/general.html">
+                            <img src="../../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span>Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../constructor/courses.html">
+                            <img src="../../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../courses.html">
+                            <img src="../../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../vacancies/vacancies.html">
+                            <img src="../../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../payment-rent.html">
+                            <img src="../../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../faq.html">
+                            <img src="../../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../profile/data.html">
+                            <img src="../../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../communication/students.html">
+                            <img src="../../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="descr.html" class="a-btn box-shadow">
+                    Описание
+                </a>
+                <a href="settings.html" class="a-btn box-shadow">
+                    Настройки
+                </a>
+                <a href="content.html" class="a-btn blue-gradient-background box-shadow">
+                    Содержание
+                </a>
+                <a href="members.html" class="a-btn box-shadow">
+                    Участники
+                </a>
+                <a href="certification.html" class="a-btn box-shadow">
+                    Сертификация
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+
+            <!-- Content -->
+            <div class="content-container candidate-container">
+
+                <!-- Breadcrumbs -->
+                <div class="vacancy-wrapper">
+                    <ul class="vacancy_list">
+                        <li class="vacancy_item"><a class="vacancy_item_link" href="../courses.html">Все курсы</a></li>
+                    </ul>
+                </div><!-- /Breadcrumbs -->
+
+                <div class="vacancy-settings">
+
+                    <form id="course-content" class="form-valid">
+                        <!-- todo перенести в виджет -->
+                        <div class="vac-about vac-settings__block">
+                            <h4 class="title">
+                                Содержание курса
+                            </h4>
+                            <div class="course-stats flex">
+                                <div class="course-stats__item">
+                                    <img src="/img/corp/icons/puzzle.png" alt="Puzzle">
+                                    <span>3 блока</span>
+                                </div>
+                                <div class="course-stats__item">
+                                    <img src="/img/corp/icons/video-camera.png" alt="Camera">
+                                    <span>3 занятий</span>
+                                </div>
+                                <div class="course-stats__item">
+                                    <img src="/img/corp/icons/clock.png" alt="Clock">
+                                    <span>5 часов 30 минут</span>
+                                </div>
+                            </div>
+                        </div>
+
+
+
+
+                        <div class="vac-settings__block-content">
+                            <div class="table-wrap">
+                                <div class="custom-table course-content-table constructor-course-table">
+                                    <div class="custom-table__body ui-sortable">
+
+                                        <!--endforeach-->
+                                        <a href="#" class="circle-add add-answer add-new-question ui-sortable-handle"
+                                            data-question="0">+</a>
+
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="design-content__row">
+                    <input type="submit" value="Сохранить" class="btn btn-submit valid-form-send" name="content-form">
+                </div>
+
+                </form>
+                <div class="vac-settings__block">
+
+                    <!--                -->
+
+                </div>
+
+            </div>
+
+
+
+    </div><!-- /Content -->
+
+    </main>
+    </div>
+    <div id="remove-course-popup" class="remove-popup custom-popup mfp-hide">
+        <h3>Вы действительно хотите удалить вопрос<span id="question-name"></span>?</h3>
+        <a href="#" class="submit-remove-course popup-modal-dismiss">Да</a>
+        <a href="#" class="popup-modal-dismiss">Нет</a>
+    </div>
+    <script src="../../../script/libs/jquery-ui.js"></script>
+    <script src="../../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../../script/libs/jquery.magnific-popup.min.js"></script>
+    <script src="../../../script/inner.js"></script>
+    <script src="../../../script/resp-menu.js"></script>
+    <script src="../../../script/common.js"></script>
+    <script src="../../../script/course-contstructor-test.js"></script>
+    <script src="../../../script/course-lessons.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.vac-test__descr select').customSelect();
+                $('.custom-table__edit-row select').customSelect();
+                $('.hw-notice select').customSelect();
+                $(document).on('click', '.popup-modal-dismiss', function (e) {
+                    e.preventDefault();
+                    $.magnificPopup.close();
+                });
+
+                //Constructor content section checkbox
+                // $('.course-content-table ').on('change', '.vac-settings__block input[type=checkbox]', function () {
+                //     if ($(this).parents('.tools-title').siblings('.vac-settings__block-content').is(':visible')) {
+                //         $(this).parents('.tools-title').siblings('.vac-settings__block-content').fadeOut(300);
+                //     } else {
+                //         $(this).parents('.tools-title').siblings('.vac-settings__block-content').fadeIn(300);
+                //     }
+                // });
+                var formValid = document.getElementsByClassName('form-valid')[0];
+                $('.valid-form-send').click(function () {
+                    alert("sdfsdf");
+                    $(this).parents('form').submit(function (e) {
+                        e.preventDefault();
+                        var el = document.querySelectorAll('.form-valid [data-reqired]');
+                        var erroreArrayElemnts = [];
+                        var alert = '<p class="alert-error">Заполните, пожалуйста, поле..</p>';
+                        for (var i = 0; i < el.length; i++) {
+                            if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
+                                erroreArrayElemnts.push(el[i]);
+                                if ($(el[i]).parents('.course-content-name-cont').length > 0) {
+
+                                    var alert = '<p class="alert-error" style="position:absolute;padding-left:25px;bottom: -20px;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('.course-content-name-cont').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.course-content-name-cont').addClass('has-error');
+                                        $(el[i]).parents('.course-content-name-cont').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('.course-content-name-cont'));
+                                        $(el[i]).parents('.course-content-name-cont').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.course-content-name-cont').removeClass('has-error');
+                                        $(e.target).parents('.course-content-name-cont').find('.alert-error').hide();
+                                    });
+                                }
+                                else if ($(el[i]).hasClass('lesson-name')) {
+
+                                    var alert = '<p class="alert-error" style="text-align: left;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('span').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('span').addClass('has-error');
+                                        $(el[i]).parents('span').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('span'));
+                                        $(el[i]).parents('span').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('span').removeClass('has-error');
+                                        $(e.target).parents('span').find('.alert-error').hide();
+                                    });
+                                }
+                                else if ($(el[i]).parents('h4.title').length > 0) {
+                                    var alert = '<p class="alert-error" style="text-align: left;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('h4.title').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('h4.title').addClass('has-error');
+                                        $(el[i]).parents('h4.title').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('h4.title'));
+                                        $(el[i]).parents('h4.title').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('h4.title').removeClass('has-error');
+                                        $(e.target).parents('h4.title').find('.alert-error').hide();
+                                    });
+                                }
+                                else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).hasClass('scores')) {
+                                    $(el[i]).addClass('has-error');
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).removeClass('has-error');
+                                    });
+                                }
+                                else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).parents('.test-scale').length > 0) {
+                                    $(el[i]).parent('span').addClass('has-error');
+                                    $(el[i]).parent('span').focus(function (e) {
+                                        $(e.target).parent('span').removeClass('has-error');
+                                    });
+                                }
+                                else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).hasClass('open-question')) {
+                                    if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                        $(el[i]).parents('.input-group').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('.input-group'));
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.input-group').removeClass('has-error');
+                                        $(e.target).parents('.input-group').find('.alert-error').hide();
+                                    });
+                                }
+                                else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).parents('.test-edit-constructor .custom-table__cell label').length > 0) {
+
+                                    var alert = '<p class="alert-error" style="text-align: left; font-size:10px; padding-left: 10px;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parent('label').find('.alert-error').length > 0) {
+                                        $(el[i]).parent('label').addClass('has-error');
+                                        $(el[i]).parent('label').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parent('label'));
+                                        $(el[i]).parent('label').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parent('label').removeClass('has-error');
+                                        $(e.target).parent('label').find('.alert-error').hide();
+                                    });
+                                }
+                                else if ($(el[i]).parents('.input-group').length > 0) {
+
+                                    if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                        $(el[i]).parents('.input-group').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('.input-group'));
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.input-group').removeClass('has-error');
+                                        $(e.target).parents('.input-group').find('.alert-error').hide();
+                                    });
+                                }
+                            }
+                        }
+                        if (erroreArrayElemnts.length == 0) {
+                            formValid.submit();
+                        }
+                        if (erroreArrayElemnts.length > 0) {
+                            console.log('error');
+                            $("#main").animate({ scrollTop: erroreArrayElemnts[0] }, "slow");
+                        }
+                    });
+                });
+            });
+        });         
+    </script>
+</body>
+
+</html>

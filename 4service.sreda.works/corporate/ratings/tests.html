@@ -1,0 +1,1664 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Рейтинги - тесты</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="../../style/roman.css">
+    <link rel="stylesheet" href="../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../../courses.html"><img src="../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="general.html">
+                            <img src="../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../constructor/courses.html">
+                            <img src="../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span>Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../courses.html">
+                            <img src="../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vacancies/vacancies.html">
+                            <img src="../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payment-rent.html">
+                            <img src="../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../faq.html">
+                            <img src="../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../profile/data.html">
+                            <img src="../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../communication/students.html">
+                            <img src="../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="general.html" class="a-btn box-shadow">
+                    Общие
+                </a>
+                <a href="region.html" class="a-btn box-shadow">
+                    Регион
+                </a>
+                <a href="tests.html" class="a-btn blue-gradient-background box-shadow">
+                    Тесты
+                </a>
+                <a href="courses.html" class="a-btn box-shadow">
+                    Курсы
+                </a>
+                <a href="staff.html" class="a-btn box-shadow">
+                    Сотрудники
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+
+            <!--  Filters start  -->
+            <div class="filters-wrapper flex f-w test-members-designate-sort">
+                <div class="filter cust-select-wrap custom-select-filter custom-filter-date-picker">
+                    <select>
+                        <option value="1">Сегодня</option>
+                        <option value="2">Последние 7 дней</option>
+                        <option value="3">Последние 30 дней</option>
+                        <option value="4">Последние 90 дней</option>
+                        <option value="4">Произвольный выбор</option>
+                    </select>
+                    <input type="text" class="date-filter" value="08-05-2020 - 08-05-2020">
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Регион</option>
+                        <option value="1">Регион 1</option>
+                        <option value="2">Регион 2</option>
+                        <option value="3">Регион 3</option>
+                    </select>
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Локация</option>
+                        <option value="1">Локация 1</option>
+                        <option value="2">Локация 2</option>
+                    </select>
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Тест</option>
+                        <option value="1">Тест 1</option>
+                        <option value="2">Тест 2</option>
+                    </select>
+                </div>
+
+            </div>
+            <!--  Filters end  -->
+
+            <div class="content-container">
+                <!-- .rating-question-info детально тест -->
+                <!-- .courses-members-info детально Кому назначен -->
+                <!-- .courses-passed-info детально Пройден -->
+                <!-- .courses-not-passed-info детально Не пройден -->
+                <div class="table-wrap tests-wrap">
+                    <div class="custom-table done-test ratings-courses-table">
+                        <div class="custom-table__header flex j-s-b">
+                            <div class="custom-table__col">Тесты</div>
+                            <div class="custom-table__col"></div>
+                            <div class="custom-table__col">Дата старта</div>
+                            <div class="custom-table__col">Кому назначен</div>
+                            <div class="custom-table__col">Прогресс</div>
+                            <div class="custom-table__col">Пройден</div>
+                            <div class="custom-table__col">Не пройден</div>
+                            <div class="custom-table__col">Средний бал</div>
+                            <div class="custom-table__col">Статус</div>
+                        </div>
+                        <div class="custom-table__body">
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell"><a href="#done-test01"
+                                        class="done-test__name rating-question-info-toggle">Как повысить лояльность
+                                        персонала?</a></div>
+                                <div class="custom-table__cell">
+                                    <a href="#"><img src="../../img/corp/icons/pencil.png" /></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-members-info-toggle">3</a>
+                                </div>
+                                <div class="custom-table__cell"><span class="test-result">97</span>%<span
+                                        class="result-dot green"></span></div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-passed-info-toggle">2</a>
+                                </div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-not-passed-info-toggle">1</a>
+                                </div>
+                                <div class="custom-table__cell">73</div>
+                                <div class="custom-table__cell">Активен</div>
+                                <div class="rating-question-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap" id="done-test02">
+                                        <div class="custom-table test-details">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">Вопрос</div>
+                                                <div class="custom-table__col">Средний бал 2</div>
+                                                <div class="custom-table__col">Ответы</div>
+                                                <div class="custom-table__col">Баллы</div>
+                                                <div class="custom-table__col">Частота в выбора</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">1/5. Метод Mystery Shopping
+                                                            это:</a> <span class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">95%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">2/5. Можно ли выполнять
+                                                            отраслевые оценки Тайному Покупателю? </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">69%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">3/5. Перед выполнением
+                                                            визита ТП должен четко знать: </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">32%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-not-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell"><a href="#done-test02"
+                                        class="done-test__name rating-question-info-toggle">Инструменты оценки
+                                        сервиса</a></div>
+                                <div class="custom-table__cell">
+                                    <a href="#"><img src="../../img/corp/icons/pencil.png" /></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-members-info-toggle">3</a>
+                                </div>
+                                <div class="custom-table__cell"><span class="test-result">75</span>%<span
+                                        class="result-dot yellow"></span></div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-passed-info-toggle">2</a>
+                                </div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-not-passed-info-toggle">1</a>
+                                </div>
+                                <div class="custom-table__cell">73</div>
+                                <div class="custom-table__cell">Завершен</div>
+                                <div class="rating-question-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap" id="done-test02">
+                                        <div class="custom-table test-details">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">Вопрос</div>
+                                                <div class="custom-table__col">Средний бал 2</div>
+                                                <div class="custom-table__col">Ответы</div>
+                                                <div class="custom-table__col">Баллы</div>
+                                                <div class="custom-table__col">Частота в выбора</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">1/5. Метод Mystery Shopping
+                                                            это:</a> <span class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">95%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">2/5. Можно ли выполнять
+                                                            отраслевые оценки Тайному Покупателю? </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">69%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">3/5. Перед выполнением
+                                                            визита ТП должен четко знать: </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">32%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-not-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell"><a href="#done-test03"
+                                        class="done-test__name rating-question-info-toggle">Управление HR процессами</a>
+                                </div>
+                                <div class="custom-table__cell">
+                                    <a href="#"><img src="../../img/corp/icons/pencil.png" /></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-members-info-toggle">3</a>
+                                </div>
+                                <div class="custom-table__cell"><span class="test-result">37</span>%<span
+                                        class="result-dot red"></span></div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-passed-info-toggle">2</a>
+                                </div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-not-passed-info-toggle">1</a>
+                                </div>
+                                <div class="custom-table__cell">73</div>
+                                <div class="custom-table__cell">Завершен</div>
+                                <div class="rating-question-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap" id="done-test02">
+                                        <div class="custom-table test-details">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">Вопрос</div>
+                                                <div class="custom-table__col">Средний бал 2</div>
+                                                <div class="custom-table__col">Ответы</div>
+                                                <div class="custom-table__col">Баллы</div>
+                                                <div class="custom-table__col">Частота в выбора</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">1/5. Метод Mystery Shopping
+                                                            это:</a> <span class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">95%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">2/5. Можно ли выполнять
+                                                            отраслевые оценки Тайному Покупателю? </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">69%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">3/5. Перед выполнением
+                                                            визита ТП должен четко знать: </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">32%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-not-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="custom-table__row flex j-s-b">
+                                <div class="custom-table__cell"><a href="#done-test01"
+                                        class="done-test__name rating-question-info-toggle">Как повысить лояльность
+                                        персонала?</a></div>
+                                <div class="custom-table__cell">
+                                    <a href="#"><img src="../../img/corp/icons/pencil.png" /></a>
+                                </div>
+                                <div class="custom-table__cell">01.02.2019</div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-members-info-toggle">3</a>
+                                </div>
+                                <div class="custom-table__cell"><span class="test-result">97</span>%<span
+                                        class="result-dot green"></span></div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-passed-info-toggle">2</a>
+                                </div>
+                                <div class="custom-table__cell">
+                                    <a href="#done-test01" class="done-test__name courses-not-passed-info-toggle">1</a>
+                                </div>
+                                <div class="custom-table__cell">73</div>
+                                <div class="custom-table__cell">Активен</div>
+                                <div class="rating-question-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap" id="done-test02">
+                                        <div class="custom-table test-details">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">Вопрос</div>
+                                                <div class="custom-table__col">Средний бал 2</div>
+                                                <div class="custom-table__col">Ответы</div>
+                                                <div class="custom-table__col">Баллы</div>
+                                                <div class="custom-table__col">Частота в выбора</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">1/5. Метод Mystery Shopping
+                                                            это:</a> <span class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">95%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">2/5. Можно ли выполнять
+                                                            отраслевые оценки Тайному Покупателю? </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">69%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell"><a href="#"
+                                                            class="test-details__name">3/5. Перед выполнением
+                                                            визита ТП должен четко знать: </a> <span
+                                                            class="result-dot"></span></div>
+                                                    <div class="custom-table__cell">32%</div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">метод изучения аномальных явлений</div>
+                                                            <div class="list">метод сбора информации о конкретных
+                                                                случаях</div>
+                                                            <div class="list">метод оценки рынка ценных бумаг</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0</div>
+                                                            <div class="list">5</div>
+                                                            <div class="list">0</div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="custom-table__cell test-answer">
+                                                        <div class="answer-content">
+                                                            <div class="list">0%</div>
+                                                            <div class="list">95%</div>
+                                                            <div class="list">5%</div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-members-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-not-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Ветер Иван Анатольевич</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">37%<span
+                                                            class="result-dot red"></span></div>
+                                                    <div class="custom-table__cell">Не пройден<span
+                                                            class="result-dot red"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="courses-passed-info" style="display: none;">
+                                    <div class="table-wrap test-details-wrap">
+                                        <div class="custom-table ratings-courses-details-table">
+                                            <div class="custom-table__header flex j-s-b">
+                                                <div class="custom-table__col">ФИО</div>
+                                                <div class="custom-table__col">Регион</div>
+                                                <div class="custom-table__col">Локация</div>
+                                                <div class="custom-table__col">Дата прохождения</div>
+                                                <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Результат</div>
+                                                <div class="custom-table__col">Статус</div>
+                                            </div>
+                                            <div class="custom-table__body">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вередница Вита Игоревна</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.01.2019</div>
+                                                    <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">97%<span
+                                                            class="result-dot green"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot green"></span></div>
+                                                </div>
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <div class="custom-table__cell">Вертяков Валентин Владимирович</div>
+                                                    <div class="custom-table__cell">Москва</div>
+                                                    <div class="custom-table__cell">Театральный пр-д, 5/1</div>
+                                                    <div class="custom-table__cell">01.02.2019</div>
+                                                    <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">75/100<span
+                                                            class="result-dot yellow"></span></div>
+                                                    <div class="custom-table__cell">Пройден<span
+                                                            class="result-dot yellow"></span></div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../script/inner.js"></script>
+    <script src="../../script/resp-menu.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.date-filter').on('change paste keyup', function () {
+                    $('.custom-filter-date-picker').find('.custom-select__option--value').html($(this).val());
+                });
+                $('.date-filter').daterangepicker({
+                    opens: 'rigth',
+                    locale: {
+                        format: 'DD-MM-YYYY',
+                        applyLabel: 'Принять',
+                        cancelLabel: 'Отмена',
+                        invalidDateLabel: 'Выберите дату',
+                        daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                        firstDay: 1
+                    }
+                }, function (start, end, label) {
+                });
+            });
+        });
+    </script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.select-search select').customSelect({
+                    search: true
+                });
+                $('.custom-filter-date-picker.cust-select-wrap select').customSelect({
+                    placeholder: '<span>Период</span>',
+                    hideCallback: function () {
+                        var $value = $(this).find('[class$="value"]');
+                        if ($value.text() == 'Произвольный выбор') {
+                            console.log($value);
+                            $('.custom-filter-date-picker .date-filter').click();
+                        }
+                    }
+                });
+                $('.cust-select-wrap select').customSelect(
+                    {
+                        hideCallback: function () {
+                            var $value = $(this).find('[class$="value"]');
+                            console.log($value.text());
+
+                            if ($value.text() == 'Произвольный выбор') {
+                                console.log($value);
+                                $('.date-filter').click();
+                            }
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.table-wrap').on("click", "a.test-details__name", function (e) {
+                    e.preventDefault();
+                    $(this).toggleClass('active');
+                    if ($(this).parents('.custom-table__row').find('.answer-content').is(':visible')) {
+                        $(this).parents('.custom-table__row').find('.answer-content').slideUp(100);
+                    } else {
+                        $(this).parents('.custom-table__row').find('.answer-content').slideDown(100);
+                    }
+                });
+                $('.table-wrap').on("click", ".rating-question-info-toggle", function () {
+                    if ($(this).hasClass('active')) {
+                        $(this).removeClass('active');
+                        $(this).parents('.custom-table__row').find('.courses-members-info-toggle').removeClass('active')
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next().find('.table-wrap')[0] && !$(this).parents('.custom-table').find('.courses-members-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    else {
+                        if ($(this).parents('.custom-table__row').find('.courses-members-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table__row').find('.courses-members-info-toggle').removeClass('active');
+                            $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                            $(this).parents('.custom-table').next('.table-clone-info').remove();
+                            $('.cust-select-wrap select').customSelect(
+                                {
+                                    hideCallback: function () {
+                                        var $value = $(this).find('[class$="value"]');
+                                        console.log($value.text());
+
+                                        if ($value.text() == 'Произвольный выбор') {
+                                            console.log($value);
+                                            $('.date-filter').click();
+                                        }
+                                    }
+                                }
+                            );
+                        }
+                        if ($(this).parents('.custom-table__row').find('.courses-passed-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table__row').find('.courses-passed-info-toggle').removeClass('active');
+                            $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                            $(this).parents('.custom-table').next('.table-clone-info').remove();
+                            if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                                $(this).parents('.custom-table').next().find('.custom-select').remove();
+                                $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                                $(this).parents('.custom-table').next().remove();
+                            }
+                            $('.cust-select-wrap select').customSelect(
+                                {
+                                    hideCallback: function () {
+                                        var $value = $(this).find('[class$="value"]');
+                                        console.log($value.text());
+                                        if ($value.text() == 'Произвольный выбор') {
+                                            console.log($value);
+                                            $('.date-filter').click();
+                                        }
+                                    }
+                                }
+                            );
+                        }
+                        if ($(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').removeClass('active');
+                            $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                            $(this).parents('.custom-table').next('.table-clone-info').remove();
+                            if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                                $(this).parents('.custom-table').next().find('.custom-select').remove();
+                                $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                                $(this).parents('.custom-table').next().remove();
+                            }
+                            $('.cust-select-wrap select').customSelect(
+                                {
+                                    hideCallback: function () {
+                                        var $value = $(this).find('[class$="value"]');
+                                        console.log($value.text());
+                                        if ($value.text() == 'Произвольный выбор') {
+                                            console.log($value);
+                                            $('.date-filter').click();
+                                        }
+                                    }
+                                }
+                            );
+                        }
+                        $(this).addClass('active');
+                        var NewTable = '<div class="table-clone-info">' + $(this).parents('.custom-table__row').find('.rating-question-info').html() + '</div>';
+                        if ($(this).parents('.custom-table__row').nextAll().length > 0) {
+                            var headerStr = $(this).parents('.ratings-courses-table').find('.custom-table__header').html();
+                            NewTable = NewTable + '<div class="custom-table done-test ratings-courses-table table-clone"><div class="custom-table__header flex j-s-b">' + headerStr + '</div><div class="custom-table__body">';
+                            var nextAll = $(this).parents('.custom-table__row').nextAll();
+                            nextAll.each(function (index, el) {
+                                NewTable += '<div class="custom-table__row flex j-s-b f-w">' + el.innerHTML + '</div>';
+                            });
+                            $(this).parents('.custom-table__row').nextAll().remove();
+                            NewTable = NewTable + '</div></div>';
+                        }
+                        $(this).parents('.ratings-courses-table').after(NewTable);
+                        $('.table-clone-info').find('.rating-question-info').fadeIn();
+                    }
+                });
+            });
+            $('.table-wrap').on("click", ".courses-members-info-toggle", function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active')
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table') && !$(this).parents('.custom-table').find('.rating-question-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                else {
+                    if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table__row').find('.courses-passed-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.courses-passed-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    $(this).addClass('active');
+                    var NewTable = '<div class="table-clone-info">' + $(this).parents('.custom-table__row').find('.courses-members-info').html() + '</div>';
+                    if ($(this).parents('.custom-table__row').nextAll().length > 0) {
+                        var headerStr = $(this).parents('.ratings-courses-table').find('.custom-table__header').html();
+                        NewTable = NewTable + '<div class="custom-table done-test ratings-courses-table table-clone"><div class="custom-table__header flex j-s-b">' + headerStr + '</div><div class="custom-table__body">';
+                        var nextAll = $(this).parents('.custom-table__row').nextAll();
+                        nextAll.each(function (index, el) {
+                            NewTable += '<div class="custom-table__row flex j-s-b f-w">' + el.innerHTML + '</div>';
+                        });
+                        $(this).parents('.custom-table__row').nextAll().remove();
+                        NewTable = NewTable + '</div></div>';
+                    }
+                    $(this).parents('.ratings-courses-table').after(NewTable);
+                    $('.table-clone-info').find('.courses-members-info').fadeIn();
+                }
+            });
+            $('.table-wrap').on("click", ".courses-passed-info-toggle", function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).parents('.custom-table__row').find('.courses-passed-info-toggle').removeClass('active')
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                else {
+                    if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table') && !$(this).parents('.custom-table').find('.courses-members-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table__row').find('.courses-members-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.courses-members-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    $(this).addClass('active');
+                    var NewTable = '<div class="table-clone-info">' + $(this).parents('.custom-table__row').find('.courses-passed-info').html() + '</div>';
+                    if ($(this).parents('.custom-table__row').nextAll().length > 0) {
+                        var headerStr = $(this).parents('.ratings-courses-table').find('.custom-table__header').html();
+                        NewTable = NewTable + '<div class="custom-table done-test ratings-courses-table table-clone"><div class="custom-table__header flex j-s-b">' + headerStr + '</div><div class="custom-table__body">';
+                        var nextAll = $(this).parents('.custom-table__row').nextAll();
+                        nextAll.each(function (index, el) {
+                            NewTable += '<div class="custom-table__row flex j-s-b f-w">' + el.innerHTML + '</div>';
+                        });
+                        $(this).parents('.custom-table__row').nextAll().remove();
+                        NewTable = NewTable + '</div></div>';
+                    }
+                    $(this).parents('.ratings-courses-table').after(NewTable);
+                    $('.table-clone-info').find('.courses-passed-info').fadeIn();
+                }
+            });
+            $('.table-wrap').on("click", ".courses-not-passed-info-toggle", function () {
+                if ($(this).hasClass('active')) {
+                    $(this).removeClass('active');
+                    $(this).parents('.custom-table__row').find('.courses-not-passed-info-toggle').removeClass('active')
+                    $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                    $(this).parents('.custom-table').next('.table-clone-info').remove();
+                    if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                        $(this).parents('.custom-table').next().find('.custom-select').remove();
+                        $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                        $(this).parents('.custom-table').next().remove();
+                    }
+                    $('.cust-select-wrap select').customSelect(
+                        {
+                            hideCallback: function () {
+                                var $value = $(this).find('[class$="value"]');
+                                console.log($value.text());
+
+                                if ($value.text() == 'Произвольный выбор') {
+                                    console.log($value);
+                                    $('.date-filter').click();
+                                }
+                            }
+                        }
+                    );
+                }
+                else {
+                    if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table') && !$(this).parents('.custom-table').find('.courses-members-info-toggle').hasClass('active')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table__row').find('.courses-members-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table__row').find('.courses-members-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    if ($(this).parents('.custom-table').find('.courses-passed-info-toggle').hasClass('active')) {
+                        $(this).parents('.custom-table').find('.courses-passed-info-toggle').removeClass('active');
+                        $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
+                        $(this).parents('.custom-table').next('.table-clone-info').remove();
+                        if ($(this).parents('.custom-table').next('.ratings-courses-table')) {
+                            $(this).parents('.custom-table').next().find('.custom-select').remove();
+                            $(this).parents('.custom-table__row').after($(this).parents('.custom-table').next('.ratings-courses-table').find('.custom-table__body').html());
+                            $(this).parents('.custom-table').next().remove();
+                        }
+                        $('.cust-select-wrap select').customSelect(
+                            {
+                                hideCallback: function () {
+                                    var $value = $(this).find('[class$="value"]');
+                                    console.log($value.text());
+                                    if ($value.text() == 'Произвольный выбор') {
+                                        console.log($value);
+                                        $('.date-filter').click();
+                                    }
+                                }
+                            }
+                        );
+                    }
+                    $(this).addClass('active');
+                    var NewTable = '<div class="table-clone-info">' + $(this).parents('.custom-table__row').find('.courses-not-passed-info').html() + '</div>';
+                    if ($(this).parents('.custom-table__row').nextAll().length > 0) {
+                        var headerStr = $(this).parents('.ratings-courses-table').find('.custom-table__header').html();
+                        NewTable = NewTable + '<div class="custom-table done-test ratings-courses-table table-clone"><div class="custom-table__header flex j-s-b">' + headerStr + '</div><div class="custom-table__body">';
+                        var nextAll = $(this).parents('.custom-table__row').nextAll();
+                        nextAll.each(function (index, el) {
+                            NewTable += '<div class="custom-table__row flex j-s-b f-w">' + el.innerHTML + '</div>';
+                        });
+                        $(this).parents('.custom-table__row').nextAll().remove();
+                        NewTable = NewTable + '</div></div>';
+                    }
+                    $(this).parents('.ratings-courses-table').after(NewTable);
+                    $('.table-clone-info').find('.courses-not-passed-info').fadeIn();
+                }
+            });
+        });
+
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,451 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конструктор - курсы - редактирование - настройка</title>
+
+    <!-- Styles -->
+    <!--    <link rel="stylesheet" type="text/css" href="../../../script/libs/SearchableMultiselect/jquery.dropdown.css">-->
+    <link rel="stylesheet" href="../../../style/libs/select2.min.css">
+    <link rel="stylesheet" href="../../../style/libs/datepicker.min.css">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../style/roman.css">
+    <link rel="stylesheet" href="../../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../courses.html"><img src="../../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../profile/notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="../../ratings/general.html">
+                            <img src="../../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span>Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../constructor/courses.html">
+                            <img src="../../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../courses.html">
+                            <img src="../../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../vacancies/vacancies.html">
+                            <img src="../../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../payment-rent.html">
+                            <img src="../../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../faq.html">
+                            <img src="../../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../profile/data.html">
+                            <img src="../../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../communication/students.html">
+                            <img src="../../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="settings.html" class="a-btn blue-gradient-background box-shadow">
+                    Настройки
+                </a>
+                <a href="../webinars/descr.html" class="a-btn box-shadow">
+                    Описание
+                </a>
+                <a href="content.html" class="a-btn box-shadow">
+                    Содержание
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+
+            <!-- Content -->
+            <div class="content-container candidate-container">
+
+                <!-- Breadcrumbs -->
+                <div class="vacancy-wrapper">
+                    <ul class="vacancy_list">
+                        <li class="vacancy_item"><a class="vacancy_item_link" href="../courses.html">Все курсы</a></li>
+                    </ul>
+                </div><!-- /Breadcrumbs -->
+
+                <section class="design">
+                    <div class="design-container course-setting-wrap ui-ux_design-content">
+                        <form action="/img/corp/icons/atom.png" class="flex form-valid">
+                            <div class="registration upload-photo">
+                                <div class="course-settings-left">
+                                    <div class="design-content__row flex">
+                                        <img src="../../../img/corp/icons/atom.png" alt="Atom">
+                                        <select>
+                                            <option value="0" selected>Дизайн</option>
+                                            <option value="1">CSMS</option>
+                                            <option value="1">Customer Loyalty</option>
+                                            <option value="1">Customer Experience</option>
+                                        </select>
+                                    </div>
+                                    <div class="design-content__row flex">
+                                        <img src="../../../img/corp/icons/brain-tech.png" alt="Head">
+                                        <select class="js-example-basic-multiple" name="level[]" multiple="multiple" data-reqired="reqired">
+                                            <option value="junior">Junior</option>
+                                            <option value="middle">Middle</option>
+                                            <option value="pro">Pro</option>
+                                        </select>
+                                    </div>
+                                    <div class="design-content__row flex">
+                                        <img src="../../../img/corp/icons/book.png" alt="Book">
+                                        <span class="lesson-length-count">5 лекций по 2 часа</span>
+                                    </div>
+                                    <div class="design-content__row flex">
+                                        <img src="../../../img/corp/icons/calendar.png" alt="Calendar">
+                                        <select class="js-example-basic-multiple" name="period[]" multiple="multiple" data-reqired="reqired">
+                                            <option value="Понедельник">Понедельник</option>
+                                            <option value="Вторник">Вторник</option>
+                                            <option value="Среда">Среда</option>
+                                            <option value="Четверг">Четверг</option>
+                                            <option value="Пятница">Пятница</option>
+                                            <option value="Суббота">Суббота</option>
+                                            <option value="Восресенье">Восресенье</option>
+                                            <option value="Произвольно">Произвольно</option>
+                                            <option value="Ежедневно">Ежедневно</option>
+                                        </select>
+                                    </div>
+                                    <div class="design-content__row flex">
+                                        <img src="../../../img/corp/icons/medal.png" alt="Atom">
+                                        <select>
+                                            <option value="0">Тест по итогу курса</option>
+                                            <option value="1">Курсовая работа</option>
+                                            <option value="2">Результаты тестов\ДЗ к урокам</option>
+                                        </select>
+                                    </div>
+                                </div>
+                                <div class="reg-btn-wrapper">
+                                    <div class="upload-container">
+                                        <div>
+                                            <input id="file-input" type="file" name="file">
+                                            <label for="file-input" id="file-label">Загрузить фото
+                                                <img class="upload-image" src="../../../img/corp/icons/download-arrow.png"></label>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="max-file-size-alert box-shadow">Минимальный размер изображения 550х300px
+                                </div>
+                            </div>
+                            <div class="course-description-block">
+                                <div class="ui-ux_design_title">
+                                    <div class="design-content__row design-content__webinar-name">
+                                        <div class="input-group">
+                                            <input type="text" value="UI/UX design" class="input-shdw"
+                                                data-reqired="reqired" placeholder="Название" />
+                                            <p class="alert-error" style="display: none;">Заполните, пожалуйста, поле..
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="input-group">
+                                    <textarea placeholder="Описание" data-reqired="reqired" maxlength="600"></textarea>
+                                    <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/
+                                            300 </span></h6>
+                                </div>
+
+                                <div class="multiselect-wrap">
+                                    <div class="profile-item experience">
+                                        <p class="profile-item-name">Категории:</p>
+                                        <select class="js-example-basic-multiple" name="period[]" multiple="multiple"  data-reqired="reqired" >
+                                            <option value="Сервис">Сервис</option>
+                                            <option value="CSMS">CSMS</option>
+                                            <option value="Customer Loyalty">Customer Loyalty</option>
+                                            <option value="Customer">Customer</option>
+                                            <option value="Customer Experience">Customer Experience</option>
+                                        </select>
+                                    </div>
+                                </div>
+
+                                <div class="ui-ux_design-content">
+                                    <div class="design-content__row">
+                                        Дата начала
+                                        <span id="course-start"><input type="text" value="01.09.2020" /></span>
+                                        Дата окончания
+                                        <span id="course-end"><input type="text" value="01.12.2020" /></span>
+                                    </div>
+
+                                    <div class="design-content__row">
+                                        <div class="course-set-chk">
+                                            Не ограничивать даты курса
+                                            <div class="input-group">
+                                                <input type="checkbox" class="checkbox" id="checkbox01"
+                                                    checked="checked" />
+                                                <label for="checkbox01"></label>
+                                            </div>
+                                            <div class="input-group">
+                                                <input type="checkbox" class="checkbox" id="checkbox02"
+                                                    checked="checked" />
+                                                <label for="checkbox02"></label>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="design-content__row">Статус курса:
+                                        <span class="info-icon">i <span class="icon-info__text">При статусе «Завершен»
+                                                пользователи не смогут взаимодействовать с курсом и видеть его в списке
+                                                доступных </span></span>
+                                        <select>
+                                            <option value="0">Активный</option>
+                                            <option value="1">Завершен</option>
+                                            <option value="2">Скрытый</option>
+                                        </select>
+                                    </div>
+                                    <div class="design-content__row history">Изменена: <span>20.04.2019 в 16:41</span>
+                                        <!--<img src="../../../img/corp/icons/history.png" alt="History" />-->
+                                    </div>
+                                </div>
+                                <div class="design-content__row">
+                                    <button type="submit" class="btn btn-submit valid-form-send">Сохранить</button>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+                </section>
+
+            </div><!-- /Content -->
+
+
+        </main>
+    </div>
+
+    <!--<script src="../../../script/libs/SearchableMultiselect/jquery.dropdown.js"></script>-->
+    <script src="../../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../../script/libs/select2.min.js"></script>
+    <script src="../../../script/libs/datepicker.min.js"></script>
+    <script src="../../../script/inner.js"></script>
+    <script src="../../../script/resp-menu.js"></script>
+    <script src="../../../script/common.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.ui-ux_design-content select:not([multiple])').customSelect();
+
+                // $('.dropdown-mul-1').dropdown({
+                //     limitCount: 40,
+                //     multipleMode: 'label',
+                //     choice: function () {}
+                // });
+                $('.js-example-basic-multiple').select2({
+                    width: 'style'
+                });
+                $('#course-start input').datepicker();
+                $('#course-end input').datepicker();
+                // $('#file-input').on('change', function(e){
+
+                // });
+                $('.valid-form-send').click(function () {
+                    $(this).parents('form').submit(function (e) {
+                        e.preventDefault();
+                        var el = document.querySelectorAll('[data-reqired]');
+                        var erroreArrayElemnts = [];
+                        var alert = '<p class="alert-error">Заполните, пожалуйста, поле..</p>';
+                        
+
+                        for (var i = 0; i < el.length; i++) {
+                            if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
+                                erroreArrayElemnts.push(el[i]);
+                                if(el[i].tagName == "SELECT") {
+                                    if($(el[i]).parents('.multiselect-wrap').length>0){
+                                        if ($(el[i]).parents('.multiselect-wrap').find('.alert-error').length > 0) {
+                                            $(el[i]).parents('.multiselect-wrap').addClass('has-error');
+                                            $(el[i]).parents('.multiselect-wrap').find('.alert-error').show();
+                                        }
+                                        else {
+                                            $(alert).appendTo($(el[i]).parents('.multiselect-wrap'));
+                                            $(el[i]).parents('.multiselect-wrap').addClass('has-error');
+                                        }
+                                        $(el[i]).parent().click(function (e) {
+                                            $(e.target).parents('.multiselect-wrap').removeClass('has-error');
+                                            $(e.target).parents('.multiselect-wrap').find('.alert-error').hide();
+                                        });
+                                    }
+                                    else {
+                                        if ($(el[i]).parent().find('.alert-error').length > 0) {
+                                            $(el[i]).parent().addClass('has-error');
+                                            $(el[i]).parent().find('.alert-error').show();
+                                        }
+                                        else {
+                                            $(alert).appendTo($(el[i]).parent());
+                                            $(el[i]).parent().addClass('has-error');
+                                        }
+                                        $(el[i]).parent().click(function (e) {
+                                            $(e.target).parents('.design-content__row').removeClass('has-error');
+                                            $(e.target).parents('.design-content__row').find('.alert-error').hide();
+                                        });
+                                    }
+                                }
+                                else {
+                                    if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                        $(el[i]).parents('.input-group').find('.alert-error').show();
+                                    }
+                                    else {
+                                        $(alert).appendTo($(el[i]).parents('.input-group'));
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.input-group').removeClass('has-error');
+                                        $(e.target).parents('.input-group').find('.alert-error').hide();
+                                    });
+                                }
+                            }
+                        }
+                        //file 
+                        var elem = $('#file-input')[0];
+                        var files = elem.files;
+                        for (var i = 0, file; file = files[i]; i++) {
+                            var reader = new FileReader();
+                            reader.onload = function(theFile) {
+                                var image = new Image();
+                                image.onload = function() {
+                                    if(parseInt(this.width)<550 || parseInt(this.height<300)) { 
+                                        erroreArrayElemnts.push(elem);
+                                        var alert = '<p class="alert-error" style="padding: 20px 30px;">Минимальный размер изображения 550х300px</p>';
+                                        if ($(elem).parents('.reg-btn-wrapper').prev('.alert-error').length > 0) {
+                                            $(elem).parents('.upload-container').addClass('has-error');
+                                            $(elem).parents('.reg-btn-wrapper').prev('.alert-error').show();
+                                        }
+                                        else {
+                                            $(alert).insertBefore($(elem).parents('.reg-btn-wrapper'));
+                                            $(elem).parents('.upload-container').addClass('has-error');
+                                        }
+                                        $(elem).parent().click(function (e) {
+                                            $(e.target).parents('.upload-container').removeClass('has-error');
+                                            $(e.target).parents('.reg-btn-wrapper').prev('.alert-error').hide();
+                                        });
+                                    }
+
+                                };
+                                image.src = theFile.target.result;
+                            };
+                            reader.readAsDataURL(file);
+                        }
+                        
+                        if (erroreArrayElemnts.length == 0) {
+                            formValid.submit();
+                        }
+                        if (erroreArrayElemnts.length > 0) {
+                            console.log('error');
+                            $("#main").animate({ scrollTop: 0 }, "slow");
+                            return false;
+                        }
+                    });
+                });
+                // var formValid = document.getElementsByClassName('form-valid')[0];
+                // formValid.addEventListener('submit', function (e) {
+                //     e.preventDefault();
+                //     var el = document.querySelectorAll('[data-reqired]');
+                //     var erroreArrayElemnts = [];
+                //     var alert = '<p class="alert-error">Заполните, пожалуйста, поле..</p>';
+                //     for (var i = 0; i < el.length; i++) {
+                //         if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
+                //             erroreArrayElemnts.push(el[i]);
+                //             if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                //                 $(el[i]).parents('.input-group').addClass('has-error');
+                //                 $(el[i]).parents('.input-group').find('.alert-error').show();
+                //             }
+                //             else {
+                //                 $(alert).appendTo($(el[i]).parents('.input-group'));
+                //                 $(el[i]).parents('.input-group').addClass('has-error');
+                //             }
+                //             $(el[i]).focus(function (e) {
+                //                 $(e.target).parents('.input-group').removeClass('has-error');
+                //                 $(e.target).parents('.input-group').find('.alert-error').hide();
+                //             });
+                //         }
+                //     }
+                //     if (erroreArrayElemnts.length == 0) {
+                //         formValid.submit();
+                //     }
+                //     if (erroreArrayElemnts.length > 0) {
+                //         console.log('error');
+                //         $("#main").animate({ scrollTop: 0 }, "slow");
+                //         return false;
+                //     }
+                // });
+            });
+        });
+    </script>
+
+</body>
+
+</html>

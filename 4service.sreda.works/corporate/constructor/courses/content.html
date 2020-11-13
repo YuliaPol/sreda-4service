@@ -1,0 +1,1774 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Конструктор - курсы - редактирование - содержание</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../../style/libs/jquery-ui.min.css">
+    <link rel="stylesheet" href="../../../style/libs/magnific-popup.css">
+    <link rel="stylesheet" href="../../../style/style.css">
+    <link rel="stylesheet" href="../../../style/roman.css">
+    <link rel="stylesheet" href="../../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../courses.html"><img src="../../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../profile/notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="../../ratings/general.html">
+                            <img src="../../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span>Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../constructor/courses.html">
+                            <img src="../../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../courses.html">
+                            <img src="../../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../vacancies/vacancies.html">
+                            <img src="../../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../payment-rent.html">
+                            <img src="../../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../../faq.html">
+                            <img src="../../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../profile/data.html">
+                            <img src="../../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../communication/students.html">
+                            <img src="../../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="descr.html" class="a-btn box-shadow">
+                    Описание
+                </a>
+                <a href="settings.html" class="a-btn box-shadow">
+                    Настройки
+                </a>
+                <a href="content.html" class="a-btn blue-gradient-background box-shadow">
+                    Содержание
+                </a>
+                <a href="members.html" class="a-btn box-shadow">
+                    Участники
+                </a>
+                <a href="certification.html" class="a-btn box-shadow">
+                    Сертификация
+                </a>
+            </div>
+            <input type="hidden" id="courseId" value="3">
+            <!--  Top Buttons Container End  -->
+
+            <!-- Content -->
+            <div class="content-container candidate-container">
+
+                <!-- Breadcrumbs -->
+                <div class="vacancy-wrapper">
+                    <ul class="vacancy_list">
+                        <li class="vacancy_item"><a class="vacancy_item_link" href="../courses.html">Все курсы</a></li>
+                    </ul>
+                </div><!-- /Breadcrumbs -->
+
+                <div class="vacancy-settings">
+                    <form action="" class="form-valid">
+                        <div class="vac-about vac-settings__block">
+
+                            <h4 class="title">
+                                Содержание курса
+                            </h4>
+                            <div class="course-stats flex">
+                                <div class="course-stats__item">
+                                    <img src="../../../img/corp/icons/puzzle.png" alt="Puzzle">
+                                    <span>4 блока</span>
+                                </div>
+                                <div class="course-stats__item">
+                                    <img src="../../../img/corp/icons/video-camera.png" alt="Camera">
+                                    <span>11 занятий</span>
+                                </div>
+                                <div class="course-stats__item">
+                                    <img src="../../../img/corp/icons/clock.png" alt="Clock">
+                                    <span>5 часов 30 минут</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="vac-settings__block-content">
+                            <div class="table-wrap">
+                                <div class="custom-table course-content-table constructor-course-table">
+                                    <div class="custom-table__body">
+                                        <div class="question-cont">
+                                            <div class="custom-table__row flex j-s-b">
+                                                <div class="custom-table__cell course-content-name">
+                                                    <div class="course-content-name-cont">
+                                                        <span><span class="number">1.</span>
+                                                            <input type="text" class="answer input-shdw lesson-name"
+                                                                data-reqired="reqired"
+                                                                value=" Три секрета управлений персоналом с пошаговой инструкцией;"
+                                                                id="new_question_1" name="new_question_1"></span>
+                                                    </div>
+                                                    <a href="#" class="circle-add add-answer add-new-question"
+                                                        data-question='2'>+</a>
+                                                    <!-- data-question кількість блоків  -->
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-question"
+                                                        data-name="Три секрета управлений персоналом с пошаговой инструкцией">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="question-item-cont">
+                                                <div class="lesson-wrap">
+                                                    <div class="custom-table__row flex j-s-b">
+                                                        <div class="custom-table__cell">
+                                                            <span class="table-list table-list-span">
+                                                                <input type="text" class="answer input-shdw lesson-name"
+                                                                    value="Как проводить сервисную беседу с сотрудником;"
+                                                                    data-reqired="reqired" id="new-item_1_1"
+                                                                    name="new-item_1_1">
+                                                            </span>
+                                                        </div>
+                                                        <div class="custom-table__cell">
+                                                            <a href="#" title="Edit" class="edit-lesson">
+                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                    alt="Edit">
+                                                            </a>
+                                                            <a href="#remove-course-popup" title="Delete"
+                                                                class="delete-item">
+                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                    alt="Delete">
+                                                            </a>
+                                                            <a href="#" title="Move" class="move-question">
+                                                                <img src="../../../img/corp/icons/movetest.png"
+                                                                    alt="Move">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lesson-info" style="display: none;"
+                                                        id="lesson-info_1_1">
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="input-group">
+                                                                <textarea placeholder="Введите информацию об уроке"
+                                                                    name="info-lesson_1_1"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="upload-field-wrap">
+                                                                <div class="upload-logo upload-lesson">
+                                                                    <div class="input-group">
+                                                                        <input id="file-input_1_1" type="file"
+                                                                            name="file-input_1_1">
+                                                                        <label for="file-input_1_1" id="file-label_1_1"
+                                                                            name="file-label_1_1">
+                                                                            <img class="upload-image"
+                                                                                src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__materials">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/book_blue.png"
+                                                                    alt="Book">
+                                                                Материалы к занятию
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="matterials_1_1" name="matterials_1_1"
+                                                                            checked="checked" />
+                                                                        <label for="matterials_1_1"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="vac-settings__block-content ">
+                                                                <div class="course-materials-wrap">
+                                                                    <div class="inputs-wrap">
+                                                                        <div class="input-group">
+                                                                            <input type="text" class="input-shdw"
+                                                                                name="course-materials_1_1_1"
+                                                                                placeholder="Укажите название документа рекомендованного к изучению, напр. «статья/книга/чек-лист» и т.д.">
+                                                                        </div>
+                                                                        <div class="upload-field-wrap">
+                                                                            <div class="upload-logo upload-lesson">
+                                                                                <div class="input-group">
+                                                                                    <input id="file-materials_1_1_1"
+                                                                                        type="file"
+                                                                                        name="file-materials_1_1_1">
+                                                                                    <label for="file-materials_1_1_1"
+                                                                                        id="label-file-materials_1_1_1"
+                                                                                        name="label-file-materials_1_1_1">
+                                                                                        <img class="upload-image"
+                                                                                            src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#remove-course-popup" title="Delete"
+                                                                        class="delete-input-file">
+                                                                        <img src="../../../img/corp/icons/trash.png"
+                                                                            alt="Delete">
+                                                                    </a>
+                                                                </div>
+                                                                <a href="#" class="circle-add add-answer add-inputfile"
+                                                                    data-inputfile='1' data-block="1"
+                                                                    data-lesson="1">+</a>
+                                                                <h4>Рекомендовано к изучению</h4>
+                                                                <div class="recommend-articles">
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Статья Елены Цысарь «Как
+                                                                                компании заполучить»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Книга Дэвида Аллена «Как
+                                                                                привести дела в порядок»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__hw">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/essay.png" alt="Book">
+                                                                Домашнее задание
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="recomended_1_1" name="recomended_1_1"
+                                                                            checked="checked" />
+                                                                        <label for="recomended_1_1"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="vac-settings__block-content">
+                                                                <div class="input-group">
+                                                                    <textarea name="homework_1_1"
+                                                                        placeholder="Введите информацию"></textarea>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Крайний срок подачи
+                                                                        <select name="deadline_1_1">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+                                                                <div class="blck-chk-wrap course-hw-chk">
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-file_1_1" />
+                                                                        <div class="test-radio__answer">
+                                                                            <span class="answer">ДЗ предусматривает
+                                                                                загрузку файла</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-comment_1_1" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                текстовый комментарий</span></div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-feedback_1_1" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                обратную
+                                                                                связь</span></div>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Срок обратной связи
+                                                                        <select name="feedback-deadline_1_1">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block">
+                                                            <h4 class="title tools-title">
+                                                                Тест
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            name="lesson-test_1_1" id="lesson-test_1_1"
+                                                                            checked="checked" />
+                                                                        <label for="lesson-test_1_1"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div
+                                                                class="vac-settings__block-content vac-settings__block-test">
+                                                                <div class="course-test-settings">
+                                                                    <div class="vac-test__descr">
+                                                                        <p>Ограничить время прохождения теста
+                                                                            <select>
+                                                                                <option value="0">10:00</option>
+                                                                                <option value="1">15:00</option>
+                                                                                <option value="2">20:00</option>
+                                                                                <option value="2">30:00</option>
+                                                                            </select>
+                                                                        </p>
+                                                                        <div class="design-content__row">
+                                                                            <label class="test-radio">
+                                                                                <input type="checkbox"
+                                                                                    name="webinar-new-regs_1_1" />
+                                                                                <div class="test-radio__answer"><span
+                                                                                        class="answer">Перемешать
+                                                                                        ответы</span></div>
+                                                                            </label>
+                                                                        </div>
+                                                                        <div class="ui-ux_design-content">
+                                                                            <div class="design-content__row">
+                                                                                <div
+                                                                                    class="design-content__row min-res-wrap">
+                                                                                    Минимальный результат
+                                                                                    прохождения
+                                                                                    <a href="#"
+                                                                                        class="min_res-output_link">50%</a>
+                                                                                    <div
+                                                                                        class="min_res-wrap box-shadow">
+                                                                                        <div class="min_res-output">50%
+                                                                                        </div>
+                                                                                        <input type="range" min="1"
+                                                                                            max="100" value="50"
+                                                                                            class="test-min_res"
+                                                                                            id="min_res">
+                                                                                    </div>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                        <p>Количество повторных попыток
+                                                                            <select>
+                                                                                <option value="0">0</option>
+                                                                                <option value="1">1</option>
+                                                                                <option value="2">2</option>
+                                                                                <option value="3">3</option>
+                                                                                <option value="4">4</option>
+                                                                                <option value="5">5</option>
+                                                                                <option value="6">Без ограничений
+                                                                                </option>
+                                                                            </select>
+                                                                        </p>
+                                                                        <p>Подача теста
+                                                                            <select>
+                                                                                <option value="0">Все вопросы</option>
+                                                                                <option value="1">Вопрос за вопросом
+                                                                                </option>
+                                                                                <option value="2">Раздел за разделом
+                                                                                </option>
+                                                                            </select>
+                                                                        </p>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="table-wrap">
+                                                                    <div
+                                                                        class="custom-table test-edit test-edit-constructor test-table-constructor">
+                                                                        <div class="custom-table__header flex j-s-b">
+                                                                            <div class="custom-table__col">Вопрос</div>
+                                                                            <div class="custom-table__col">Тип вопроса
+                                                                            </div>
+                                                                            <div class="custom-table__col">Ответы</div>
+                                                                            <div class="custom-table__col">Баллы</div>
+                                                                            <div class="custom-table__col"></div>
+                                                                        </div>
+                                                                        <div class="custom-table__body">
+                                                                            <div class="custom-table__row flex j-s-b">
+                                                                                <div class="title">
+                                                                                    <span>Раздел 1: </span>
+                                                                                    <input type="text"
+                                                                                        class="answer input-shdw"
+                                                                                        value="«Название»"
+                                                                                        id="section_1" name="section_1">
+                                                                                </div>
+                                                                                <div class="delete-chapter-cont">
+                                                                                    <a href="#" title="Delete"
+                                                                                        class="delete-chapter">
+                                                                                        <img src="../../../img/corp/icons/trash.png"
+                                                                                            alt="Delete">
+                                                                                    </a>
+                                                                                </div>
+                                                                            </div>
+                                                                            <a href="#"
+                                                                                class="circle-add add-chapter-question"
+                                                                                data-section="1" data-question="0">+</a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="lesson-wrap">
+                                                    <div class="custom-table__row flex j-s-b">
+                                                        <div class="custom-table__cell">
+                                                            <span class="table-list table-list-span">
+                                                                <input type="text" class="answer input-shdw lesson-name"
+                                                                    data-reqired="reqired"
+                                                                    value="Как проводить собрание по сервису;"
+                                                                    id="new-item_1_2" name="new-item_1_2">
+                                                            </span>
+                                                        </div>
+                                                        <div class="custom-table__cell">
+                                                            <a href="#" title="Edit" class="edit-lesson">
+                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                    alt="Edit">
+                                                            </a>
+                                                            <a href="#remove-course-popup" title="Delete"
+                                                                class="delete-item">
+                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                    alt="Delete">
+                                                            </a>
+                                                            <a href="#" title="Move" class="move-question">
+                                                                <img src="../../../img/corp/icons/movetest.png"
+                                                                    alt="Move">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lesson-info" style="display: none;"
+                                                        id="lesson-info_1_2">
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="input-group">
+                                                                <textarea placeholder="Введите информацию об уроке"
+                                                                    name="info-lesson_1_2"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="upload-field-wrap">
+                                                                <div class="upload-logo upload-lesson">
+                                                                    <div class="input-group">
+                                                                        <input id="file-input_1_2" type="file"
+                                                                            name="file-input_1_2">
+                                                                        <label for="file-input_1_2" id="file-label_1_2"
+                                                                            name="file-label_1_2">
+                                                                            <img class="upload-image"
+                                                                                src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__materials">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/book_blue.png"
+                                                                    alt="Book">
+                                                                Материалы к занятию
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="matterials_1_2" name="matterials_1_2"
+                                                                            checked="checked" />
+                                                                        <label for="matterials_1_2"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="vac-settings__block-content ">
+                                                                <div class="course-materials-wrap">
+                                                                    <div class="inputs-wrap">
+                                                                        <div class="input-group">
+                                                                            <input type="text" class="input-shdw"
+                                                                                name="course-materials_1_2_1"
+                                                                                placeholder="Укажите название документа рекомендованного к изучению, напр. «статья/книга/чек-лист» и т.д.">
+                                                                        </div>
+                                                                        <div class="upload-field-wrap">
+                                                                            <div class="upload-logo upload-lesson">
+                                                                                <div class="input-group">
+                                                                                    <input id="file-materials_1_2_1"
+                                                                                        type="file"
+                                                                                        name="file-materials_1_2_1">
+                                                                                    <label for="file-materials_1_2_1"
+                                                                                        id="label-file-materials_1_2_1"
+                                                                                        name="label-file-materials_1_2_1">
+                                                                                        <img class="upload-image"
+                                                                                            src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#remove-course-popup" title="Delete"
+                                                                        class="delete-input-file">
+                                                                        <img src="../../../img/corp/icons/trash.png"
+                                                                            alt="Delete">
+                                                                    </a>
+                                                                </div>
+                                                                <a href="#" class="circle-add add-answer add-inputfile"
+                                                                    data-inputfile='1' data-block="1"
+                                                                    data-lesson="2">+</a>
+                                                                <h4>Рекомендовано к изучению</h4>
+                                                                <div class="recommend-articles">
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Статья Елены Цысарь «Как
+                                                                                компании заполучить»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Книга Дэвида Аллена «Как
+                                                                                привести дела в порядок»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__hw">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/essay.png" alt="Book">
+                                                                Домашнее задание
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="recomended_1_2" name="recomended_1_2"
+                                                                            checked="checked" />
+                                                                        <label for="recomended_1_2"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="vac-settings__block-content">
+                                                                <div class="input-group">
+                                                                    <textarea name="homework_1_2"
+                                                                        placeholder="Введите информацию"></textarea>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Крайний срок подачи
+                                                                        <select name="deadline_1_2">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+                                                                <div class="blck-chk-wrap course-hw-chk">
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-file_1_2" />
+                                                                        <div class="test-radio__answer">
+                                                                            <span class="answer">ДЗ предусматривает
+                                                                                загрузку файла</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-comment_1_2" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                текстовый комментарий</span></div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-feedback_1_2" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                обратную
+                                                                                связь</span></div>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Срок обратной связи
+                                                                        <select name="feedback-deadline_1_2">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="circle-add add-answer add-new-item" data-item="2"
+                                                    data-question="1">+</a>
+                                            </div>
+                                        </div>
+                                        <div class="question-cont">
+                                            <div class="custom-table__row flex j-s-b mt-50">
+                                                <div class="custom-table__cell course-content-name">
+                                                    <div class="course-content-name-cont">
+                                                        <span><span class="number">2.</span>
+                                                            <input type="text" class="answer input-shdw lesson-name"
+                                                                value="" data-reqired="reqired" id="new_question_2"
+                                                                name="new_question_2">
+                                                    </div>
+                                                    <a href="#" class="circle-add add-answer add-new-question"
+                                                        data-question='2'>+</a>
+                                                    <!-- data-question кількість блоків  -->
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-question" data-name="">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="question-item-cont">
+                                                <div class="lesson-wrap">
+                                                    <div class="custom-table__row flex j-s-b">
+                                                        <div class="custom-table__cell">
+                                                            <span class="table-list">
+                                                                <input type="text" class="answer input-shdw lesson-name"
+                                                                    value="" data-reqired="reqired" id="new-item_2_1"
+                                                                    name="new-item_2_1">
+                                                            </span>
+                                                        </div>
+                                                        <div class="custom-table__cell">
+                                                            <a href="#" title="Edit" class="edit-lesson">
+                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                    alt="Edit">
+                                                            </a>
+                                                            <a href="#" title="Delete" class="delete-item">
+                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                    alt="Delete">
+                                                            </a>
+                                                            <a href="#" title="Move" class="move-question">
+                                                                <img src="../../../img/corp/icons/movetest.png"
+                                                                    alt="Move">
+                                                            </a>
+                                                        </div>
+                                                    </div>
+                                                    <div class="lesson-info" style="display: none;"
+                                                        id="lesson-info_2_1">
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="input-group">
+                                                                <textarea placeholder="Введите информацию об уроке"
+                                                                    name="info-lesson_2_1"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="upload-field-wrap">
+                                                                <div class="upload-logo upload-lesson">
+                                                                    <div class="input-group">
+                                                                        <input id="file-input_2_1" type="file"
+                                                                            name="file-input_2_1">
+                                                                        <label for="file-input_2_1" id="file-label_2_1"
+                                                                            name="file-label_2_1">
+                                                                            <img class="upload-image"
+                                                                                src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                        </label>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__materials">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/book_blue.png"
+                                                                    alt="Book">
+                                                                Материалы к занятию
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="matterials_2_1" name="matterials_2_1"
+                                                                            checked="checked" />
+                                                                        <label for="matterials_2_1"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+
+                                                            <div class="vac-settings__block-content ">
+                                                                <div class="course-materials-wrap">
+                                                                    <div class="inputs-wrap">
+                                                                        <div class="input-group">
+                                                                            <input type="text" class="input-shdw"
+                                                                                name="course-materials_2_1_1"
+                                                                                placeholder="Укажите название документа рекомендованного к изучению, напр. «статья/книга/чек-лист» и т.д.">
+                                                                        </div>
+                                                                        <div class="upload-field-wrap">
+                                                                            <div class="upload-logo upload-lesson">
+                                                                                <div class="input-group">
+                                                                                    <input id="file-materials_2_1_1"
+                                                                                        type="file"
+                                                                                        name="file-materials_2_1_1">
+                                                                                    <label for="file-materials_2_1_1"
+                                                                                        id="label-file-materials_2_1_1"
+                                                                                        name="label-file-materials_2_1_1">
+                                                                                        <img class="upload-image"
+                                                                                            src="../../../img/corp/icons/download-arrow_blue.png">
+                                                                                    </label>
+                                                                                </div>
+                                                                            </div>
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#remove-course-popup" title="Delete"
+                                                                        class="delete-input-file">
+                                                                        <img src="../../../img/corp/icons/trash.png"
+                                                                            alt="Delete">
+                                                                    </a>
+                                                                </div>
+                                                                <a href="#" class="circle-add add-answer add-inputfile"
+                                                                    data-inputfile='1' data-block="2"
+                                                                    data-lesson="1">+</a>
+                                                                <h4>Рекомендовано к изучению</h4>
+                                                                <div class="recommend-articles">
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Статья Елены Цысарь «Как
+                                                                                компании заполучить»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                    <div class="recommend-articles-item flex j-s-b">
+                                                                        <div class="article-link">
+                                                                            <a href="#">Книга Дэвида Аллена «Как
+                                                                                привести дела в порядок»</a>
+                                                                        </div>
+                                                                        <div class="article-edit">
+                                                                            <a href="#" title="Edit">
+                                                                                <img src="../../../img/corp/icons/pencil.png"
+                                                                                    alt="Edit">
+                                                                            </a>
+                                                                            <a href="#" title="Delete">
+                                                                                <img src="../../../img/corp/icons/trash.png"
+                                                                                    alt="Delete">
+                                                                            </a>
+                                                                        </div>
+                                                                    </div>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                        <div class="vac-settings__block vac-settings__hw">
+                                                            <h4 class="tools-title">
+                                                                <img src="../../../img/corp/icons/essay.png" alt="Book">
+                                                                Домашнее задание
+                                                                <div class="vac-tools">
+                                                                    <div class="input-group">
+                                                                        <input type="checkbox" class="checkbox"
+                                                                            id="recomended_2_1" name="recomended_2_1"
+                                                                            checked="checked" />
+                                                                        <label for="recomended_2_1"></label>
+                                                                    </div>
+                                                                </div>
+                                                            </h4>
+                                                            <div class="vac-settings__block-content">
+                                                                <div class="input-group">
+                                                                    <textarea name="homework_2_1"
+                                                                        placeholder="Введите информацию"></textarea>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Крайний срок подачи
+                                                                        <select name="deadline_2_1">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+                                                                <div class="blck-chk-wrap course-hw-chk">
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-file_2_1" />
+                                                                        <div class="test-radio__answer">
+                                                                            <span class="answer">ДЗ предусматривает
+                                                                                загрузку файла</span>
+                                                                        </div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-comment_2_1" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                текстовый комментарий</span></div>
+                                                                    </label>
+                                                                    <label class="test-radio">
+                                                                        <input type="checkbox"
+                                                                            name="homework-feedback_2_1" />
+                                                                        <div class="test-radio__answer"><span
+                                                                                class="answer">ДЗ предусматривает
+                                                                                обратную
+                                                                                связь</span></div>
+                                                                    </label>
+                                                                </div>
+                                                                <div class="vac-test__descr">
+                                                                    <p class="hw-notice">Срок обратной связи
+                                                                        <select name="feedback-deadline_2_1">
+                                                                            <option value="1">1</option>
+                                                                            <option value="2">2</option>
+                                                                            <option value="3">3</option>
+                                                                            <option value="4">4</option>
+                                                                            <option value="5">5</option>
+                                                                            <option value="6">6</option>
+                                                                            <option value="7">7</option>
+                                                                            <option value="8">8</option>
+                                                                            <option value="9">9</option>
+                                                                            <option value="10">10</option>
+                                                                        </select>
+                                                                        дней
+                                                                    </p>
+                                                                </div>
+
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <a href="#" class="circle-add add-answer add-new-item" data-item="1"
+                                                    data-question="2">+</a>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="vac-settings__block">
+                            <h4 class="title tools-title">
+                                Тест
+                                <div class="vac-tools">
+                                    <div class="input-group">
+                                        <input type="checkbox" class="checkbox" id="checkbox06" checked="checked" />
+                                        <label for="checkbox06"></label>
+                                    </div>
+                                </div>
+                            </h4>
+
+                            <div class="vac-settings__block-content">
+
+                                <div class="course-test-settings">
+                                    <div class="vac-test__descr">
+                                        <p>Ограничить время прохождения теста
+                                            <select>
+                                                <option value="0">10:00</option>
+                                                <option value="1">15:00</option>
+                                                <option value="2">20:00</option>
+                                                <option value="2">30:00</option>
+                                            </select>
+                                        </p>
+                                        <div class="design-content__row">
+                                            <label class="test-radio">
+                                                <input type="checkbox" name="webinar-new-regs" />
+                                                <div class="test-radio__answer"><span class="answer">Перемешать
+                                                        ответы</span></div>
+                                            </label>
+                                        </div>
+                                        <div class="ui-ux_design-content">
+                                            <div class="design-content__row">
+                                                <div class="design-content__row min-res-wrap">Минимальный результат
+                                                    прохождения
+                                                    <a href="#" class="min_res-output_link">50%</a>
+                                                    <div class="min_res-wrap box-shadow">
+                                                        <div class="min_res-output">50%</div>
+                                                        <input type="range" min="1" max="100" value="50"
+                                                            class="test-min_res" id="min_res">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <p>Количество повторных попыток
+                                            <select>
+                                                <option value="0">0</option>
+                                                <option value="1">1</option>
+                                                <option value="2">2</option>
+                                                <option value="3">3</option>
+                                                <option value="4">4</option>
+                                                <option value="5">5</option>
+                                                <option value="6">Без ограничений</option>
+                                            </select>
+                                        </p>
+                                        <p>Подача теста
+                                            <select>
+                                                <option value="0">Все вопросы</option>
+                                                <option value="1">Вопрос за вопросом</option>
+                                                <option value="2">Раздел за разделом</option>
+                                            </select>
+                                        </p>
+                                    </div>
+                                </div>
+                                <div class="table-wrap">
+                                    <div class="custom-table test-edit test-edit-constructor test-table-constructor">
+                                        <div class="custom-table__header flex j-s-b">
+                                            <div class="custom-table__col">Вопрос</div>
+                                            <div class="custom-table__col">Тип вопроса</div>
+                                            <div class="custom-table__col">Ответы</div>
+                                            <div class="custom-table__col">Баллы</div>
+                                            <div class="custom-table__col"></div>
+                                        </div>
+                                        <div class="custom-table__body">
+                                            <div class="custom-table__row flex j-s-b">
+                                                <div class="title">
+                                                    <span>Раздел 1: </span>
+                                                    <input type="text" class="answer input-shdw" value="«Название»"
+                                                        data-reqired="reqired" id="section_1" name="section_1">
+                                                </div>
+                                                <div class="delete-chapter-cont">
+                                                    <a href="#" title="Delete" class="delete-chapter">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test">
+                                                            <span>1/1.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                data-reqired="reqired" class="input-shdw"
+                                                                value="Метод Mystery Shopping" id="question_1_1"
+                                                                name="question_1_1">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" value="Описание вопроса"
+                                                            id="questionDesc_1_1" name="questionDesc_1_1">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <select id="typeQuestion_1_1" name="typeQuestion_1_1"
+                                                        style="display: none;">
+                                                        <option value="0" selected="">Один из списка</option>
+                                                        <option value="1">Множественный выбор</option>
+                                                        <option value="2">Шкала</option>
+                                                        <option value="3">Закрытый "Да\Нет"</option>
+                                                        <option value="4">Открытый вопрос</option>
+                                                    </select>
+                                                </div>
+                                                <div class="custom-table__cell opened">
+                                                    <ul class="custom-table-test-list">
+                                                        <li class="test-radio">
+                                                            <!-- <input type="checkbox" name="questionRadio_1_1"
+                                                            id="questionRadio_1_1_1" checked> -->
+                                                            <div class="test-radio__answer"></div>
+                                                            <label>
+                                                                <input type="text" class="answer input-shdw "
+                                                                    data-reqired="reqired"
+                                                                    value="метод изучения аномальных явлений"
+                                                                    name="item_1_1_1" id="item_1_1_1">
+                                                            </label>
+                                                            <input class="scores input-shdw" type="text" value="0"
+                                                                data-reqired="reqired" name="itemScore_1_1_1"
+                                                                id="itemScore_1_1_1">
+                                                        </li>
+
+                                                        <li class="test-radio">
+                                                            <!-- <input type="checkbox" name="questionRadio_1_1"
+                                                            id="questionRadio_1_1_2" checked> -->
+                                                            <div class="test-radio__answer"></div>
+                                                            <label>
+                                                                <input type="text" class="answer input-shdw"
+                                                                    data-reqired="reqired"
+                                                                    value="метод сбора информации о конкретных случаях"
+                                                                    name="item_1_1_2" id="item_1_1_2">
+                                                            </label>
+                                                            <input class="scores input-shdw" type="text" value="100"
+                                                                data-reqired="reqired" name="itemScore_1_1_2"
+                                                                id="itemScore_1_1_2">
+                                                        </li>
+                                                        <li class="test-radio">
+                                                            <!-- <input type="checkbox" name="questionRadio_1_1"
+                                                            id="questionRadio_1_1_3" checked> -->
+                                                            <div class="test-radio__answer"></div>
+                                                            <label>
+                                                                <input type="text" class="answer input-shdw"
+                                                                    data-reqired="reqired"
+                                                                    value="метод оценки рынка ценных бумаг"
+                                                                    name="item_1_1_3" id="item_1_1_3">
+                                                            </label>
+                                                            <input class="scores input-shdw" type="text" value="0"
+                                                                data-reqired="reqired" name="itemScore_1_1_3"
+                                                                id="itemScore_1_1_3">
+                                                        </li>
+                                                    </ul>
+                                                    <a href="#" class="circle-add add-answer add-questions-item"
+                                                        data-section="1" data-question="1" data-item="3">+</a>
+                                                </div>
+                                                <div class="custom-table__cell ">
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_1_1_1" type="file"
+                                                                name="file-name_1_1_1" class="test-answer">
+                                                            <label for="file-name_1_1_1"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png"></label>
+                                                        </div>
+                                                        <a href="#" title="Delete" class="delete-test-questions-item">
+                                                            <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                        </a>
+                                                    </div>
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_1_1_2" type="file"
+                                                                name="file-name_1_1_2" class="test-answer">
+                                                            <label for="file-name_1_1_2"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png"></label>
+                                                        </div>
+                                                        <a href="#" title="Delete" class="delete-test-questions-item">
+                                                            <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                        </a>
+                                                    </div>
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_1_1_3" type="file"
+                                                                name="file-name_1_1_3" class="test-answer">
+                                                            <label for="file-name_1_1_3"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png"></label>
+                                                        </div>
+                                                        <a href="#" title="Delete" class="delete-test-questions-item">
+                                                            <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                        </a>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test">
+                                                            <span>1/2.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                data-reqired="reqired" class="input-shdw"
+                                                                id="question_1_2" name="question_1_2">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" id="questionDesc_1_2"
+                                                            name="questionDesc_1_2">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell"> <select id="typeQuestion_1_2"
+                                                        name="typeQuestion_1_2" style="display: none;">
+                                                        <option value="0">Один из списка</option>
+                                                        <option value="1" selected="">Множественный выбор</option>
+                                                        <option value="2">Шкала</option>
+                                                        <option value="3">Закрытый "ДаНет"</option>
+                                                        <option value="4">Открытый вопрос</option>
+                                                    </select>
+                                                </div>
+                                                <div class="custom-table__cell opened">
+                                                    <ul class="custom-table-test-list">
+                                                        <li class="test-radio">
+                                                            <div class="test-radio__answer"></div>
+                                                            <label>
+                                                                <input type="text" class="answer input-shdw"
+                                                                    placeholder="Введите вариант ответа"
+                                                                    name="item_1_2_1" id="item_1_2_1">
+                                                            </label>
+                                                            <input class="scores input-shdw" type="text" value="0"
+                                                                name="itemScore_1_2_1" id="itemScore_1_2_1">
+                                                        </li>
+                                                        <li class="test-radio">
+                                                            <input type="checkbox" name="questionRadio_1_2_2"
+                                                                id="questionRadio_1_2_2" checked>
+                                                            <div class="test-radio__answer"></div>
+                                                            <label>
+                                                                <input type="text" class="answer input-shdw"
+                                                                    placeholder="Введите вариант ответа"
+                                                                    name="item_1_2_2" id="item_1_2_2">
+                                                            </label>
+                                                            <input class="scores input-shdw" type="text" value="0"
+                                                                name="itemScore_1_2_2" id="itemScore_1_2_2">
+                                                        </li>
+                                                    </ul>
+                                                    <a href="#" class="circle-add add-answer add-questions-item-check"
+                                                        data-section="1" data-question="2" data-item="2">+</a>
+                                                </div>
+                                                <div class="custom-table__cell ">
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_1_2_1" type="file"
+                                                                name="file-name_1_2_1" class="test-answer">
+                                                            <label for="file-name_1_2_1">
+                                                                <img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_1_2_2" type="file"
+                                                                name="file-name_1_2_2" class="test-answer">
+                                                            <label for="file-name_1_2_2">
+                                                                <img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png">
+                                                            </label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test">
+                                                            <span>1/3.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                class="input-shdw" id="question_1_3"
+                                                                name="question_1_3">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group"> <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" id="questionDesc_1_3"
+                                                            name="questionDesc_1_3">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell"> <select id="typeQuestion_1_3"
+                                                        name="typeQuestion_1_3" style="display: none;">
+                                                        <option value="0">Один из списка</option>
+                                                        <option value="1">Множественный выбор</option>
+                                                        <option value="2" selected="">Шкала</option>
+                                                        <option value="3">Закрытый "ДаНет"</option>
+                                                        <option value="4">Открытый вопрос</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="custom-table__cell ">
+                                                    <div class="input-group test-scale">
+                                                        <span>От <input type="number" min="1" max="10" value="1"
+                                                                name="questionScale_1_3_1"
+                                                                id="questionScale_1_3_1"></span>
+                                                        <input type="text" class="input-shdw answer"
+                                                            placeholder="Подпись (необязательно)"
+                                                            name="questionScaleDesc_1_3_1" id="questionScaleDesc_1_3_1">
+                                                        <input class="scores input-shdw" type="text" value="0"
+                                                            name="itemScore_1_3_1" id="itemScore_1_3_1">
+                                                    </div>
+                                                    <div class="input-group test-scale">
+                                                        <span>До <input type="number" min="1" max="10" value="10"
+                                                                name="questionScale_1_3_2"
+                                                                id="questionScale_1_3_2"></span>
+                                                        <input type="text" class="input-shdw answer"
+                                                            placeholder="Подпись (необязательно)"
+                                                            name="questionScaleDesc_1_3_2" id="questionScaleDesc_1_3_2">
+                                                        <input class="scores input-shdw" type="text" value="10"
+                                                            name="itemScore_1_3_2" id="itemScore_1_3_2">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell "> </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test">
+                                                            <span>1/4.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                class="input-shdw" id="question_1_4"
+                                                                name="question_1_4">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" id="questionDesc_1_4"
+                                                            name="questionDesc_1_4">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell"> <select id="typeQuestion_1_4"
+                                                        name="typeQuestion_1_4" style="display: none;">
+                                                        <option value="0">Один из списка</option>
+                                                        <option value="1">Множественный выбор</option>
+                                                        <option value="2">Шкала</option>
+                                                        <option value="3" selected="">Закрытый "ДаНет"</option>
+                                                        <option value="4">Открытый вопрос</option>
+                                                    </select>
+                                                </div>
+                                                <div class="custom-table__cell ">
+                                                    <ul class="custom-table-test-list">
+                                                        <li class="test-radio">
+                                                            <input type="radio" name="questionYesNot_1_4"
+                                                                id="questionYesNot_1_4_1">
+                                                            <div class="test-radio__answer">
+                                                                <span class="answer">Да</span>
+                                                                <input class="scores input-shdw" type="text" value="0"
+                                                                    name="itemScore_1_4_1" id="itemScore_1_4_1">
+                                                            </div>
+                                                        </li>
+                                                        <li class="test-radio">
+                                                            <input type="radio" name="questionYesNot_1_4"
+                                                                id="questionYesNot_1_4_2">
+                                                            <div class="test-radio__answer">
+                                                                <span class="answer">Нет</span>
+                                                                <input class="scores input-shdw" type="text" value="100"
+                                                                    name="itemScore_1_4_2" id="itemScore_1_4_2">
+                                                            </div>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                                <div class="custom-table__cell "> </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test"> <span>1/5.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                class="input-shdw" id="question_1_5"
+                                                                name="question_1_5">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" id="questionDesc_1_5"
+                                                            name="questionDesc_1_5">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <select id="typeQuestion_1_5" name="typeQuestion_1_5"
+                                                        style="display: none;">
+                                                        <option value="0">Один из списка</option>
+                                                        <option value="1">Множественный выбор</option>
+                                                        <option value="2">Шкала</option>
+                                                        <option value="3">Закрытый "ДаНет"</option>
+                                                        <option value="4" selected="">Открытый вопрос</option>
+                                                    </select>
+
+                                                </div>
+                                                <div class="custom-table__cell ">
+                                                    <div class="input-group">
+                                                        <label>
+                                                            <select id="question_1_5" name="question_1_5"
+                                                                style="display: none;"
+                                                                class="input-shdw answer open-question">
+                                                                <option value="0" selected>15+ символов</option>
+                                                                <option value="1">20+ символов</option>
+                                                                <option value="2">50+ символов</option>
+                                                            </select>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell "> </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div><a href="#" class="circle-add add-chapter-question" data-section="1"
+                                                data-question="5">+</a>
+                                        </div>
+                                        <!-- Chapter 2 -->
+                                        <div class="custom-table__body">
+                                            <div class="custom-table__row flex j-s-b">
+                                                <h4 class="title add-chapter">
+                                                    <a href="#" class="circle-add add-chapter-constructor">
+                                                        <img src="../../../img/corp/icons/chapter-img02.png" alt="" />
+                                                    </a>
+                                                    <div class="title">
+                                                        <span>Раздел 2: </span>
+                                                        <input type="text" class="answer input-shdw" value="«Название»"
+                                                            id="section_2" name="section_2">
+                                                    </div>
+                                                    <div class="delete-chapter-cont">
+                                                        <a href="#" title="Delete" class="delete-chapter">
+                                                            <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                        </a>
+                                                    </div>
+                                                </h4>
+                                            </div>
+                                            <div class="custom-table__row custom-table__edit-row flex j-s-b">
+                                                <div class="custom-table__cell">
+                                                    <div class="input-group">
+                                                        <div class="input-cont-constructor-test">
+                                                            <span>2/1.</span>
+                                                            <input type="text" placeholder="Введите ваш вопрос"
+                                                                class="input-shdw" value="Метод Mystery Shopping"
+                                                                id="question_2_1" name="question_2_1">
+                                                        </div>
+                                                        <p class="alert-error" style="display: none;">Заполните,
+                                                            пожалуйста, поле..</p>
+                                                    </div>
+                                                    <div class="input-group">
+                                                        <input type="text"
+                                                            placeholder="Описание вопроса (необязательно)"
+                                                            class="input-shdw" value="Описание вопроса"
+                                                            id="questionDesc_2_1" name="questionDesc_2_1">
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <select id="typeQuestion_1_1" name="typeQuestion_2_1">
+                                                        <option value="0" selected>Один из списка</option>
+                                                        <option value="1">Множественный выбор</option>
+                                                        <option value="2">Шкала</option>
+                                                        <option value="3">Закрытый "Да\Нет"</option>
+                                                        <option value="4">Открытый вопрос</option>
+                                                    </select>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <label class="test-radio">
+                                                        <input type="checkbox" name="questionRadio_2_1"
+                                                            id="questionRadio_2_1_1" checked>
+                                                        <div class="test-radio__answer"></div>
+                                                        <label>
+                                                            <input type="text" class="answer input-shdw"
+                                                                value="метод изучения аномальных явлений"
+                                                                name="item_2_1_1" id="item_2_1_1">
+                                                        </label>
+                                                        <input class="scores input-shdw" type="text" value="0"
+                                                            name="itemScore_2_1_1" id="itemScore_2_1_1">
+                                                    </label>
+                                                    <label class="test-radio">
+                                                        <input type="checkbox" name="questionRadio_1_1"
+                                                            id="questionRadio_2_1_2" checked>
+                                                        <div class="test-radio__answer"></div>
+                                                        <label>
+                                                            <input type="text" class="answer input-shdw"
+                                                                value="метод сбора информации о конкретных случаях"
+                                                                name="item_2_1_2" id="item_2_1_2">
+                                                        </label>
+                                                        <input class="scores input-shdw" type="text" value="100"
+                                                            name="itemScore_2_1_2" id="itemScore_2_1_2">
+                                                    </label>
+                                                    <label class="test-radio">
+                                                        <input type="checkbox" name="questionRadio_2_1"
+                                                            id="questionRadio_2_1_3" checked>
+                                                        <div class="test-radio__answer"></div>
+                                                        <label>
+                                                            <input type="text" class="answer input-shdw"
+                                                                value="метод оценки рынка ценных бумаг"
+                                                                name="item_2_1_3" id="item_2_1_3">
+                                                        </label>
+                                                        <input class="scores input-shdw" type="text" value="0"
+                                                            name="itemScore_2_1_3" id="itemScore_2_1_3">
+                                                    </label>
+                                                    <a href="#" class="circle-add add-answer add-questions-item"
+                                                        data-section="2" data-question="1" data-item="3">+</a>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_2_1_1" type="file"
+                                                                name="file-name_2_1_1" class="test-answer">
+                                                            <label for="file-name_2_1_1"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png" /></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_2_1_2" type="file"
+                                                                name="file-name_2_1_2" class="test-answer">
+                                                            <label for="file-name_2_1_2"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png" /></label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="upload-answer">
+                                                        <div class="input-group">
+                                                            <input id="file-name_2_1_3" type="file"
+                                                                name="file-name_2_1_3" class="test-answer">
+                                                            <label for="file-name_2_1_3"><img class="upload-image"
+                                                                    src="../../../img/corp/icons/download-arrow_blue.png" /></label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="custom-table__cell">
+                                                    <a href="#" title="Delete" class="delete-sections-question">
+                                                        <img src="../../../img/corp/icons/trash.png" alt="Delete">
+                                                    </a>
+                                                    <a href="#" title="Move" class="move-question">
+                                                        <img src="../../../img/corp/icons/movetest.png" alt="Move">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <a href="#" class="circle-add add-chapter-question" data-section="2"
+                                                data-question="1">+</a>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="design-content__row">
+                            <input type="submit" value="Сохранить" class="btn btn-submit valid-form-send" />
+                        </div>
+                    </form>
+
+                </div>
+
+
+
+            </div><!-- /Content -->
+
+        </main>
+    </div>
+    <div id="remove-course-popup" class="remove-popup custom-popup mfp-hide">
+        <h3>Вы действительно хотите удалить вопрос<span id="question-name"></span>?</h3>
+        <a href="#" class="submit-remove-course popup-modal-dismiss">Да</a>
+        <a href="#" class="popup-modal-dismiss">Нет</a>
+    </div>
+    <script src="../../../script/libs/jquery-ui.js"></script>
+    <script src="../../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../../script/libs/jquery.magnific-popup.min.js"></script>
+    <script src="../../../script/inner.js"></script>
+    <script src="../../../script/resp-menu.js"></script>
+    <script src="../../../script/common.js"></script>
+    <script src="../../../script/course-contstructor.js"></script>
+    <script src="../../../script/course-lessons.js"></script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.vac-test__descr select').customSelect();
+                $('.custom-table__edit-row select').customSelect();
+                $('.hw-notice select').customSelect();
+    
+                //Constructor content section checkbox
+                $('.course-content-table ').on('change', '.vac-settings__block input[type=checkbox]', function () {
+                    if ($(this).parents('.tools-title').siblings('.vac-settings__block-content').is(':visible')) {
+                        $(this).parents('.tools-title').siblings('.vac-settings__block-content').fadeOut(300);
+                    } else {
+                        $(this).parents('.tools-title').siblings('.vac-settings__block-content').fadeIn(300);
+                    }
+                });
+    
+                if (!$('.course-content-table .vac-settings__block input[type=checkbox]').is(':checked')) {
+                    $(this).parents('.tools-title').siblings('.vac-settings__block-content').fadeOut();
+                }
+    
+                var formValid = document.getElementsByClassName('form-valid')[0];
+                $('.valid-form-send').click(function () {
+                    $(this).parents('form').submit(function (e) {
+                        e.preventDefault();
+                        var el = document.querySelectorAll('[data-reqired]');
+                        var erroreArrayElemnts = [];
+                        var alert = '<p class="alert-error">Заполните, пожалуйста, поле..</p>';
+                        for (var i = 0; i < el.length; i++) {
+                            if (el[i].value === '' || el[i].value === ' ' || el[i].value === '-') {
+                                erroreArrayElemnts.push(el[i]);
+                                if ($(el[i]).parents('.course-content-name-cont').length > 0) {
+                                    var alert = '<p class="alert-error" style="position:absolute;padding-left:25px;bottom: -20px;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('.course-content-name-cont').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.course-content-name-cont').addClass('has-error');
+                                        $(el[i]).parents('.course-content-name-cont').find('.alert-error').show();
+                                    } else {
+                                        $(alert).appendTo($(el[i]).parents('.course-content-name-cont'));
+                                        $(el[i]).parents('.course-content-name-cont').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.course-content-name-cont').removeClass('has-error');
+                                        $(e.target).parents('.course-content-name-cont').find('.alert-error').hide();
+                                    });
+                                } else if ($(el[i]).hasClass('lesson-name')) {
+    
+                                    var alert = '<p class="alert-error" style="text-align: left;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('span').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('span').addClass('has-error');
+                                        $(el[i]).parents('span').find('.alert-error').show();
+                                    } else {
+                                        $(alert).appendTo($(el[i]).parents('span'));
+                                        $(el[i]).parents('span').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('span').removeClass('has-error');
+                                        $(e.target).parents('span').find('.alert-error').hide();
+                                    });
+                                } else if ($(el[i]).parents('.title').length > 0) {
+                                    var alert = '<p class="alert-error" style="text-align: left;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parents('.title').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.title').addClass('has-error');
+                                        $(el[i]).parents('.title').find('.alert-error').show();
+                                    } else {
+                                        $(alert).appendTo($(el[i]).parents('.title'));
+                                        $(el[i]).parents('.title').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.title').removeClass('has-error');
+                                        $(e.target).parents('.title').find('.alert-error').hide();
+                                    });
+                                } else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).hasClass('scores') && $(el[i]).parents('.lesson-info').find('.lessons-test').is(':checked')) {
+                                    if(!$(el[i]).parents('.lesson-info').is(':visible')) {
+                                        $(el[i]).parents('.lesson-info').fadeIn();
+                                    }
+    
+                                    $(el[i]).addClass('has-error');
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).removeClass('has-error');
+                                    });
+                                } else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).parents('.test-scale').length > 0 && $(el[i]).parents('.lesson-info').find('.lessons-test').is(':checked')) {
+                                    if(!$(el[i]).parents('.lesson-info').is(':visible')) {
+                                        $(el[i]).parents('.lesson-info').fadeIn();
+                                    }
+    
+                                    $(el[i]).parent('span').addClass('has-error');
+                                    $(el[i]).parent('span').focus(function (e) {
+                                        $(e.target).parent('span').removeClass('has-error');
+                                    });
+                                } else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).hasClass('open-question') && $(el[i]).parents('.lesson-info').find('.lessons-test').is(':checked')) {
+                                    if(!$(el[i]).parents('.lesson-info').is(':visible')) {
+                                        $(el[i]).parents('.lesson-info').fadeIn();
+                                    }
+    
+                                    if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                        $(el[i]).parents('.input-group').find('.alert-error').show();
+                                    } else {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.input-group').removeClass('has-error');
+                                        $(e.target).parents('.input-group').find('.alert-error').hide();
+                                    });
+                                } else if ($(el[i]).parents('.test-edit-constructor').length > 0 && $(el[i]).parents('.test-edit-constructor .custom-table__cell label').length > 0 && $(el[i]).parents('.lesson-info').find('.lessons-test').is(':checked')) {
+                                    if(!$(el[i]).parents('.lesson-info').is(':visible')) {
+                                        $(el[i]).parents('.lesson-info').fadeIn();
+                                    }
+                                    if(!$(el[i]).parents('.lesson-info').is(':visible')) {
+                                    }
+                                    var alert = '<p class="alert-error" style="text-align: left; font-size:10px; padding-left: 10px;">Заполните, пожалуйста, поле..</p>';
+                                    if ($(el[i]).parent('label').find('.alert-error').length > 0) {
+                                        $(el[i]).parent('label').addClass('has-error');
+                                        $(el[i]).parent('label').find('.alert-error').show();
+                                    } else {
+                                        $(el[i]).parent('label').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parent('label').removeClass('has-error');
+                                        $(e.target).parent('label').find('.alert-error').hide();
+                                    });
+                                } else if ($(el[i]).parents('.input-group').length > 0) {
+    
+                                    if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                        $(el[i]).parents('.input-group').find('.alert-error').show();
+                                    } else {
+                                        $(alert).appendTo($(el[i]).parents('.input-group'));
+                                        $(el[i]).parents('.input-group').addClass('has-error');
+                                    }
+                                    $(el[i]).focus(function (e) {
+                                        $(e.target).parents('.input-group').removeClass('has-error');
+                                        $(e.target).parents('.input-group').find('.alert-error').hide();
+                                    });
+                                }
+                            }
+                        }
+                        if (erroreArrayElemnts.length == 0) {
+                            formValid.submit();
+                        }
+                        if (erroreArrayElemnts.length > 0) {
+                            console.log('error');
+                            $("#main").animate({scrollTop: erroreArrayElemnts[0]}, "slow");
+                        }
+                    });
+                });
+            });
+            $(document).on('click', '.popup-modal-dismiss', function (e) {
+                e.preventDefault();
+                $.magnificPopup.close();
+            });
+        });
+    </script>
+</body>
+
+</html>

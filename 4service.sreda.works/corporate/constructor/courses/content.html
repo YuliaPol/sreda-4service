@@ -181,11 +181,13 @@
                                             <div class="custom-table__row flex j-s-b">
                                                 <div class="custom-table__cell course-content-name">
                                                     <div class="course-content-name-cont">
-                                                        <span><span class="number">1.</span>
+                                                        <span class="number">1.</span>
                                                             <input type="text" class="answer input-shdw lesson-name"
-                                                                data-reqired="reqired"
-                                                                value=" Три секрета управлений персоналом с пошаговой инструкцией;"
-                                                                id="new_question_1" name="new_question_1"></span>
+                                                            data-reqired="reqired"
+                                                            value=" Три секрета управлений персоналом с пошаговой инструкцией;"
+                                                            id="block_1" name="block_1">
+                                                            <input type="hidden" name="blockorder_1" id="blockorder_1"
+                                                            class="block-order" value="1">
                                                     </div>
                                                     <a href="#" class="circle-add add-answer add-new-question"
                                                         data-question='2'>+</a>
@@ -509,10 +511,11 @@
                                                                                     <input type="text"
                                                                                         class="answer input-shdw"
                                                                                         value="«Название»"
-                                                                                        id="section_1" name="section_1">
+                                                                                        id="section_1_1_1" name="section_1_1_1">
                                                                                 </div>
                                                                                 <div class="delete-chapter-cont">
                                                                                     <a href="#" title="Delete"
+                                                                                    data-chapter="25"
                                                                                         class="delete-chapter">
                                                                                         <img src="../../../img/corp/icons/trash.png"
                                                                                             alt="Delete">
@@ -752,10 +755,12 @@
                                             <div class="custom-table__row flex j-s-b mt-50">
                                                 <div class="custom-table__cell course-content-name">
                                                     <div class="course-content-name-cont">
-                                                        <span><span class="number">2.</span>
+                                                        <span class="number">2.</span>
                                                             <input type="text" class="answer input-shdw lesson-name"
-                                                                value="" data-reqired="reqired" id="new_question_2"
-                                                                name="new_question_2">
+                                                            value="" data-reqired="reqired" id="block_2"
+                                                            name="block_2">
+                                                            <input type="hidden" name="blockorder_2" id="blockorder_2"
+                                                            class="block-order" value="2">
                                                     </div>
                                                     <a href="#" class="circle-add add-answer add-new-question"
                                                         data-question='2'>+</a>
@@ -1073,7 +1078,7 @@
                                                         data-reqired="reqired" id="section_1" name="section_1">
                                                 </div>
                                                 <div class="delete-chapter-cont">
-                                                    <a href="#" title="Delete" class="delete-chapter">
+                                                    <a href="#" title="Delete" class="delete-chapter" data-chapter="25">
                                                         <img src="../../../img/corp/icons/trash.png" alt="Delete">
                                                     </a>
                                                 </div>
@@ -1475,7 +1480,7 @@
                                                             id="section_2" name="section_2">
                                                     </div>
                                                     <div class="delete-chapter-cont">
-                                                        <a href="#" title="Delete" class="delete-chapter">
+                                                        <a href="#" title="Delete" class="delete-chapter" data-chapter="25">
                                                             <img src="../../../img/corp/icons/trash.png" alt="Delete">
                                                         </a>
                                                     </div>
@@ -1615,7 +1620,7 @@
     <script src="../../../script/inner.js"></script>
     <script src="../../../script/resp-menu.js"></script>
     <script src="../../../script/common.js"></script>
-    <script src="../../../script/course-contstructor.js"></script>
+    <script src="../../../script/course-contstructor-test.js"></script>
     <script src="../../../script/course-lessons.js"></script>
     <script>
         jQuery(function ($) {

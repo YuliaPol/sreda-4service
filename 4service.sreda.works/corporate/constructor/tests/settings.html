@@ -212,13 +212,20 @@
                                 </div>
                                 <div class="design-content__row webinar-date">Ограничить время прохождения теста
                                     <span id="webinar-length">
-                                        <input type="text" value="0:12:00" maxlength="8" 
+                                        <!-- <input type="text" value="0:12:00" maxlength="8" 
                                         onkeydown="return ( event.ctrlKey || event.altKey 
                                             || (47<event.keyCode && event.keyCode<58 && event.shiftKey==false) 
                                             || (95<event.keyCode && event.keyCode<106)
                                             || (event.keyCode==8) || (event.keyCode==9) 
                                             || (event.keyCode>34 && event.keyCode<40) 
-                                            || (event.keyCode==46) )"/>
+                                            || (event.keyCode==46) )"/> -->
+
+                                            <select id="time_39_54" class="form-control" name="time_39_54">
+                                                <option value="10:00"> 10:00 </option>
+                                                <option value="15:00"> 15:00 </option>
+                                                <option value="20:00"> 20:00 </option>
+                                                <option value="30:00"> 30:00 </option>
+                                            </select>
                                         </span>
                                 </div>
                                 <div class="design-content__row">
@@ -228,11 +235,20 @@
                                     </label>
                                 </div>
                                 <div class="design-content__row min-res-wrap">Минимальный результат прохождения
-                                    <a href="#" class="min_res-output_link">50%</a>
-                                    <div class="min_res-wrap box-shadow">
+                                    <span>
+                                        <select id="minresult_39_54" class="form-control" name="minresult_39_54">
+                                            <option value="50"> 50% </option>
+                                            <option value="60"> 60% </option>
+                                            <option value="70"> 70%  </option>
+                                            <option value="80"> 80% </option>
+                                            <option value="90"> 90%</option>
+                                    </select>
+                                    </span>
+                                    <!-- <a href="#" class="min_res-output_link">50%</a> -->
+                                    <!-- <div class="min_res-wrap box-shadow">
                                         <div class="min_res-output">50%</div>
                                         <input type="range" min="0" max="100" value="50" step="5" class="test-min_res" id="min_res">
-                                    </div>
+                                    </div> -->
                                 </div>
                                 <div class="design-content__row">Количество повторных попыток
                                     <select>

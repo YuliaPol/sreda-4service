@@ -1,0 +1,1244 @@
+* {
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+}
+
+*::-webkit-scrollbar {
+  width: 0px  !important;
+}
+
+* {
+  scrollbar-width: none;
+}
+
+body #papa.no-header {
+  min-height: 100vh;
+}
+
+body #papa main#main.landing-page {
+  top: 0px;
+  min-height: 100vh;
+}
+
+body #papa main#main.landing-page .social-btn {
+  padding: 0px 10px;
+  text-align: center;
+}
+
+body #papa main#main.landing-page .social-btn a {
+  text-decoration: none;
+  outline: none;
+}
+
+body #papa main#main.landing-page .social-btn a .facebook {
+  font-size: 14px;
+  font-weight: 600;
+  color: #ffffff;
+  background: #2e4587;
+  text-decoration: none;
+  display: -webkit-inline-box;
+  display: -webkit-inline-flex;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  text-transform: uppercase;
+  text-align: center;
+  padding: 8px 12px;
+  border-radius: 30px;
+}
+
+body #papa main#main.landing-page .social-btn a .facebook::before {
+  content: "";
+  display: inline-block;
+  width: 15px;
+  height: 15px;
+  background: url(../img/icon/facebook.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+  margin-right: 15px;
+}
+
+body #papa main#main.landing-page .header-landing {
+  width: 100%;
+  background: url(../img/landing-header-bg.png);
+  -webkit-background-size: cover;
+          background-size: cover;
+  background-repeat: no-repeat;
+  background-position: left;
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: stretch;
+  -webkit-justify-content: stretch;
+      -ms-flex-pack: stretch;
+          justify-content: stretch;
+}
+
+body #papa main#main.landing-page .header-landing .img-col {
+  width: 40%;
+}
+
+body #papa main#main.landing-page .header-landing .img-col .landing-img {
+  background-image: url(../img/header-img.png);
+  background-position: left;
+  -webkit-background-size: contain;
+          background-size: contain;
+  background-repeat: no-repeat;
+  height: 100%;
+  width: 100%;
+}
+
+body #papa main#main.landing-page .header-landing .header-content {
+  width: 60%;
+  padding: 100px 40px 60px;
+}
+
+body #papa main#main.landing-page .header-landing .header-content h3.title {
+  font-size: 36px;
+  font-weight: bold;
+  text-align: left;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0px;
+  margin-bottom: 80px;
+}
+
+body #papa main#main.landing-page .header-landing .header-content .text {
+  font-size: 20px;
+  line-height: 1.2;
+  text-align: left;
+  font-weight: bold;
+  color: #ffffff;
+}
+
+body #papa main#main.landing-page .header-landing .header-content .text p {
+  margin-bottom: 25px;
+}
+
+body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper {
+  margin-top: 80px;
+  text-align: center;
+}
+
+body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper .go-to-course-btn {
+  text-align: center;
+  padding: 15px 35px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 40px;
+  margin: 0 auto;
+  display: inline-block;
+  outline: none;
+  border: none;
+  text-decoration: none;
+  text-transform: uppercase;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  -webkit-box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
+          box-shadow: 0px 10px 27px 3px rgba(0, 0, 0, 0.1);
+  width: 350px;
+}
+
+body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper .go-to-course-btn:hover {
+  font-weight: 700;
+}
+
+body #papa main#main.landing-page .discount {
+  padding-top: 80px;
+  padding-bottom: 80px;
+}
+
+body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+  margin: 27px;
+  width: calc(33.3% - 90px);
+}
+
+body #papa main#main.landing-page .discount h3.title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper {
+  -webkit-box-align: baseline;
+  -webkit-align-items: baseline;
+      -ms-flex-align: baseline;
+          align-items: baseline;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item {
+  font-size: 15px;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .discount-icons {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: end;
+  -webkit-align-items: flex-end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .bold-text {
+  font-weight: bold;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .simple-text {
+  text-align: center;
+}
+
+body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .italic {
+  padding-top: 35px;
+  font-style: italic;
+}
+
+body #papa main#main.landing-page .video-registration {
+  margin: 0px;
+  width: 100%;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper {
+  width: 90%;
+  margin: auto;
+  padding: 70px 0px;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block {
+  width: 70%;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block .resp-video {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block iframe,
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block video {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block {
+  width: 30%;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block p {
+  margin-bottom: 35px;
+  text-align: center;
+  font-weight: bold;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block .border-blue {
+  border: 1px solid #008bb2;
+  padding: 10px;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block .go-to-course {
+  margin-top: 80px;
+  text-align: center;
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block .go-to-course .take-course {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 19px;
+  width: 260px;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+  border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+}
+
+body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block .go-to-course .take-course:hover {
+  font-weight: 700;
+}
+
+body #papa main#main.landing-page .registration-btn {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 20px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 30px;
+  width: 260px;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+  border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+}
+
+body #papa main#main.landing-page .registration-btn:hover {
+  font-weight: 700;
+}
+
+body #papa main#main.landing-page .first-ten-member {
+  padding-top: 80px;
+  padding-bottom: 80px;
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .first-ten-member h3.title {
+  font-size: 20px;
+  font-weight: bold;
+  line-height: 1;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 40px;
+  line-height: 1.2;
+}
+
+body #papa main#main.landing-page .first-ten-member .text {
+  max-width: 680px;
+  font-size: 14px;
+  text-align: center;
+  margin: auto;
+  margin-bottom: 70px;
+}
+
+body #papa main#main.landing-page .first-ten-member .go-to-course {
+  text-align: center;
+}
+
+body #papa main#main.landing-page .first-ten-member .go-to-course .take-course {
+  text-align: center;
+  padding: 10px 0;
+  font-size: 15px;
+  font-weight: 500;
+  color: #ffffff;
+  border-radius: 19px;
+  width: 260px;
+  margin: 0 auto;
+  display: block;
+  outline: none;
+  border: none;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -webkit-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -o-linear-gradient(150deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+}
+
+body #papa main#main.landing-page .first-ten-member .go-to-course .take-course:hover {
+  font-weight: 700;
+}
+
+body #papa main#main.landing-page .first-ten-member .share-buttons-wrapper .share-buttons {
+  max-width: 310px;
+}
+
+body #papa main#main.landing-page .first-ten-member .share-buttons-wrapper .share-buttons .share_social {
+  font-weight: normal;
+}
+
+body #papa main#main.landing-page .registered-users {
+  margin: 0px;
+  padding-top: 100px;
+  padding-bottom: 40px;
+  background-image: url(../img/registration-users-bg.png);
+  min-height: 520px;
+}
+
+body #papa main#main.landing-page .registered-users .registered-users-title {
+  font-weight: bold;
+  font-size: 40px;
+  text-align: center;
+  line-height: 1.6;
+  color: #ffffff;
+  margin: 0px;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+body #papa main#main.landing-page .registered-users .text {
+  font-weight: bold;
+  font-size: 34px;
+  text-align: center;
+  line-height: 1.2;
+  color: #ffffff;
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
+  margin-bottom: 80px;
+}
+
+body #papa main#main.landing-page .you-can-get {
+  max-width: 90%;
+  margin: auto;
+  padding-top: 60px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_container .you-can-get_item .you-can-get_item_text {
+  max-width: 360px;
+  margin: auto;
+  font-size: 15px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get-block {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: stretch;
+  -webkit-align-items: stretch;
+      -ms-flex-align: stretch;
+          align-items: stretch;
+  -webkit-box-pack: justify;
+  -webkit-justify-content: space-between;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  -webkit-flex-wrap: wrap;
+      -ms-flex-wrap: wrap;
+          flex-wrap: wrap;
+  padding-bottom: 35px;
+  padding-top: 35px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item {
+  width: calc( 33% - 40px);
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -webkit-flex-direction: column;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  display: block;
+  padding: 20px;
+  border-radius: 20px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  margin: 10px 0;
+  background-color: #daf5f8;
+  max-width: 450px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item .picture {
+  max-width: 80px;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item .picture img {
+  max-width: 100%;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item .text {
+  padding-top: 20px;
+  max-width: 350px;
+  text-align: center;
+  margin: auto;
+  font-weight: 500;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text {
+  padding-top: 80px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .bold {
+  text-align: center;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text h3.title {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%;
+  margin: auto;
+  margin-bottom: 40px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list {
+  padding-top: 30px;
+  padding-left: 40px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list .you-can-get-list_item {
+  font-size: 18px;
+  line-height: 25px;
+  position: relative;
+  padding-bottom: 35px;
+}
+
+body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list .you-can-get-list_item:before {
+  content: '';
+  position: absolute;
+  left: -38px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+}
+
+body #papa main#main.landing-page .design {
+  width: 90%;
+  margin: auto;
+  padding-bottom: 100px;
+}
+
+body #papa main#main.landing-page .design .design-container .webinar-description-block {
+  width: 70%;
+  max-width: calc(100% - 300px);
+}
+
+body #papa main#main.landing-page .design .reg_item {
+  position: relative;
+}
+
+body #papa main#main.landing-page .design .reg_item:before {
+  width: 25px;
+  height: 25px;
+  display: inline-block;
+  position: absolute;
+  top: 7px;
+  left: -39px;
+  background-repeat: no-repeat;
+  -webkit-background-size: contain;
+          background-size: contain;
+}
+
+body #papa main#main.landing-page .design .book:before {
+  content: '';
+  background-image: url("../img/icon_list/book.png");
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list {
+  margin-left: 0px;
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list_titel {
+  font-size: 15px;
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .requirements {
+  position: relative;
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .requirements:before {
+  content: '';
+  display: inline-block;
+  width: 20px;
+  height: 30px;
+  background-image: url(../img/icon/resume.png);
+  background-repeat: no-repeat;
+  position: absolute;
+  -webkit-background-size: contain;
+          background-size: contain;
+  left: -35px;
+  top: -3px;
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list_item {
+  font-size: 15px;
+  line-height: 25px;
+  padding-bottom: 15px;
+  position: relative;
+}
+
+body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list_item:before {
+  content: '';
+  position: absolute;
+  left: -28px;
+  top: 10px;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background-image: -webkit-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+  background-image: -ms-linear-gradient(-60deg, #3fc6d9 0%, #5bd9ea 71%, #76ecfa 100%);
+}
+
+body #papa main#main.landing-page .light-blue {
+  padding: 40px;
+  background-color: #daf5f8;
+  width: 100%;
+}
+
+body #papa main#main.landing-page .light-blue h3.title {
+  color: #000000;
+  text-align: center;
+  font-size: 20px;
+  font-weight: 700;
+  padding-top: 40px;
+  padding-bottom: 30px;
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .light-blue .text {
+  font-size: 14px;
+  text-align: center;
+  line-height: 1.667;
+  max-width: 1170px;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .light-blue .text p {
+  margin-bottom: 35px;
+}
+
+body #papa main#main.landing-page .registration-btn-cont {
+  padding-top: 80px;
+  padding-bottom: 60px;
+}
+
+body #papa main#main.landing-page .speaker {
+  margin-top: 50px;
+}
+
+body #papa main#main.landing-page .speaker .speaker-items-wrapper {
+  max-width: 1280px;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .speaker .speaker-items-wrapper .speaker-avatar {
+  width: 200px;
+  height: 200px;
+  min-width: 200px;
+  background-image: url(../img/speaker_avatar.png);
+}
+
+body #papa main#main.landing-page .speaker .speaker-items-wrapper .speaker_name {
+  font-size: 22px;
+}
+
+body #papa main#main.landing-page .cards {
+  padding-top: 80px;
+}
+
+body #papa main#main.landing-page .cards h3.title {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .cards .card-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 80px;
+  margin-bottom: 0px;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item {
+  width: calc( 33.3% - 50px);
+  margin: 25px;
+  padding: 35px 50px;
+  border-radius: 25px;
+  min-width: 300px;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.bronze-card {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background-image: url(../img/landing-card/bronze-card.png);
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  font-weight: bold;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.bronze-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.silver-card {
+  position: relative;
+  z-index: 1;
+  background-image: url(../img/landing-card/silver-card.png);
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  font-weight: bold;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.silver-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  background-color: rgba(255, 255, 255, 0.5);
+  border-radius: 25px;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.golden-card {
+  position: relative;
+  z-index: 1;
+  color: #fff;
+  background-image: url(../img/landing-card/golden-card.png);
+  -webkit-background-size: auto 180%;
+          background-size: auto 180%;
+  background-position: 50% 0%;
+  background-repeat: no-repeat;
+  font-weight: bold;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item.golden-card::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border-radius: 25px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item .card-title-name {
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item .card-body p {
+  opacity: 1;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item .card-price {
+  padding-top: 10px;
+  font-weight: bold;
+  text-align: center;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item .card-price .old-price {
+  font-size: 22px;
+  text-decoration: line-through;
+}
+
+body #papa main#main.landing-page .cards .card-container .card-item .card-price .new-price {
+  font-size: 24px;
+}
+
+body #papa main#main.landing-page .section-because {
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .section-because .conditions-list-wrapper .conditions-list .conditions-list_titel {
+  font-style: normal;
+  font-size: 18px;
+}
+
+body #papa main#main.landing-page .section-because .conditions-list-wrapper .conditions-list .conditions-list_item {
+  padding-bottom: 5px;
+  font-size: 18px;
+}
+
+body #papa main#main.landing-page .certificate {
+  margin: auto;
+  width: 90%;
+  margin-top: 90px;
+}
+
+body #papa main#main.landing-page .bottom-text {
+  padding-top: 120px;
+}
+
+body #papa main#main.landing-page .bottom-text h3.title {
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+  text-transform: uppercase;
+  width: 90%;
+  margin: auto;
+}
+
+body #papa main#main.landing-page .bottom-text .registration-btn-cont {
+  padding-top: 60px;
+}
+
+body #papa main#main.landing-page .questions .questions_content .write_mail .send-btn {
+  font-weight: 500;
+}
+
+body #papa main#main.landing-page .questions .questions_content .write_mail .send-btn:hover {
+  font-weight: 700;
+}
+
+/* The Modal (background) */
+.custom-popup-succes {
+  display: none;
+  /* Hidden by default */
+  position: fixed;
+  /* Stay in place */
+  z-index: 1;
+  /* Sit on top */
+  padding-top: 100px;
+  /* Location of the box */
+  left: 0;
+  top: 0;
+  width: 100%;
+  /* Full width */
+  height: 100%;
+  /* Full height */
+  overflow: auto;
+  /* Enable scroll if needed */
+  background-color: black;
+  /* Fallback color */
+  background-color: rgba(0, 0, 0, 0.4);
+  /* Black w/ opacity */
+  -webkit-box-align: center;
+  -webkit-align-items: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+  -webkit-justify-content: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  /* Modal Content */
+  /* The Close Button */
+}
+
+.custom-popup-succes.show {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.custom-popup-succes .modal-content {
+  margin: 0 auto;
+  background: #fff;
+  position: relative;
+  padding: 30px 30px 40px;
+  border-radius: 30px;
+  max-width: 90%;
+  width: 600px;
+}
+
+.custom-popup-succes .modal-content h2 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 28px;
+  text-align: center;
+  text-transform: uppercase;
+  margin-bottom: 35px;
+}
+
+.custom-popup-succes .modal-content p {
+  font-size: 14px;
+  line-height: 23px;
+  text-align: center;
+}
+
+.custom-popup-succes .close {
+  width: 44px;
+  height: 44px;
+  line-height: 44px;
+  position: absolute;
+  right: 10px;
+  top: 0;
+  text-decoration: none;
+  text-align: center;
+  opacity: 0.65;
+  padding: 0 0 18px 10px;
+  color: #333333;
+  font-style: normal;
+  font-size: 28px;
+}
+
+.custom-popup-succes .close:hover,
+.custom-popup-succes .close:focus {
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+@media (max-width: 1200px) {
+  body #papa main#main.landing-page .you-can-get .you-can-get_container,
+  body #papa main#main.landing-page .discount .discount-item-wrapper {
+    -webkit-justify-content: space-around;
+        -ms-flex-pack: distribute;
+            justify-content: space-around;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item {
+    width: calc( 50% - 15px);
+  }
+  body #papa main#main.landing-page .header-landing .header-content h3.title {
+    font-size: 32px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text {
+    font-size: 20px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper .go-to-course-btn {
+    font-size: 14px;
+    width: 300px;
+  }
+  body #papa main#main.landing-page .discount {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block .go-to-course {
+    margin-top: 60px;
+  }
+  body #papa main#main.landing-page .first-ten-member {
+    padding-top: 60px;
+    padding-bottom: 60px;
+  }
+  body #papa main#main.landing-page .registered-users {
+    padding-top: 80px;
+  }
+  body #papa main#main.landing-page .registered-users .registered-users-title {
+    font-size: 32px;
+  }
+  body #papa main#main.landing-page .registered-users .text {
+    font-size: 20px;
+  }
+  body #papa main#main.landing-page .you-can-get {
+    margin-top: 60px;
+  }
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item .italic {
+    padding-top: 10px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item {
+    width: calc( 33.3% - 30px);
+    margin: 15px;
+    padding: 20px;
+  }
+  body #papa main#main.landing-page .cards .card-container {
+    margin-top: 60px;
+  }
+  body #papa main#main.landing-page .registration-btn-cont {
+    padding-top: 60px;
+    padding-bottom: 40px;
+  }
+  body #papa main#main.landing-page .speaker {
+    margin-top: 60px;
+  }
+  body #papa main#main.landing-page .certificate {
+    margin-top: 60px;
+  }
+  body #papa main#main.landing-page .bottom-text {
+    padding-top: 80px;
+  }
+  body #papa main#main.landing-page .bottom-text .registration-btn-cont {
+    padding-top: 40px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item .card-price .new-price {
+    font-size: 20px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item .card-price .old-price {
+    font-size: 18px;
+  }
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+    margin: 10px;
+    width: calc(33.3% - 30px);
+    min-width: 250px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item {
+    margin: 15px auto;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_container .you-can-get_item {
+    width: calc( 30% - 20px);
+    margin: 10px;
+    min-width: 250px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_container {
+    width: 100%;
+  }
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item {
+    margin: 10px;
+    width: calc(33.3% - 60px);
+  }
+}
+
+@media (max-width: 990px) {
+  body #papa main#main.landing-page .speaker .speaker-items-wrapper {
+    padding-left: 0px;
+  }
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item {
+    margin: 10px;
+    width: calc(33.3% - 20px);
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block {
+    width: 50%;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block {
+    width: 50%;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block p {
+    margin-bottom: 10px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content h3.title {
+    margin-bottom: 40px;
+  }
+  body #papa main#main.landing-page .discount .discount-item-wrapper {
+    -webkit-box-align: center;
+    -webkit-align-items: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+    width: 100%;
+    max-width: 300px;
+  }
+}
+
+@media (max-width: 768px) {
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+    min-width: 300px;
+    max-width: 300px;
+  }
+  body #papa main#main.landing-page .speaker {
+    margin-top: 20px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get-block .you-can-get-list_item {
+    width: 100%;
+    max-width: 100%;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item .card-title {
+    display: block;
+    text-align: center;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item .card-body p {
+    text-align: center;
+  }
+  body #papa main#main.landing-page .certificate .certificate-info-wrapper .certificate-info,
+  body #papa main#main.landing-page .speaker .speaker-items-wrapper .speaker_name,
+  body #papa main#main.landing-page .speaker .speaker-items-wrapper .speaker-details,
+  .you-can-get_bottom-text p,
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block p {
+    text-align: center;
+  }
+  body #papa main#main.landing-page .cards .card-container {
+    -webkit-box-pack: center;
+    -webkit-justify-content: center;
+        -ms-flex-pack: center;
+            justify-content: center;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block iframe {
+    margin: auto;
+  }
+  body #papa main#main.landing-page .discount h3.title,
+  body #papa main#main.landing-page .first-ten-member h3.title,
+  body #papa main#main.landing-page .you-can-get h4 {
+    text-align: center;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper .go-to-course-btn {
+    width: 260px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content h3.title {
+    font-size: 20px;
+    text-align: center;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text {
+    text-align: center;
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper .go-to-course-btn,
+  body #papa main#main.landing-page .registration-btn {
+    padding: 10px 15px;
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .video-block {
+    width: 100%;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block {
+    width: 100%;
+    padding-left: 0px;
+    padding-top: 20px;
+  }
+  body #papa main#main.landing-page .design .design-container .webinar-description-block {
+    width: 100%;
+    max-width: 100%;
+  }
+  body #papa main#main.landing-page .header-landing .header-content {
+    padding: 60px 10px 30px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content .text .go-to-course-wrapper {
+    margin-top: 30px;
+  }
+  body #papa main#main.landing-page .section-because .conditions-list-wrapper .conditions-list .conditions-list_item {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .speaker .speaker-items-wrapper .speaker-details,
+  body #papa main#main.landing-page .certificate .certificate-info-wrapper .certificate-info,
+  body #papa main#main.landing-page .section-because .conditions-list-wrapper .conditions-list .conditions-list_titel {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list .you-can-get-list_item {
+    font-size: 14px;
+    padding-bottom: 7px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list {
+    padding-top: 15px;
+  }
+}
+
+@media (max-width: 500px) {
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+    min-width: 250px;
+    max-width: 300px;
+  }
+  body #papa main#main.landing-page .header-landing .img-col {
+    width: 100%;
+    height: 250px;
+  }
+  body #papa main#main.landing-page .header-landing .header-content {
+    width: 100%;
+    padding-top: 20px;
+  }
+  body #papa main#main.landing-page .header-landing {
+    -webkit-flex-wrap: wrap;
+        -ms-flex-wrap: wrap;
+            flex-wrap: wrap;
+  }
+  body #papa main#main.landing-page .our-conditions .conditions-list-wrapper .conditions-list {
+    margin-left: 0px;
+  }
+}
+
+@media (max-width: 408px) {
+  body #papa main#main.landing-page .bottom-text h3.title,
+  body #papa main#main.landing-page .cards h3.title,
+  body #papa main#main.landing-page .light-blue h3.title,
+  body #papa main#main.landing-page .discount h3.title,
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .you-can-get .you-can-get_container .you-can-get_item .you-can-get_item_text,
+  body #papa main#main.landing-page .first-ten-member h3.title,
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list_titel,
+  body #papa main#main.landing-page .design .conditions-list-wrapper .conditions-list_item {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text h3.title {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text {
+    padding-top: 40px;
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item .card-price .old-price,
+  body #papa main#main.landing-page .cards .card-container .card-item .card-price .new-price {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .light-blue h3.title {
+    padding-top: 0px;
+  }
+  body #papa main#main.landing-page .light-blue {
+    padding-bottom: 5px;
+  }
+  body #papa main#main.landing-page .design {
+    padding-bottom: 40px;
+  }
+  body #papa main#main.landing-page .registered-users .text {
+    font-size: 14px;
+    margin-bottom: 40px;
+  }
+  body #papa main#main.landing-page .registered-users .registered-users-title {
+    font-size: 20px;
+  }
+  body #papa main#main.landing-page .registered-users {
+    padding-top: 10px;
+    min-height: 300px;
+  }
+  body #papa main#main.landing-page .first-ten-member .text {
+    margin-bottom: 40px;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper .registration-block {
+    font-size: 14px;
+  }
+  body #papa main#main.landing-page .video-registration .video-registration-wrapper {
+    padding-top: 30px;
+    padding-bottom: 30px;
+  }
+  body #papa main#main.landing-page .cards .card-container {
+    width: 100%;
+  }
+  body #papa main#main.landing-page .cards .card-container .card-item {
+    min-width: calc( 100% - 30px);
+  }
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item {
+    min-width: calc(100% - 60px);
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list {
+    padding-left: 20px;
+  }
+  body #papa main#main.landing-page .you-can-get .you-can-get_bottom-text .you-can-get-list .you-can-get-list_item:before {
+    left: -15px;
+  }
+  body #papa main#main.landing-page .certificate .certificate-info-wrapper {
+    width: 100%;
+  }
+  body #papa main#main.landing-page .discount.support-team .discount-item-wrapper .discount-item,
+  body #papa main#main.landing-page .discount .discount-item-wrapper .discount-item {
+    font-size: 12px;
+  }
+}

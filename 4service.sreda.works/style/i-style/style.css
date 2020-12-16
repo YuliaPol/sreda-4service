@@ -16,11 +16,16 @@
   border-bottom: 2px solid #e9c6b3;
   outline: none;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
   color: #ffffff;
 }
 
 .field-wrapper.txt-wrapper input:focus::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+.field-wrapper.txt-wrapper input:focus::-moz-placeholder {
   color: rgba(0, 0, 0, 0);
 }
 
@@ -41,6 +46,10 @@
 }
 
 .field-wrapper.txt-wrapper input.errored::-webkit-input-placeholder {
+  color: red;
+}
+
+.field-wrapper.txt-wrapper input.errored::-moz-placeholder {
   color: red;
 }
 
@@ -76,7 +85,8 @@
   margin-right: 10px;
   background: url("../../img/checkboxUn.svg");
   background-repeat: no-repeat;
-  background-size: cover;
+  -webkit-background-size: cover;
+          background-size: cover;
   width: 35px;
   height: 36px;
   position: relative;
@@ -148,6 +158,7 @@
   text-transform: uppercase;
   outline: none;
   -webkit-transition: 0.3s;
+  -o-transition: 0.3s;
   transition: 0.3s;
 }
 
@@ -161,6 +172,10 @@ input {
 }
 
 :focus::-webkit-input-placeholder {
+  color: rgba(0, 0, 0, 0);
+}
+
+:focus::-moz-placeholder {
   color: rgba(0, 0, 0, 0);
 }
 
@@ -179,4 +194,3 @@ input {
 .stels {
   display: none;
 }
-/*# sourceMappingURL=style.css.map */

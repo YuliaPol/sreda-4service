@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <form action="#">
+        <input type="text" name="sdf" id="">
+        <input type="submit" value="sf">
+    </form>
+<div class="">
+    <a href="#topage">To page</a>
+</div>
+<div style="height: 1500px;"></div>
+<div style="height: 200px; background-color: red;" id="topage"></div>
+<p>Reload this page, or click on the link below to invoke the onbeforeunload event.</p>
+
+<a href="https://www.w3schools.com">Click here to go to w3schools.com</a>
+    
+<script>
+// before unload page
+    window.addEventListener('beforeunload', function(event) {
+        console.log(event);
+        event.preventDefault();
+        event.returnValue = '';
+    });
+</script>
+
+</body>
+</html>

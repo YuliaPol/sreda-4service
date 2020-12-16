@@ -253,6 +253,33 @@
                                                                 </div>
                                                             </div>
                                                         </div>
+                                                        <div class="vac-settings__block-content">
+                                                            <div class="youtube-links">
+                                                                <div class="youtube-link-item">
+                                                                    <div class="youtube-link-wrapper">
+                                                                        <div class="input-group youtube-link">
+                                                                            <input type="text"
+                                                                                class="input-shdw"
+                                                                                value=""
+                                                                                name="youtube-link_1_1_1"
+                                                                                id="youtube-link_1_1_1"
+                                                                                placeholder="Укажите ссылку на видео с сервиса YouTube">
+                                                                            <input type="hidden"
+                                                                                class="input-shdw"
+                                                                                value="3394"
+                                                                                name="youtube-duration_1_1_1"
+                                                                                id="youtube-duration_1_1_1">
+                                                                        </div>
+                                                                    </div>
+                                                                    <a href="#remove-course-popup" title="Delete"
+                                                                        class="delete-youtube-link">
+                                                                        <img src="../../../img/corp/icons/trash.png"
+                                                                            alt="Delete">
+                                                                    </a>
+                                                                </div>
+                                                                <a href="#" class="circle-add add-answer add-new-youtube-link" >+</a>
+                                                            </div>
+                                                        </div>
                                                         <div class="vac-settings__block vac-settings__materials">
                                                             <h4 class="tools-title">
                                                                 <img src="../../../img/corp/icons/book_blue.png"
@@ -434,11 +461,12 @@
                                                                 <div class="course-test-settings">
                                                                     <div class="vac-test__descr">
                                                                         <p>Ограничить время прохождения теста
-                                                                            <select>
+                                                                            <select class="limit-time-test" name="time_42_141" id="time_42_141">
                                                                                 <option value="0">10:00</option>
                                                                                 <option value="1">15:00</option>
                                                                                 <option value="2">20:00</option>
                                                                                 <option value="2">30:00</option>
+                                                                                <option data-myoption="true" value="myoption">Свой вариант</option>
                                                                             </select>
                                                                         </p>
                                                                         <div class="design-content__row">
@@ -504,8 +532,11 @@
                                                                             <div class="custom-table__col">Баллы</div>
                                                                             <div class="custom-table__col"></div>
                                                                         </div>
-                                                                        <div class="custom-table__body">
+                                                                        <div class="custom-table__body default-add-section">
                                                                             <div class="custom-table__row flex j-s-b">
+                                                                                <a href="#" class="circle-add add-chapter-constructor" data-block="42" data-blockitem="130">
+                                                                                    <img src="../../../img/corp/icons/chapter-img02.png" alt="">
+                                                                                </a>
                                                                                 <div class="title">
                                                                                     <span>Раздел 1: </span>
                                                                                     <input type="text"
@@ -1617,6 +1648,7 @@
     <script src="../../../script/libs/jquery-ui.js"></script>
     <script src="../../../script/libs/jquery.custom-select.js"></script>
     <script src="../../../script/libs/jquery.magnific-popup.min.js"></script>
+    <script src="../../../script/libs/jquery.maskedinput.js"></script>
     <script src="../../../script/inner.js"></script>
     <script src="../../../script/resp-menu.js"></script>
     <script src="../../../script/common.js"></script>

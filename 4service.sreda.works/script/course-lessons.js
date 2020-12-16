@@ -294,6 +294,61 @@ jQuery(function ($) {
                 }
             );
         }
+        let youtubeLinks = $('.vacancy-settings').find('.youtube-link-item');
+        if(youtubeLinks.length>0){
+            setYoutubeLinks(youtubeLinks);
+        }
+        function setYoutubeLinks(youtubeLinks){
+            youtubeLinks.each(function (index, link) {
+                if($(link).find('.youtube-link input:nth-child(1)').val() && $(link).find('.youtube-link input:nth-child(2)').val()){
+                    console.log()
+                    let duration = $(link).find('.youtube-link input:nth-child(2)').val();
+                    if(duration > 0){
+                        var youTubeText ;
+                        if($(link).find('.youtube-link').parent().find('.text-youtube').length>0){
+                            youTubeText = $(link).find('.youtube-link').parent().find('.text-youtube');
+                        }
+                        else {
+                            var divText = '<div class="text-youtube"></div>';
+                            $(divText).appendTo( $(link).find('.youtube-link').parent());
+                            youTubeText = $(link).find('.youtube-link').parent().find('.text-youtube');
+                        }
+                        var labelTime = getTimeFromSecunds(duration);
+                        youTubeText.html('Продолжительность урока: ' + labelTime);
+                    }
+                }
+            });
+        };
+        //add youtube-link
+        $('.vacancy-settings').on('click', '.add-new-youtube-link', function () {
+            var id_link = 1 + parseInt($(this).parents('.youtube-links').find('.youtube-link').length);
+            var id_block = $(this).parents('.lesson-wrap').find('.lesson-name').attr('name').split('_')[1];
+            var id_lesson = $(this).parents('.lesson-wrap').find('.lesson-name').attr('name').split('_')[2];
+            var newlink = 
+                '<div class="youtube-link-item">'
+                +'<div class="youtube-link-wrapper">'
+                +'    <div class="input-group youtube-link">'
+                +'      <input type="text"'
+                +'          class="input-shdw"'
+                +'          value=""'
+                +'          name="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
+                +'          id="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
+                +'          placeholder="Укажите ссылку на видео с сервиса YouTube">'
+                +'      <input type="hidden"'
+                +'          class="input-shdw"'
+                +'          value=""'
+                +'          name="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
+                +'          id="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'">'
+                +'  </div>'
+                +'</div>'
+                +'<a href="#remove-course-popup" title="Delete"'
+                +'    class="delete-youtube-link">'
+                +'    <img src="../../../img/corp/icons/trash.png"'
+                +'       alt="Delete">'
+                +'</a>'
+                +'</div>';
+            $(newlink).insertBefore($(this));
+        });
         //add input-file
         $('.vacancy-settings').on('click', '.add-inputfile', function () {
             var id_inputfile = 1 + $(this).data('inputfile');
@@ -332,10 +387,10 @@ jQuery(function ($) {
             $('#remove-course-popup .submit-remove-course').data('id', id_element);
             $('#remove-course-popup .submit-remove-course').data('type', 'question');
             if ($(this).data('name')) {
-                $('#remove-course-popup h3').html('Вы действительно хотите удалить вопрос «' + $(this).data('name') + '» ?');
+                $('#remove-course-popup h3').html('Вы действительно хотите удалить блок «' + $(this).data('name') + '» ?');
             }
             else {
-                $('#remove-course-popup h3').html('Вы действительно хотите удалить вопрос?');
+                $('#remove-course-popup h3').html('Вы действительно хотите удалить блок?');
             }
             $.magnificPopup.open({
                 items: [
@@ -351,6 +406,20 @@ jQuery(function ($) {
             $('#remove-course-popup .submit-remove-course').data('id', id_element);
             $('#remove-course-popup .submit-remove-course').data('type', 'inputfile');
             $('#remove-course-popup h3').html('Вы действительно хотите удалить  материалы к занятию?');
+            $.magnificPopup.open({
+                items: [
+                    {
+                        src: '#remove-course-popup'
+                    }
+                ]
+            });
+        });
+        //delete youtube-link
+        $('.vacancy-settings').on('click', '.delete-youtube-link', function () {
+            var id_element = $(this).parents('.youtube-link-item').find('.youtube-link input:nth-child(1)').attr('id');
+            $('#remove-course-popup .submit-remove-course').data('id', id_element);
+            $('#remove-course-popup .submit-remove-course').data('type', 'youtube');
+            $('#remove-course-popup h3').html('Вы действительно хотите удалить видео?');
             $.magnificPopup.open({
                 items: [
                     {
@@ -439,17 +508,36 @@ jQuery(function ($) {
                 }
                 $('#' + id).parents('.course-materials-wrap').remove();
             }
+            if ($(this).data('type') == 'youtube') {
+                var parents = $('#' + id).parents('.youtube-links');
+                $('#' + id).parents('.youtube-link-item').remove();
+                var Links = parents.find('.youtube-link-item');
+                refreshYoutubeLinks(Links);
+            }
         });
+        function refreshYoutubeLinks(Links){
+            console.log(Links);
+            Links.each(function (index, link) {
+                var inputs = $(link).find('input');
+                inputs.each(function (index2, input) {
+                    prevName = $(input).attr('name').split("_");
+                    prevName[3] = index+1;
+                    newName = prevName.join('_');
+                    $(input).attr('id', newName);
+                    $(input).attr('name', newName);
+                });
+            });
+        }
         //delete questions item
         $('.vacancy-settings').on('click', '.delete-item', function () {
             var id_item = $(this).parents('.lesson-wrap').find('.table-list .answer.input-shdw.lesson-name').attr('id');
             $('#remove-course-popup .submit-remove-course').data('id', id_item);
             $('#remove-course-popup .submit-remove-course').data('type', 'item');
             if ($(this).parents('.custom-table__row').find('.table-list input').val().length > 0) {
-                $('#remove-course-popup h3').html('Вы действительно хотите удалить ответ на вопрос «' + $(this).parents('.custom-table__row').find('.table-list input').val() + '» ?');
+                $('#remove-course-popup h3').html('Вы действительно хотите удалить урок «' + $(this).parents('.custom-table__row').find('.table-list input').val() + '» ?');
             }
             else {
-                $('#remove-course-popup h3').html('Вы действительно хотите удалить ответ на вопрос?');
+                $('#remove-course-popup h3').html('Вы действительно хотите удалить урок?');
             }
             $.magnificPopup.open({
                 items: [
@@ -466,7 +554,7 @@ jQuery(function ($) {
             var order_item = parseInt($(this).parents('.question-item-cont').find('.lesson-wrap').length) + 1;
             var thisEl = this;
             var id_item;
-            // var id_item = Math.floor(Math.random() * 100000);
+            var id_item = Math.floor(Math.random() * 100000);
             // AddNewItemAjax(id_question, id_item, order_item, thisEl);
             if(id_question){
                 $.ajax ({
@@ -528,11 +616,32 @@ jQuery(function ($) {
                 // '            </div>' +
                 // '        </div>' +
                 // '    </div>' +
-                '    <div class="vac-settings__block-content">' +
-                '            <div class="input-group  youtube-link">' +
-                '                <input type="text" class="input-shdw" name="youtube-link_' + id_question + '_' + id_item + '"' +
-                '                    placeholder="Укажите ссылку на видео с сервиса YouTube">' +
-                '            </div>' +
+                '    <div class="vac-settings__block-content">'
+                +'        <div class="youtube-links">'
+                +'          <div class="youtube-link-item">'
+                +'              <div class="youtube-link-wrapper">'
+                +'                  <div class="input-group youtube-link">'
+                +'                      <input type="text"'
+                +'                          class="input-shdw"'
+                +'                          value=""'
+                +'                          name="youtube-link_' + id_question + '_' + id_item + '_1"'
+                +'                          id="youtube-link_' + id_question + '_' + id_item + '_1"'
+                +'                          placeholder="Укажите ссылку на видео с сервиса YouTube">'
+                +'                      <input type="hidden"'
+                +'                          class="input-shdw"'
+                +'                          value=""'
+                +'                          name="youtube-duration_' + id_question + '_' + id_item + '_1"'
+                +'                          id="youtube-duration_' + id_question + '_' + id_item + '_1">'
+                +'                  </div>'
+                +'              </div>'
+                +'              <a href="#remove-course-popup" title="Delete"'
+                +'                  class="delete-youtube-link">'
+                +'                  <img src="../../../img/corp/icons/trash.png"'
+                +'                      alt="Delete">'
+                +'              </a>'
+                +'          </div>'
+                +'          <a href="#" class="circle-add add-answer add-new-youtube-link" >+</a>'
+                +'      </div>'+
                 '    </div>' +
                 '    <div class="vac-settings__block vac-settings__materials">' +
                 '        <h4 class="tools-title">' +
@@ -546,33 +655,7 @@ jQuery(function ($) {
                 '            </div>' +
                 '        </h4>' +
                 '        <div class="vac-settings__block-content " style="display: none;">' +
-                '        <div class="course-materials-wrap">' +
-
-                // '        <div class="inputs-wrap">' +
-                // '            <div class="input-group">' +
-                // '                <input type="text" class="input-shdw" name="course-materials_' + id_question + '_' + id_item + '_1"' +
-                // '                    placeholder="Укажите название документа рекомендованного к изучению, напр. «статья/книга/чек-лист» и т.д.">' +
-                // '            </div>' +
-                // '            <div class="upload-field-wrap">' +
-                // '                <div class="upload-logo upload-lesson">' +
-                // '                   <div class="input-group">' +
-                // '                        <input id="file-materials_' + id_question + '_' + id_item + '_1" type="file" name="file-materials_' + id_question + '_' + id_item + '_1">' +
-                // '                        <label for="file-materials_' + id_question + '_' + id_item + '_1" id="label-file-materials_' + id_question + '_' + id_item + '_1"  name="label-file-materials_' + id_question + '_' + id_item + '_1">' +
-                // '                            <img class="upload-image" src="../../../img/corp/icons/download-arrow_blue.png">' +
-                // '                        </label>' +
-                // '                    </div>' +
-                // '                </div>' +
-                // '            </div>' +
-                // '             </div>' +
-                // '                <a href="#remove-course-popup" title="Delete"' +
-                // '                    class="delete-input-file">' +
-                // '                    <img src="../../../img/corp/icons/trash.png"' +
-                // '                        alt="Delete">' +
-                // '                </a>' +
-                // '            </div>' +
-
-                '            <a href="#" class="circle-add add-answer add-inputfile" data-inputfile="1" data-lesson="' + id_item + '" data-block="' + id_question + '">+</a>' +
-                '        </div>' +
+                '    </div>' +
                 '    </div>' +
                 '    <div class="vac-settings__block vac-settings__hw">' +
                 '       <h4 class="tools-title">' +
@@ -586,62 +669,6 @@ jQuery(function ($) {
                 '           </div>' +
                 '       </h4>' +
                 '       <div class="vac-settings__block-content"  style="display: none;">' +
-                '           <div class="input-group">' +
-                '               <textarea name="homework_' + id_question + '_' + id_item + '" placeholder="Введите информацию"></textarea>' +
-                '           </div>' +
-                '           <div class="vac-test__descr">' +
-                '               <p class="hw-notice">Крайний срок подачи' +
-                '                   <select name="deadline_' + id_question + '_' + id_item + '">' +
-                '                       <option value="1">1</option>' +
-                '                       <option value="2">2</option>' +
-                '                       <option value="3">3</option>' +
-                '                       <option value="4">4</option>' +
-                '                       <option value="5">5</option>' +
-                '                       <option value="6">6</option>' +
-                '                       <option value="7">7</option>' +
-                '                       <option value="8">8</option>' +
-                '                       <option value="9">9</option>' +
-                '                       <option value="10">10</option>' +
-                '                   </select>' +
-                '                   дней' +
-                '               </p>' +
-                '           </div>' +
-                '           <div class="blck-chk-wrap course-hw-chk">' +
-                '               <label class="test-radio">' +
-                '                   <input type="checkbox" name="homework-file_' + id_question + '_' + id_item + '" />' +
-                '                   <div class="test-radio__answer">' +
-                '                       <span class="answer">ДЗ предусматривает загрузку  файла</span>' +
-                '                   </div>' +
-                '               </label>' +
-                '               <label class="test-radio">' +
-                '                   <input type="checkbox" name="homework-comment_' + id_question + '_' + id_item + '" />' +
-                '                   <div class="test-radio__answer"><span class="answer">ДЗ предусматривает' +
-                '                           текстовый комментарий</span></div>' +
-                '               </label>' +
-                '               <label class="test-radio">' +
-                '                   <input type="checkbox" name="homework-feedback_' + id_question + '_' + id_item + '" />' +
-                '                   <div class="test-radio__answer"><span class="answer">ДЗ предусматривает обратную' +
-                '                           связь</span></div>' +
-                '               </label>' +
-                '           </div>' +
-                '           <div class="vac-test__descr">' +
-                '               <p class="hw-notice">Срок обратной связи' +
-                '                   <select name="feedback-deadline_' + id_question + '_' + id_item + '">' +
-                '                       <option value="1">1</option>' +
-                '                       <option value="2">2</option>' +
-                '                       <option value="3">3</option>' +
-                '                       <option value="4">4</option>' +
-                '                       <option value="5">5</option>' +
-                '                       <option value="6">6</option>' +
-                '                       <option value="7">7</option>' +
-                '                       <option value="8">8</option>' +
-                '                       <option value="9">9</option>' +
-                '                       <option value="10">10</option>' +
-                '                   </select>' +
-                '                   дней' +
-                '               </p>' +
-                '           </div>' +
-                '       </div>' +
                 '   </div>' +
                 '    <div class="vac-settings__block">' +
                 '    <h4 class="title tools-title">' +
@@ -664,7 +691,89 @@ jQuery(function ($) {
             // $('.default-add-section').remove();
             $('.vac-test__descr select').customSelect();
         }
+
+        $('.vacancy-settings').on('click', '.vac-settings__hw .tools-title .checkbox', function(e){
+            if($(this).is(':checked')){
+                if($(this).parents('.tools-title').next().find('.hw-notice').length==0){
+                    var id_question = $(this).attr('name').split('_')[1];
+                    var id_item = $(this).attr('name').split('_')[2];
+                    var homework = 
+                    '           <div class="input-group">' +
+                    '               <textarea name="homework_' + id_question + '_' + id_item + '" placeholder="Введите информацию"></textarea>' +
+                    '           </div>' +
+                    '           <div class="vac-test__descr">' +
+                    '               <p class="hw-notice">Крайний срок подачи' +
+                    '                   <select name="deadline_' + id_question + '_' + id_item + '">' +
+                    '                       <option value="1">1</option>' +
+                    '                       <option value="2">2</option>' +
+                    '                       <option value="3">3</option>' +
+                    '                       <option value="4">4</option>' +
+                    '                       <option value="5">5</option>' +
+                    '                       <option value="6">6</option>' +
+                    '                       <option value="7">7</option>' +
+                    '                       <option value="8">8</option>' +
+                    '                       <option value="9">9</option>' +
+                    '                       <option value="10">10</option>' +
+                    '                   </select>' +
+                    '                   дней' +
+                    '               </p>' +
+                    '           </div>' +
+                    '           <div class="blck-chk-wrap course-hw-chk">' +
+                    '               <label class="test-radio">' +
+                    '                   <input type="checkbox" name="homework-file_' + id_question + '_' + id_item + '" />' +
+                    '                   <div class="test-radio__answer">' +
+                    '                       <span class="answer">ДЗ предусматривает загрузку  файла</span>' +
+                    '                   </div>' +
+                    '               </label>' +
+                    '               <label class="test-radio">' +
+                    '                   <input type="checkbox" name="homework-comment_' + id_question + '_' + id_item + '" />' +
+                    '                   <div class="test-radio__answer"><span class="answer">ДЗ предусматривает' +
+                    '                           текстовый комментарий</span></div>' +
+                    '               </label>' +
+                    '               <label class="test-radio">' +
+                    '                   <input type="checkbox" name="homework-feedback_' + id_question + '_' + id_item + '" />' +
+                    '                   <div class="test-radio__answer"><span class="answer">ДЗ предусматривает обратную' +
+                    '                           связь</span></div>' +
+                    '               </label>' +
+                    '           </div>' +
+                    '           <div class="vac-test__descr">' +
+                    '               <p class="hw-notice">Срок обратной связи' +
+                    '                   <select name="feedback-deadline_' + id_question + '_' + id_item + '">' +
+                    '                       <option value="1">1</option>' +
+                    '                       <option value="2">2</option>' +
+                    '                       <option value="3">3</option>' +
+                    '                       <option value="4">4</option>' +
+                    '                       <option value="5">5</option>' +
+                    '                       <option value="6">6</option>' +
+                    '                       <option value="7">7</option>' +
+                    '                       <option value="8">8</option>' +
+                    '                       <option value="9">9</option>' +
+                    '                       <option value="10">10</option>' +
+                    '                   </select>' +
+                    '                   дней' +
+                    '               </p>' +
+                    '           </div>' +
+                    '       </div>';
+                    $(homework).appendTo($(this).parents('.tools-title').next());
+                    $('.vac-test__descr select').customSelect();
+                }
+            }
+        });
+        
+        $('.vacancy-settings').on('click', '.vac-settings__materials .tools-title .checkbox', function(e){
+            if($(this).is(':checked')){
+                if($(this).parents('.tools-title').next().find('.add-inputfile').length==0){
+                    var id_question = $(this).attr('name').split('_')[1];
+                    var id_item = $(this).attr('name').split('_')[2];
+                    var material = 
+                    '<a href="#" class="circle-add add-answer add-inputfile" data-inputfile="1" data-lesson="' + id_item + '" data-block="' + id_question + '">+</a>';
+                    $(material).appendTo($(this).parents('.tools-title').next());
+                    $('.vac-test__descr select').customSelect();
+                }
+            }
+        });
         $('.vacancy-settings').on('click', '.lessons-test', function(e){
+            console.log($(this).is(':checked'));
             if($(this).is(':checked')){
                 if($(this).parents('.tools-title').next().find('.course-test-settings').length==0){
                     var id_question = $(this).attr('name').split('_')[1];
@@ -674,13 +783,13 @@ jQuery(function ($) {
                     '            <div class="vac-test__descr">' +
                     '                <p>Ограничить время прохождения теста</p>' +
                     '                <div class="form-group field-testdata-time_limit">' +
-                    '                    <select id="time_' + id_question + '_' + id_item + '" class="form-control" name="time_' + id_question + '_' + id_item + '" >' +
+                    '                    <select  class="limit-time-test"  id="time_' + id_question + '_' + id_item + '" class="form-control" name="time_' + id_question + '_' + id_item + '" >' +
                     '                        <option value="0">10:00</option>' +
                     '                        <option value="1">15:00</option>' +
                     '                        <option value="2">20:00</option>' +
                     '                        <option value="3">30:00</option>' +
+                    '                        <option data-myoption="true" value="myoption">Свой вариант</option>'+
                     '                    </select>' +
-                    '                    <div class="help-block"></div>' +
                     '                </div>' +
                     '                <div class="design-content__row">' +
                     '                    <label class="test-radio">' +
@@ -777,6 +886,9 @@ jQuery(function ($) {
                     $('.vac-test__descr select').customSelect();
                 }
             }
+            else {
+                $(this).parents('.tools-title').next().html(' ');
+            }
         });
         $('.vacancy-settings').on('click', '.edit-lesson', function () {
             if ($(this).parents('.lesson-wrap').find('.lesson-info').is(':visible')) {
@@ -785,6 +897,103 @@ jQuery(function ($) {
             else {
                 $(this).parents('.lesson-wrap').find('.lesson-info').fadeIn();
             }
-        })
+        });
+
+        //youtube duration
+        $('.vacancy-settings').on('input keydown keyup mousedown mouseup select contextmenu drop change', '.youtube-link input[type=text]', function(e){
+            var url = $(this).val();
+            var vidid = youtube_parser(url);
+            var YOUR_API_KEY = "AIzaSyBNhDxp4JZ1B6RHz3YT3yZo_R-yfINbw0o";
+            var inDuration = $(this).next('input');
+            var youTubeText ;
+            if($(this).parents('.youtube-link').parent().find('.text-youtube').length>0){
+                youTubeText = $(this).parents('.youtube-link').parent().find('.text-youtube');
+            }
+            else {
+                var divText = '<div class="text-youtube"></div>';
+                $(divText).appendTo( $(this).parents('.youtube-link').parent());
+                youTubeText = $(this).parents('.youtube-link').parent().find('.text-youtube');
+            }
+            if(vidid){
+                $.ajax({
+                    url: 'https://www.googleapis.com/youtube/v3/videos?id='+ vidid +'&key='+ YOUR_API_KEY + '&part=contentDetails,statistics',
+                    dataType: "jsonp",
+                    success: function (data) {
+                        if(data.items.length !==0){
+                            var durarion = data.items[0].contentDetails.duration
+                            if(durarion){
+                                var durationSec = convert_time(durarion);
+                                inDuration.val(durationSec);
+                                var labelTime = getTimeFromSecunds(durationSec);
+                                youTubeText.html('Продолжительность урока: ' + labelTime);
+                                console.log('Add YouTube video duration');
+                            }
+                            else {
+                                youTubeText.html('Ошибка. Видео не найдено.');
+                                console.log('YouTube API Error');
+                            }
+                        }
+                        else {
+                            youTubeText.html('Ошибка. Видео не найдено.');
+                            console.log('YouTube API Error');
+                        }
+                    }
+                });
+            }
+            else {
+                youTubeText.html('Ошибка. Неправильная ссылка на видео.');
+                console.log('YouTube API Error');
+            }
+        });
+        function getTimeFromSecunds(totalSeconds){
+            let hours = Math.floor(totalSeconds / 3600);
+            totalSeconds %= 3600;
+            let minutes = Math.floor(totalSeconds / 60);
+            let seconds = totalSeconds % 60;
+            var returnStr = ' ';
+            if(hours !== 0) {
+                returnStr += hours + ' часов ';
+            }
+            returnStr += minutes + ' минут ';
+            returnStr += seconds + ' секунд ';
+            return returnStr;
+        }
+        function youtube_parser(url){
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#&?]*).*/;
+            var match = url.match(regExp);
+            return (match&&match[7].length==11)? match[7] : false;
+        }
+        function convert_time(duration) {
+            var a = duration.match(/\d+/g);
+    
+            if (duration.indexOf('M') >= 0 && duration.indexOf('H') == -1 && duration.indexOf('S') == -1) {
+                a = [0, a[0], 0];
+            }
+    
+            if (duration.indexOf('H') >= 0 && duration.indexOf('M') == -1) {
+                a = [a[0], 0, a[1]];
+            }
+            if (duration.indexOf('H') >= 0 && duration.indexOf('M') == -1 && duration.indexOf('S') == -1) {
+                a = [a[0], 0, 0];
+            }
+    
+            duration = 0;
+    
+            if (a.length == 3) {
+                duration = duration + parseInt(a[0]) * 3600;
+                duration = duration + parseInt(a[1]) * 60;
+                duration = duration + parseInt(a[2]);
+            }
+    
+            if (a.length == 2) {
+                duration = duration + parseInt(a[0]) * 60;
+                duration = duration + parseInt(a[1]);
+            }
+    
+            if (a.length == 1) {
+                duration = duration + parseInt(a[0]);
+            }
+            return duration
+        }
     });
 });

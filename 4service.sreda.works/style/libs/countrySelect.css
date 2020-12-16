@@ -31,10 +31,15 @@
     background-repeat: no-repeat;
     background-size: contain;
 }
+
 .selected-country.select-arrow-active:after {
     transform-origin: center center;
     transform: rotate(180deg);
     top: 8px;
+}
+.inputfoucus .selected-country:after {
+    transform: none;
+    top: 12px;
 }
 .selected-country{
     color: #3ec5d9;
@@ -55,8 +60,8 @@
     background-color: rgba(255,255,255, 0.0);
     border-radius: 10px;
     margin-top: 4px;
-    margin-left: 5px;
-    white-space: nowrap;
+    /* margin-left: 5px; */
+    white-space: normal;
     font-size: 14px;
     font-weight: 600;
     width: 83%;
@@ -71,8 +76,12 @@
     position: absolute;
     z-index: 1001;
     left: 20px;
-    width: 103% !important;
+    width: 100%;
+    min-width: 200px;
     top: 31px;
+    max-height: 400px;
+    overflow-y: auto;
+    overflow-x: overlay;
 }
 .country-select-items .same-as-selected {
     display: none;

@@ -1,17 +1,14 @@
-/**
- * Created by Ihor on 31.10.2019.
- */
 'use strict';
 
-class NITimer {
+class NITimerLesson {
 
     constructor(
-        selctor,
+        elementTimer,
         secondsCounter,
         functionTimerEnd,
     ) {
         this.interval = null;
-        this.selector = selctor;
+        this.elementTimer = elementTimer;
         this.secondCounter = secondsCounter;
         this.functionTimerEnd = functionTimerEnd;
         this.start()
@@ -29,15 +26,19 @@ class NITimer {
         else {
             $('body').addClass('submit');
             window.removeEventListener('beforeunload', beforeLoad);
-
-            document.querySelector(this.selector).innerText = 'Время Вышло!';
+    
+            this.elementTimer.parents('.lesson-test').find('form').submit();
+            this.elementTimer.html('Время Вышло!');
             this.functionTimerEnd();
             window.clearInterval(this.interval);
         }
     }
 
     writeNewValToTimer() {
-        document.querySelector(this.selector).innerText = 'Осталось времени: ' + this.toRightFormat();
+        this.elementTimer.html('Осталось времени: ' + this.toRightFormat());
+        if(this.secondCounter<10){
+            this.elementTimer.css('color', 'red');
+        }
     }
 
     toRightFormat() {

@@ -395,13 +395,14 @@
                             <div class="select-container">
                                 <div class="country-filters-wrapper flex f-w">
                                     <div class="filter custom-select-filter">
-                                        <div class="country-select-wrapper region-select-wrap">
+                                        <div class="country-select-wrapper region-select-wrap region-select-options region-input">
                                             <select>
-                                                <option value="0" selected="selected">Киев</option>
+                                                <option value="0">Киев</option>
                                                 <option value="1">Днепр</option>
                                                 <option value="2">Харьков</option>
                                                 <option value="3">ЛЬвов</option>
                                                 <option value="4">Одесса</option>
+                                                <option value="myoption">Свой вариант</option>
                                             </select>
                                         </div>
                                     </div>
@@ -415,14 +416,16 @@
                             <div class="select-container">
                                 <div class="country-filters-wrapper flex f-w">
                                     <div class="filter custom-select-filter">
-                                        <div class="country-select-wrapper region-select-wrap">
-                                            <select>
-                                                <option value="0" selected="selected">Ул. Спасская, «Палладиум»</option>
+                                        <div class="country-select-wrapper region-select-wrap region-select-options location-input">
+                                            <select name="UserProfile[region]">
+                                                <option value="0" >Ул. Спасская, «Палладиум»</option>
                                                 <option value="1">Локация 2</option>
                                                 <option value="2">Локация 3</option>
                                                 <option value="3">Локация 4</option>
                                                 <option value="4">Локация 5</option>
+                                                <option value="myoption" selected="selected">Свой вариант</option>
                                             </select>
+                                            <div class="myoption"><input type="text" name="UserProfile[myregion]"></div>
                                         </div>
                                     </div>
                                 </div>
@@ -483,6 +486,38 @@
 <script>
     jQuery(function ($) {
         $(document).ready(function () {
+
+            $('.region-select-options').on('click', '.country-select-items',function(e){
+                if($(this).parents('.region-select-options').find('select').find('option:selected').val() == 'myoption'){
+                    var nameText;
+                    if($(this).parents('.location-input').length>0){
+                        nameText = 'UserProfile[myregion]';
+                    }
+                    else {
+                        nameText = 'UserProfile[mylocation]';
+                    }
+                    var input = '<div class="myoption"><input type="text" name="' + nameText + '"></div>';
+                    $(input).insertAfter($(this).parents('.region-select-options').find('select'));
+                }
+                else {
+                    $(this).parents('.region-select-options').find('.myoption').remove();
+                }
+            });
+            $('.region-select-options').on('focus', '.selected-country input', function(e){
+                $(this).parents('.region-select-options').find('.selected-country').click();
+                $(this).parents('.region-select-options').find('.country-select-items').css('display','none');
+                $(this).parents('.region-select-options').addClass('inputfoucus');
+            });
+            $('.region-select-options').on('blur', '.selected-country input', function(e){
+                $(this).parents('.region-select-options').find('.country-select-items').css('display','');
+                $(this).parents('.region-select-options').removeClass('inputfoucus');
+            });
+
+            // $('.region-select-options').on('input keydown keyup mousedown mouseup select contextmenu drop', '.selected-country input', function(e){
+            //     var myoption = $(this).val();
+            //     $(this).parents('.region-select-options').find('select option[data-myoption]').val(myoption);
+            // });
+
             $('.js-example-basic-multiple').select2({
                 width: 'style'
             });

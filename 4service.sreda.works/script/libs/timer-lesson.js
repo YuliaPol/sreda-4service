@@ -20,17 +20,25 @@ class NITimerLesson {
 
     startTimer() {
         this.secondCounter--;
-        if ( this.secondCounter > 0 ) {
-            this.writeNewValToTimer();
-        }
-        else {
-            $('body').addClass('submit');
-            window.removeEventListener('beforeunload', beforeLoad);
-    
-            this.elementTimer.parents('.lesson-test').find('form').submit();
-            this.elementTimer.html('Время Вышло!');
+        if($(this.elementTimer).hasClass('stop-timer')){
+            $(this.elementTimer).removeClass('stop-timer');
+            this.elementTimer.html(' ');
             this.functionTimerEnd();
             window.clearInterval(this.interval);
+        }
+        else {
+            if ( this.secondCounter > 0 ) {
+                this.writeNewValToTimer();
+            }
+            else {
+                $('body').addClass('submit');
+                window.removeEventListener('beforeunload', beforeLoad);
+        
+                this.elementTimer.parents('.lesson-test').find('form').submit();
+                this.elementTimer.html('Время Вышло!');
+                this.functionTimerEnd();
+                window.clearInterval(this.interval);
+            }
         }
     }
 

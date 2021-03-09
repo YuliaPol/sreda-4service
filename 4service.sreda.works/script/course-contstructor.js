@@ -1,10 +1,26 @@
 jQuery(function ($) {
     $(document).ready(function () {
+        // Restricts input for the set of matched elements to the given inputFilterTime function.
+        $.fn.inputFilterTime = function(inputFilterTime) {
+            return this.on("input keydown keyup mousedown mouseup select contextmenu drop", function() {
+                if (inputFilterTime(this.value) && this.value.length<3) {
+                    this.oldValue = this.value;
+                    this.oldSelectionStart = this.selectionStart;
+                    this.oldSelectionEnd = this.selectionEnd;
+                    } else if (this.hasOwnProperty("oldValue")) {
+                    this.value = this.oldValue;
+                    this.setSelectionRange(this.oldSelectionStart, this.oldSelectionEnd);
+                    } else {
+                    this.value = "";
+                }
+            });
+        };
+        
         //Upload image as test answer
         $('.content-container').on('change', '.test-answer', function (e) {
                 let elemId = $(this).attr('id'),
                 arr = elemId.split("_");
-                arr[0] = "item";
+                arr[0] = "answer";
             if (this.files[0]) { // если выбрали файл
                 $('#' + arr.join('_')).val(this.files[0].name);
                 var reader = new FileReader();
@@ -42,33 +58,115 @@ jQuery(function ($) {
             }
         });
 
-        $('.vacancy-settings').on('change', '.limit-time-test', function(e){
+        $('.vacancy-settings').on('change', '.field-certificationtest-time_limit select', function(e){
             if($(this).find("option[data-myoption=true]:selected").length>0){
                 if($(this).parent().find('.mytime').length==0){
-                    var  mytime = '<input class="answer input-shdw mytime" type="text" name="mytime" id="mytime">';
+                    var  mytime = 
+                    '<div class="mytime">'
+                    +'    <input type="text" class="mytime__minute" name="mytimeMinute" id="mytimeMinute"> '
+                    +'  <div>:</div> '
+                    +'  <input type="text" class="mytime__second" name="mytimeSeconds" id="mytimeSeconds" value="00">'
+                    +'</div>';
                     $(mytime).appendTo($(this).parent());
+                    $(this).parent().find('.mytime .mytime__minute').focus();
                 }
                 $(this).parent().find('.mytime').fadeIn();
-                $(this).parent().find('.mytime').mask("99:99");
+                $(this).parent().find('.mytime input').inputFilterTime(function(value) {
+                    return /^\d*$/.test(value) && (value === "" || parseInt(value) <= 99);
+                });
             }
             else {
                 $(this).parents('.vac-test__descr').find('.mytime').remove();
             }
         });
 
+        $('.vacancy-settings').on('input keydown keyup mousedown mouseup select contextmenu drop', '.mytime input', function(e){
+            let minute = parseInt($(this).parents('.mytime').find('.mytime__minute').val());
+            let seconds = parseInt($(this).parents('.mytime').find('.mytime__second').val());
+            if(!minute) {
+                minute = 0;
+            }
+            if(!seconds) {
+                seconds = 0;
+            }
+            let myvalue = minute + ':' + seconds;
+            $(this).parents('.vac-test__descr').find('.field-certificationtest-time_limit select option[data-myoption=true]').val(myvalue);
+        });
 
         // //drag question
-        // $('.test-table-constructor .custom-table__body').sortable(
-        //     {
-        //         appendTo: ".custom-table__body",
-        //         cancel: ".title, .circle-add, input, select, label",
-        //         axis: "y",
-        //         items: "> .custom-table__edit-row",
-        //         deactivate: function (event, ui) {
-        //             RefreshQuestionCostructor(event);
-        //         }
-        //     }
-        // );
+        $('.test-table-constructor .test-quetions-wrappper').sortable(
+            {
+                appendTo: ".test-quetions-wrappper",
+                cancel: ".title, .circle-add, input, select, label",
+                axis: "y",
+                items: "> .custom-table__edit-row",
+                deactivate: function (event, ui) {
+                    RefreshQuestionCostructor(event);
+                }
+            }
+        );
+        $('.test-table-constructor .custom-table__body .test-quetions-wrappper .custom-table__edit-row').draggable({
+            cursor: "move",
+            connectToSortable: ".test-quetions-wrappper",
+            containment: '.test-edit-constructor',
+            cancel: ".title, .circle-add, input, select, label",
+            stop: function( event, ui ) {
+                let el = $(event.target);
+                el.width('auto');
+                el.height('auto');
+                el.css('top', 'auto');
+                el.css('left', 'auto');
+                let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[1];
+                let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[1];
+                if(chapterIdOld !== chapterIdNew) {
+                    changeChapterId(chapterIdNew, el);
+                }
+                RefreshQuestionCostructor(event);
+            }
+        });
+        function changeChapterId(chapterIdNew, element){
+            if($(element).find('.title span').next('.answer').length>0){
+                prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
+                prevName[1] = chapterIdNew;
+                newName = prevName.join('_');
+                $(element).find('.title span').next('.answer').attr('name', newName);
+                $(element).find('.title span').next('.answer').attr('id', newName);
+            }
+            var inputs = $(element).find('input');
+            inputs.each(function (index, input) {
+                prevName = $(input).attr('name').split("_");
+                prevName[1] = chapterIdNew;
+                newName = prevName.join('_');
+                $(input).attr('name', newName);
+                $(input).attr('id', newName);
+            });
+            var labels = $(element).find('label');
+            labels.each(function (index, label) {
+                if($(label).attr('for')){
+                    prevName = $(label).attr('for').split("_");
+                    prevName[1] = chapterIdNew;
+                    newName = prevName.join('_');
+                    $(label).attr('for', newName);
+                }
+            });
+            var Selects = $(element).find('select');
+            Selects.each(function (index, select) {
+                prevName = $(select).attr('name').split("_");
+                prevName[1] = chapterIdNew;
+                newName = prevName.join('_');
+                $(select).attr('name', newName);
+                $(select).attr('id', newName);
+            });
+            var Links = $(element).find('.add-questions-item');
+            Links.each(function (index, link) {
+                $(link).attr('data-section', chapterIdNew);
+            });
+            var Links = $(element).find('.add-questions-item-check');
+            Links.each(function (index, link) {
+                $(link).attr('data-section', chapterIdNew);
+            });
+        }
+
         function RefreshQuestionCostructor(event) {
             if($(event.target).parents('.test-table-constructor').parents('.lesson-info').length>0){
                 if($(event.target)){
@@ -76,7 +174,7 @@ jQuery(function ($) {
                     var Sections = $(event.target).parents('.test-table-constructor').find('.custom-table__body');
                     Sections.each(function (index, section) {
                         questions = 0;
-                        var Questions = $(section).children();
+                        var Questions = $(section).find('.test-quetions-wrappper').children();
                         Questions.each(function (index, element) {
                             var numbers = $(element).find('.input-cont-constructor-test span').text().split('/');
                             if (numbers[1]) {
@@ -84,31 +182,6 @@ jQuery(function ($) {
                                 numbers[1] = questions;
                                 $(element).find('.input-cont-constructor-test span').html(numbers.join('/'));
                             }
-                            var inputs = $(element).find('input');
-                            inputs.each(function (index, input) {
-                                prevName = $(input).attr('name').split("_");
-                                prevName[4] = questions;
-                                newName = prevName.join('_');
-                                $(input).attr('name', newName);
-                                $(input).attr('id', newName);
-                            });
-                            var labels = $(element).find('label');
-                            labels.each(function (index, label) {
-                                if($(label).attr('for')){
-                                    prevName = $(label).attr('for').split("_");
-                                    prevName[4] = questions;
-                                    newName = prevName.join('_');
-                                    $(label).attr('for', newName);
-                                }
-                            });
-                            var Selects = $(element).find('select');
-                            Selects.each(function (index, select) {
-                                prevName = $(select).attr('name').split("_");
-                                prevName[4] = questions;
-                                newName = prevName.join('_');
-                                $(select).attr('name', newName);
-                                $(select).attr('id', newName);
-                            });
                             var Links = $(element).find('.add-questions-item');
                             Links.each(function (index, link) {
                                 $(link).attr('data-question', questions);
@@ -127,41 +200,21 @@ jQuery(function ($) {
                 if($(event.target)){
                     var questions = 0;
                     var Sections = $(event.target).parents('.test-table-constructor').find('.custom-table__body');
+                    let sectionOrder = 1;
                     Sections.each(function (index, section) {
                         questions = 0;
-                        var Questions = $(section).children();
+                        var Questions = $(section).find('.test-quetions-wrappper').children();
                         Questions.each(function (index, element) {
                             var numbers = $(element).find('.input-cont-constructor-test span').text().split('/');
                             if (numbers[1]) {
                                 questions++;
                                 numbers[1] = questions;
+                                numbers[0] = sectionOrder;
                                 $(element).find('.input-cont-constructor-test span').html(numbers.join('/'));
                             }
-                            var inputs = $(element).find('input');
-                            inputs.each(function (index, input) {
-                                prevName = $(input).attr('name').split("_");
-                                prevName[2] = questions;
-                                newName = prevName.join('_');
-                                $(input).attr('name', newName);
-                                $(input).attr('id', newName);
-                            });
-                            var labels = $(element).find('label');
-                            labels.each(function (index, label) {
-                                if($(label).attr('for')){
-                                    prevName = $(label).attr('for').split("_");
-                                    prevName[2] = questions;
-                                    newName = prevName.join('_');
-                                    $(label).attr('for', newName);
-                                }
-                            });
-                            var Selects = $(element).find('select');
-                            Selects.each(function (index, select) {
-                                prevName = $(select).attr('name').split("_");
-                                prevName[2] = questions;
-                                newName = prevName.join('_');
-                                $(select).attr('name', newName);
-                                $(select).attr('id', newName);
-                            });
+                            if($(element).find('.question-order').length > 0){
+                                $(element).find('.question-order').val(questions);
+                            }
                             var Links = $(element).find('.add-questions-item');
                             Links.each(function (index, link) {
                                 $(link).attr('data-question', questions);
@@ -172,6 +225,7 @@ jQuery(function ($) {
                                 $(link).attr('data-question', questions);
                             });
                         });
+                        sectionOrder ++;
                     });
                 }
             }
@@ -185,7 +239,12 @@ jQuery(function ($) {
             var thisEl = this;
             var chapterId = $(this).parents('.custom-table__edit-row').find('.input-cont-constructor-test input').attr('name').split('_')[1];
             var questionId = $(this).parents('.custom-table__edit-row').find('.input-cont-constructor-test input').attr('name').split('_')[2];
+            // var itemID = Math.floor(Math.random() * 100000);
+            // addItemCourseTest(section, question, item, thisEl, chapterId, questionId, itemID);
+
             if(questionId){
+                // var itemID = Math.floor(Math.random() * 100000000) ;
+                // addItemCourseTest(section, question, item, thisEl, chapterId, questionId, itemID);
                 $.ajax ({
                     type: 'POST',
                     url: "/corporate/ajax/create-test-item",
@@ -210,9 +269,9 @@ jQuery(function ($) {
             '<li class="test-radio">' +
             '    <div class="test-radio__answer"></div>' +
             '    <label>' +
-            '        <input type="text" class="answer input-shdw" data-reqired="reqired" value="" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + questionId + '_' + itemId + '" id="item_' + chapterId + '_' + questionId + '_' + itemId + '">' +
+            '        <input type="text" class="answer input-shdw" data-reqired="reqired" value="" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + questionId + '_' + itemId + '" id="answer_' + chapterId + '_' + questionId + '_' + itemId + '">' +
             '    </label>' +
-            '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired"  name="itemScore_' + chapterId + '_' + questionId + '_' + itemId + '" id="itemScore_' + chapterId + '_' + questionId + '_' + itemId + '">' +
+            '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired"  name="score_' + chapterId + '_' + questionId + '_' + itemId + '" id="score_' + chapterId + '_' + questionId + '_' + itemId + '">' +
             '</li>';
             var newInputfile = 
             '<div class="upload-answer">'+
@@ -238,6 +297,8 @@ jQuery(function ($) {
             var chapterId = $(this).parents('.custom-table__edit-row').find('.input-cont-constructor-test input').attr('name').split('_')[1];
             var questionId = $(this).parents('.custom-table__edit-row').find('.input-cont-constructor-test input').attr('name').split('_')[2];
             if(questionId){
+                // var itemID = Math.floor(Math.random() * 100000000) ;
+                // addItemCheckCourse(section,question, item, thisEl, chapterId, questionId, itemID);
                 $.ajax ({
                     type: 'POST',
                     url: "/corporate/ajax/create-test-item",
@@ -263,9 +324,9 @@ jQuery(function ($) {
             '<li class="test-radio">' +
             '    <div class="test-radio__answer"></div>' +
             '    <label>' +
-            '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + questionId + '_' + itemId + '" id="item_' + chapterId + '_' + questionId + '_' + itemId + '">' +
+            '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + questionId + '_' + itemId + '" id="answer_' + chapterId + '_' + questionId + '_' + itemId + '">' +
             '    </label>' +
-            '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chapterId + '_' + questionId + '_' + itemId + '" id="itemScore_' + chapterId + '_' + questionId + '_' + itemId + '">' +
+            '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chapterId + '_' + questionId + '_' + itemId + '" id="score_' + chapterId + '_' + questionId + '_' + itemId + '">' +
             '</li>';
             var newInputfile = 
             '<div class="upload-answer">'+
@@ -288,10 +349,20 @@ jQuery(function ($) {
             var question = 1 + $(this).parent('.custom-table__body').find('.custom-table__edit-row').length;
             var newQuestion;
             var idChapter = $(this).parents('.custom-table__body').find('.title.add-chapter .answer').attr('name').split('_')[1];
-            var qustionId = Math.floor(Math.random() * 10000);
-            // var items = [Math.floor(Math.random() * 10000) , Math.floor(Math.random() * 10000)];
             var thisEl = this;
+
+            // var qustionId = Math.floor(Math.random() * 10000);
+            // var item = [Math.floor(Math.random() * 10000) , Math.floor(Math.random() * 10000)];
+            // addQuestionTestCourse(section, idChapter, question, item, qustionId, thisEl);
+
             if(idChapter){
+
+                // let qustionId = Math.floor(Math.random() * 100000000) ;
+                // let item = [1,2];
+                // item[0] = Math.floor(Math.random() * 100000000) ;
+                // item[1] = Math.floor(Math.random() * 100000000) ;
+                // addQuestionTestCourse(section, idChapter, question, item, qustionId, thisEl);
+
                 $.ajax ({
                     type: 'POST',
                     url: "/corporate/ajax/create-test-question",
@@ -300,8 +371,8 @@ jQuery(function ($) {
                         chapter_id: idChapter
                     },
                 }).done(function (data) {
-                    qustionId = parseInt(data[0]);
-                    var item = [1,2];
+                    let qustionId = parseInt(data[0]);
+                    let item = [1,2];
                     if(data[1]){
                         item[0] = data[1]
                     }
@@ -346,7 +417,7 @@ jQuery(function ($) {
             '        </div>' +
             '    </div>' +
             '    <div class="custom-table__cell">' +
-            '        <select id="typeQuestion_' + chaterId + '_' + qustionId + '" name="typeQuestion_' + chaterId + '_' + qustionId + '">' +
+            '        <select id="questiontype_' + chaterId + '_' + qustionId + '" name="questiontype_' + chaterId + '_' + qustionId + '">' +
             '            <option value="0" selected>Один из списка</option>' +
             '            <option value="1">Множественный выбор</option>' +
             '            <option value="2">Шкала</option>' +
@@ -359,16 +430,16 @@ jQuery(function ($) {
             '        <li class="test-radio">' +
             '            <div class="test-radio__answer"></div>' +
             '            <label>' +
-            '                <input type="text" class="answer input-shdw" value="" data-reqired="reqired" name="item_' + chaterId + '_' + qustionId + '_'+ items[0] +'" id="item_' + chaterId + '_' + qustionId + '_'+ items[0] +'" placeholder="Введите вариант ответа">' +
+            '                <input type="text" class="answer input-shdw" value="" data-reqired="reqired" name="answer_' + chaterId + '_' + qustionId + '_'+ items[0] +'" id="answer_' + chaterId + '_' + qustionId + '_'+ items[0] +'" placeholder="Введите вариант ответа">' +
             '            </label>' +
-            '            <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chaterId + '_' + qustionId + '_'+ items[0] +'" id="itemScore_' + chaterId + '_' + qustionId + '_'+ items[0] +'">' +
+            '            <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chaterId + '_' + qustionId + '_'+ items[0] +'" id="score_' + chaterId + '_' + qustionId + '_'+ items[0] +'">' +
             '        </li>' +
             '        <li class="test-radio">' +
             '            <div class="test-radio__answer"></div>' +
             '            <label>' +
-            '                <input type="text" class="answer input-shdw" value="" data-reqired="reqired"  name="item_' + chaterId + '_' + qustionId + '_'+ items[1] +'" id="item_' + chaterId + '_' + qustionId + '_'+ items[1] +'" placeholder="Введите вариант ответа">' +
+            '                <input type="text" class="answer input-shdw" value="" data-reqired="reqired"  name="answer_' + chaterId + '_' + qustionId + '_'+ items[1] +'" id="answer_' + chaterId + '_' + qustionId + '_'+ items[1] +'" placeholder="Введите вариант ответа">' +
             '            </label>' +
-            '            <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chaterId + '_' + qustionId + '_'+ items[1] +'" id="itemScore_' + chaterId + '_' + qustionId + '_'+ items[1] +'">' +
+            '            <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chaterId + '_' + qustionId + '_'+ items[1] +'" id="score_' + chaterId + '_' + qustionId + '_'+ items[1] +'">' +
             '        </li>' +
             '        </ul>' +
             '        <a href="#" class="circle-add add-answer add-questions-item" data-section="' + section + '" data-question="' + qustionId + '" data-item="2">+</a>' +
@@ -402,22 +473,43 @@ jQuery(function ($) {
             '        </a>' +
             '    </div>' +
             '</div>';
-            $(newQuestion).insertBefore($(thisEl));
+            // $(newQuestion).insertBefore($(thisEl));
+            $(newQuestion).appendTo($(thisEl).prev('.test-quetions-wrappper'));
             $(thisEl).attr('data-question', question);
             $('.test-table-constructor select').customSelect();
             // if(question == 1 ){
             //     console.log(question);
-            //     $('.test-table-constructor .custom-table__body').sortable(
-            //         {
-            //             appendTo: ".custom-table__body",
-            //             cancel: ".title, .circle-add, input, select, label",
-            //             axis: "y",
-            //             items: "> .custom-table__edit-row",
-            //             deactivate: function (event, ui) {
-            //                 RefreshQuestionCostructor(event);
-            //             }
-            //         }
-            //     );
+            $('.test-table-constructor .custom-table__body .test-quetions-wrappper').sortable(
+                {
+                    appendTo: ".test-quetions-wrappper",
+                    cancel: ".title, .circle-add, input, select, label",
+                    axis: "y",
+                    items: "> .custom-table__edit-row",
+                    deactivate: function (event, ui) {
+                        RefreshQuestionCostructor(event);
+                    }
+                }
+            );
+
+            $('.test-table-constructor .custom-table__body .test-quetions-wrappper .custom-table__edit-row').draggable({
+                cursor: "move",
+                connectToSortable: ".test-quetions-wrappper",
+                containment: '.test-edit-constructor',
+                cancel: ".title, .circle-add, input, select, label",
+                stop: function( event, ui ) {
+                    let el = $(event.target);
+                    el.width('auto');
+                    el.height('auto');
+                    el.css('top', 'auto');
+                    el.css('left', 'auto');
+                    let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[1];
+                    let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[1];
+                    if(chapterIdOld !== chapterIdNew) {
+                        changeChapterId(chapterIdNew, el);
+                    }
+                    RefreshQuestionCostructor(event);
+                }
+            });
             // }
         }
         //delete question item
@@ -527,9 +619,11 @@ jQuery(function ($) {
         });
         $('.content-container').on('click', '.add-chapter-constructor', function () {
             var section = $(this).parents('.custom-table__body').find('.add-chapter-question').attr('data-question');
-            var chapterId = Math.floor(Math.random() * 10000);
+            // var chapterId = Math.floor(Math.random() * 10000);
             var thidEl = this;
-            var testId = $(this).parents('.test-certification').find('.test-id').val();
+            var testId = $(this).parents('.vacancy-settings').find('.test-id').val();
+            // addNewChapterTestCourse(chapterId, thidEl, Math.floor(Math.random() * 100000));
+            console.log(testId);
             if(testId){
                 $.ajax ({
                     type: 'POST',
@@ -561,20 +655,35 @@ jQuery(function ($) {
             '             </a>' +
             '             <div class="title">' +
             '               <span>Раздел ' + section + ': </span>' +
-            '               <input type="text" class="answer input-shdw" value="" data-reqired="reqired" placeholder="«Название»" id="chapter_' + chapterId + '" name="chapter_' + chapterId + '">' +
+            '               <input type="text" class="answer input-shdw" value="" data-reqired="reqired" placeholder="«Название»" id="chapter_' + chapterId + '_' + section + '" name="chapter_' + chapterId  + '_' + section + '">' +
             '              </div>' +
             '              <div class="delete-chapter-cont">' +
             '               <a href="#" title="Delete" class="delete-chapter">' +
             '                   <img src="../../../img/corp/icons/trash.png" alt="Delete">' +
             '               </a>' +
+            '                <a href="#" title="Move" class="move-chapter">'+
+            '                   <img src="../../../img/corp/icons/movetest.png" alt="Move">'+
+            '               </a>'+
             '              </div>' +
             '         </h4>' +
             '    </div>' +
+            '   <div class="test-quetions-wrappper"></div>'+
             '    <a href="#" class="circle-add add-chapter-question" data-section="' + section + '" data-question="0">+</a>' +
             '</div>';
             $(newChapter).insertAfter($(thidEl).parents('.custom-table__body'));
             section = 1;
             var Sections = $('.test-table-constructor').find('.custom-table__body');
+            $('.test-table-constructor').sortable(
+                {
+                    appendTo: ".test-table-constructor",
+                    cancel: ".circle-add, input, select, label, .delete-chapter",
+                    axis: "y",
+                    items: "> .custom-table__body",
+                    deactivate: function (event, ui) {
+                        RefreshOnStart();
+                    }
+                }
+            );
             RefreshOnSections(Sections);
             // Sections.each(function (index, section_el) {
             //     var Questions = $(section_el).children();
@@ -628,7 +737,18 @@ jQuery(function ($) {
             //     section++;
             // });
         }
-
+        $('.test-table-constructor').sortable(
+            {
+                appendTo: ".test-table-constructor",
+                cancel: ".circle-add, input, select, label, .delete-chapter",
+                axis: "y",
+                items: "> .custom-table__body",
+                deactivate: function (event, ui) {
+                    RefreshOnStart();
+                }
+            }
+        );
+        
         // select type of questions
         $('.content-container').on('change', '.custom-table__row .custom-table__cell:nth-child(2) select', function () {
             var nameQuestion = $(this).attr('name').split('_');
@@ -680,16 +800,16 @@ jQuery(function ($) {
                     '<li class="test-radio">' +
                     '    <div class="test-radio__answer"></div>' +
                     '    <label>' +
-                    '        <input type="text" class="answer input-shdw" value="" data-reqired="reqired" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="item_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
+                    '        <input type="text" class="answer input-shdw" value="" data-reqired="reqired" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
                     '    </label>' +
-                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
+                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
                     '</li>' +
                     '<li class="test-radio">' +
                     '    <div class="test-radio__answer"></div>' +
                     '    <label>' +
-                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" value="" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="item_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
+                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" value="" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
                     '    </label>' +
-                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
+                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
                     '</li>' +
                     '</ul>' +
                     '<a href="#" class="circle-add add-answer add-questions-item" data-section="' + section + '" data-question="' + question + '" data-item="2">+</a>';
@@ -719,16 +839,16 @@ jQuery(function ($) {
                     '<li class="test-radio">' +
                     '    <div class="test-radio__answer"></div>' +
                     '    <label>' +
-                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="item_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
+                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
                     '    </label>' +
-                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
+                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
                     '</li>' +
                     '<li class="test-radio">' +
                     '    <div class="test-radio__answer"></div>' +
                     '    <label>' +
-                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="item_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="item_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
+                    '        <input type="text" class="answer input-shdw" data-reqired="reqired" placeholder="Введите вариант ответа" name="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
                     '    </label>' +
-                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
+                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" name="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
                     '</li>' +
                     '</ul>'+
                     '<a href="#" class="circle-add add-answer add-questions-item-check" data-section="' + section + '" data-question="' + question + '" data-item="2">+</a>';
@@ -755,14 +875,14 @@ jQuery(function ($) {
             if ($(thisEl).val() == 2) {
                 newQuestion =
                     '<div class="input-group test-scale">' +
-                    '    <span>От <input type="number" min="1" max="10" value="1" name="questionScale_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="questionScale_' + chapterId + '_' + qustionId + '_'+ items[0] +'"></span>' +
+                    '    <span>От <input type="number" min="1" max="10" value="1" name="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[0] +'"></span>' +
                     '    <input type="text" class="input-shdw answer" placeholder="Подпись (необязательно)" name="questionScaleDesc_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="questionScaleDesc_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
-                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" data-reqired="reqired" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
+                    '    <input class="scores input-shdw" type="text" value="0" data-reqired="reqired" data-reqired="reqired" name="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'">' +
                     '</div>' +
                     '<div class="input-group test-scale">' +
-                    '    <span>До <input type="number" min="1" max="10" value="10" name="questionScale_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="questionScale_' + chapterId + '_' + qustionId + '_'+ items[1] +'"></span>' +
+                    '    <span>До <input type="number" min="1" max="10" value="10" name="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="answer_' + chapterId + '_' + qustionId + '_'+ items[1] +'"></span>' +
                     '    <input type="text" class="input-shdw answer" placeholder="Подпись (необязательно)" name="questionScaleDesc_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="questionScaleDesc_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
-                    '    <input class="scores input-shdw" type="text" data-reqired="reqired" value="10" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
+                    '    <input class="scores input-shdw" type="text" data-reqired="reqired" value="10" name="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'">' +
                     '</div>';
                     newInputfile = ' ';
             }
@@ -770,10 +890,10 @@ jQuery(function ($) {
                 newQuestion =
                     '<ul class="custom-table-test-list">'+
                     '<li class="test-radio">' +
-                    '    <div class="test-radio__answer answer-yes_not"><span class="answer">Да</span><input class="scores input-shdw" data-reqired="reqired" type="text" value="0" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[0] +'"></div>' +
+                    '    <div class="test-radio__answer answer-yes_not"><span class="answer">Да</span><input class="scores input-shdw" data-reqired="reqired" type="text" value="0" name="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[0] +'"></div>' +
                     '</li>' +
                     '<li class="test-radio">' +
-                    '    <div class="test-radio__answer answer-yes_not"><span class="answer">Нет</span><input class="scores input-shdw" data-reqired="reqired" type="text" value="100" name="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="itemScore_' + chapterId + '_' + qustionId + '_'+ items[1] +'"></div>' +
+                    '    <div class="test-radio__answer answer-yes_not"><span class="answer">Нет</span><input class="scores input-shdw" data-reqired="reqired" type="text" value="100" name="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'" id="score_' + chapterId + '_' + qustionId + '_'+ items[1] +'"></div>' +
                     '</li>'+
                     '</ul>';
                     newInputfile = ' ';
@@ -782,8 +902,8 @@ jQuery(function ($) {
                 newQuestion =
                     '<div class="input-group">' +
                     '    <label>' +
-                    '        <select id="item_' + chapterId + '_' + qustionId + '"'+
-                    '            name="item_' + chapterId + '_' + qustionId + '" style="display: none;" class="input-shdw answer open-question">'+
+                    '        <select id="answer_' + chapterId + '_' + qustionId + '"'+
+                    '            name="answer_' + chapterId + '_' + qustionId + '" style="display: none;" class="input-shdw answer open-question">'+
                     '            <option value="0" selected>15+ символов</option>'+
                     '            <option value="1">20+ символов</option>'+
                     '            <option value="2">50+ символов</option>'+
@@ -991,14 +1111,25 @@ jQuery(function ($) {
             var sectionOrder = 1;
             Sections.each(function (index, section) {
                 questions = 0;
-                var Questions = $(section).children();
+                var Questions = $(section).find('.custom-table__row');
+                if($(section).find('.add-chapter-question').length>0){
+                    $(section).find('.add-chapter-question').attr('data-section', sectionOrder);
+                }
                 Questions.each(function (index, element) {
                     if ($(element).find('.title span')) {
                         $(element).find('.title span').text('Раздел ' + sectionOrder + ': ');
                     }
-
-                    if($(element).hasClass('add-chapter-question')){
-                        $(element).attr('data-section', sectionOrder);
+                    if($(element).find('.title span').next('.answer').length>0){
+                        var prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
+                        if(prevName.length==3){
+                            prevName[2] = sectionOrder;
+                        }
+                        else {
+                            prevName.push(sectionOrder);
+                        }
+                        var newName = prevName.join('_');
+                        $(element).find('.title span').next('.answer').attr('name', newName);
+                        $(element).find('.title span').next('.answer').attr('id', newName);
                     }
                     if($(element).hasClass('custom-table__edit-row')){
                         if($(element).find('.add-questions-item')){

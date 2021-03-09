@@ -8,7 +8,7 @@ jQuery(function ($) {
             }
         });
 
-        //drag question
+        // //drag question
         $('.constructor-course-table .custom-table__body').sortable(
             {
                 appendTo: ".custom-table__body",
@@ -19,6 +19,128 @@ jQuery(function ($) {
                 }
             }
         );
+        $( ".question-item-cont .lesson-wrap" ).draggable({
+            cursor: "move",
+            connectToSortable: ".question-item-cont",
+            containment: '.constructor-course-table',
+            cancel: ".title, .circle-add, input, select, label, .constructor-course-table .custom-table__body .vac-settings__block-content, textarea",
+            stop: function( event, ui ) {
+                let el = $(event.target);
+                // el.style('width', 'auto');
+                el.width('auto');
+                el.height('auto');
+                el.css('top', 'auto');
+                el.css('left', 'auto');
+                let blockIdOld = el.find('.table-list .lesson-name').attr('name').split('_')[1];
+                let blockIdNew = el.parents('.question-cont').find('.course-content-name .lesson-name').attr('name').split('_')[1];
+                if(blockIdNew !== blockIdOld) {
+                    changeBlockId(blockIdNew, el);
+                }
+                RefreshQuestion();
+            }
+        });
+        function changeBlockId(newId, el){
+            QeustionElement = $(el).children();
+            QeustionElement.each(function (index, element) {
+                if ($(element).find('.course-content-name-cont').length !== 0) {
+                    $(element).find('.course-content-name-cont .number').html(newId + '.');
+                    $(element).find('.course-content-name-cont .block-order').val(newId);
+                    $(element).find('.answer.input-shdw.lesson-name').attr('id', 'block_' + newId);
+                    $(element).find('.answer.input-shdw.lesson-name').attr('name', 'block_' + newId);
+                    
+                    $(element).find('.block-id').attr('id', 'blockid_' + newId);
+                    $(element).find('.block-id').attr('name', 'blockid_' + newId);
+                }
+                else {
+                    Items = $(element).children();
+                    Items.each(function (index, item) {
+                        if ($(item).find('.table-list').length !== 0 && $(item).find('.answer.input-shdw.lesson-name').attr('name')) {
+                            prevName = $(item).find('.answer.input-shdw.lesson-name').attr('name').split("_");
+                            prevName[1] = newId;
+                            newName = prevName.join('_');
+                            $(item).find('.answer.input-shdw.lesson-name').attr('id', newName);
+                            $(item).find('.answer.input-shdw.lesson-name').attr('name', newName);
+                        }
+                        if ($(item).find('.lesson-order').length !== 0) {
+                            prevName = $(item).find('.lesson-order').attr('name').split("_");
+                            prevName[1] = newId;
+                            newName = prevName.join('_');
+                            $(item).find('.lesson-order').attr('id', newName);
+                            $(item).find('.lesson-order').attr('name', newName);
+                        }
+                        if ($(item).find('.table-list').length !== 0 && $(item).find('.lesson-id').attr('name')) {
+                            prevName = $(item).find('.lesson-id').attr('name').split("_");
+                            prevName[1] = newId;
+                            newName = prevName.join('_');
+                            $(item).find('.lesson-id').attr('id', newName);
+                            $(item).find('.lesson-id').attr('name', newName);
+                        }
+                        if (item.hasAttribute('data-question' && $(item).parents('.test-table-constructor').length==0)) {
+                            $(item).attr('data-question', newId);
+                        }
+                        if(item.hasAttribute('data-blockitem' && $(item).parents('.test-table-constructor').length>0)){
+                            $(item).attr('data-blockitem', newId);
+                        }
+                    });
+                }
+            });
+            var inputs = $(el).find('.lesson-info').find('input');
+            if ($(el).find('.lesson-info').attr('id')) {
+                prevName = $(el).find('.lesson-info').attr('id').split("_");
+                prevName[1] = newId;
+                newName = prevName.join('_');
+                $(el).find('.lesson-info').attr('id', newName);
+            }
+            $(el).find('.lesson-info').attr('id', 'lesson-info_' + newId);
+            inputs.each(function (index, input) {
+                if( $(input).attr('name')){
+                    prevName = $(input).attr('name').split("_");
+                    prevName[1] = newId;
+                    newName = prevName.join('_');
+                    $(input).attr('name', newName);
+                    $(input).attr('id', newName);    
+                }
+            });
+            var labels = $(el).find('.lesson-info').find('label');
+            labels.each(function (index, label) {
+                if ($(label).attr('for')) {
+                    prevName = $(label).attr('for').split("_");
+                    prevName[1] = newId;
+                    newName = prevName.join('_');
+                    $(label).attr('for', newName);
+                }
+                if ($(label).attr('name')) {
+                    prevName = $(label).attr('name').split("_");
+                    prevName[1] = newId;
+                    newName = prevName.join('_');
+                    $(label).attr('name', newName);
+                    $(label).attr('id', newName);
+                }
+            });
+            var Selects = $(el).find('.lesson-info').find('select');
+            Selects.each(function (index, select) {
+                if($(select).attr('name')) {
+                    prevName = $(select).attr('name').split("_");
+                    prevName[1] = newId;
+                    newName = prevName.join('_');
+                    $(select).attr('name', newName);
+                    $(select).attr('id', newName);    
+                }
+            });
+            var Textares = $(el).find('.lesson-info').find('textarea');
+            Textares.each(function (index, textarea) {
+                prevName = $(textarea).attr('name').split("_");
+                prevName[1] = newId;
+                newName = prevName.join('_');
+                $(textarea).attr('name', newName);
+                $(textarea).attr('id', newName);
+            });
+            var Links = $(el).find('.lesson-info').find('.add-inputfile');
+            Links.each(function (index, link) {
+                $(link).data('block', newId);
+            });
+            $(el).find('.lesson-info').find('.circle-add').attr('data-block', newId);
+        }
         $('.constructor-course-table .question-item-cont').sortable(
             {
                 appendTo: ".custom-table__body .question-item-cont",
@@ -30,6 +152,26 @@ jQuery(function ($) {
                 }
             }
         );
+        $( ".question-item-cont .lesson-wrap" ).draggable({
+            cursor: "move",
+            connectToSortable: ".question-item-cont",
+            containment: '.constructor-course-table',
+            cancel: ".title, .circle-add, input, select, label, .constructor-course-table .custom-table__body .vac-settings__block-content, textarea",
+            stop: function( event, ui ) {
+                let el = $(event.target);
+                // el.style('width', 'auto');
+                el.width('auto');
+                el.height('auto');
+                el.css('top', 'auto');
+                el.css('left', 'auto');
+                let blockIdOld = el.find('.table-list .lesson-name').attr('name').split('_')[1];
+                let blockIdNew = el.parents('.question-cont').find('.course-content-name .lesson-name').attr('name').split('_')[1];
+                if(blockIdNew !== blockIdOld) {
+                    changeBlockId(blockIdNew, el);
+                }
+                RefreshQuestion();
+            }
+        });
         function RefreshItems() {
             var item = 1;
             var Questions = $('.constructor-course-table .question-item-cont');
@@ -293,6 +435,26 @@ jQuery(function ($) {
                     }
                 }
             );
+            $( ".question-item-cont .lesson-wrap" ).draggable({
+                cursor: "move",
+                connectToSortable: ".question-item-cont",
+                containment: '.constructor-course-table',
+                cancel: ".title, .circle-add, input, select, label, .constructor-course-table .custom-table__body .vac-settings__block-content, textarea",
+                stop: function( event, ui ) {
+                    let el = $(event.target);
+                    // el.style('width', 'auto');
+                    el.width('auto');
+                    el.height('auto');
+                    el.css('top', 'auto');
+                    el.css('left', 'auto');
+                    let blockIdOld = el.find('.table-list .lesson-name').attr('name').split('_')[1];
+                    let blockIdNew = el.parents('.question-cont').find('.course-content-name .lesson-name').attr('name').split('_')[1];
+                    if(blockIdNew !== blockIdOld) {
+                        changeBlockId(blockIdNew, el);
+                    }
+                    RefreshQuestion();
+                }
+            });
         }
         let youtubeLinks = $('.vacancy-settings').find('.youtube-link-item');
         if(youtubeLinks.length>0){
@@ -301,7 +463,6 @@ jQuery(function ($) {
         function setYoutubeLinks(youtubeLinks){
             youtubeLinks.each(function (index, link) {
                 if($(link).find('.youtube-link input:nth-child(1)').val() && $(link).find('.youtube-link input:nth-child(2)').val()){
-                    console.log()
                     let duration = $(link).find('.youtube-link input:nth-child(2)').val();
                     if(duration > 0){
                         var youTubeText ;
@@ -328,15 +489,14 @@ jQuery(function ($) {
                 '<div class="youtube-link-item">'
                 +'<div class="youtube-link-wrapper">'
                 +'    <div class="input-group youtube-link">'
-                +'      <input type="text"'
+                +'      <div><input type="text"'
                 +'          class="input-shdw"'
-                +'          value=""'
                 +'          name="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
                 +'          id="youtube-link_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
-                +'          placeholder="Укажите ссылку на видео с сервиса YouTube">'
+                +'          placeholder="Укажите ссылку на видео с сервиса YouTube"></div>'
                 +'      <input type="hidden"'
-                +'          class="input-shdw"'
-                +'          value=""'
+                +'          class="youtube-duration"'
+                +'          value="0"'
                 +'          name="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'"'
                 +'          id="youtube-duration_'+ id_block + '_'+ id_lesson +'_'+ id_link +'">'
                 +'  </div>'
@@ -457,7 +617,6 @@ jQuery(function ($) {
             }
             if ($(this).data('type') == 'item') {
                 var id_lesson = id.split('_')[2];
-                console.log(id_lesson);
                 if(id_lesson){
                     $.ajax ({
                         type: 'POST',
@@ -516,7 +675,6 @@ jQuery(function ($) {
             }
         });
         function refreshYoutubeLinks(Links){
-            console.log(Links);
             Links.each(function (index, link) {
                 var inputs = $(link).find('input');
                 inputs.each(function (index2, input) {
@@ -583,7 +741,7 @@ jQuery(function ($) {
                 '<div class="lesson-wrap">' +
                 '<div class="custom-table__row flex j-s-b">' +
                 '    <div class="custom-table__cell">' +
-                '        <span class="table-list"><input type="text" class="answer input-shdw lesson-name" data-reqired="reqired" value="" id="lesson_' + id_question + '_' + id_item + '" name="lesson_' + id_question + '_' + id_item + '" placeholder="Введите название вопроса">' +
+                '        <span class="table-list"><input type="text" class="answer input-shdw lesson-name" data-reqired="reqired" value="" id="lesson_' + id_question + '_' + id_item + '" name="lesson_' + id_question + '_' + id_item + '" placeholder="Введите название урока">' +
                 '        <input type="hidden" value="'+ order_item + '" class="lesson-order"  id="lessonorder_' + id_question + '_' + id_item + '" name="lessonorder_' + id_question + '_' + id_item + '"></span>'+
                 '    </div>' +
                 '    <div class="custom-table__cell">' +
@@ -618,29 +776,29 @@ jQuery(function ($) {
                 // '    </div>' +
                 '    <div class="vac-settings__block-content">'
                 +'        <div class="youtube-links">'
-                +'          <div class="youtube-link-item">'
-                +'              <div class="youtube-link-wrapper">'
-                +'                  <div class="input-group youtube-link">'
-                +'                      <input type="text"'
-                +'                          class="input-shdw"'
-                +'                          value=""'
-                +'                          name="youtube-link_' + id_question + '_' + id_item + '_1"'
-                +'                          id="youtube-link_' + id_question + '_' + id_item + '_1"'
-                +'                          placeholder="Укажите ссылку на видео с сервиса YouTube">'
-                +'                      <input type="hidden"'
-                +'                          class="input-shdw"'
-                +'                          value=""'
-                +'                          name="youtube-duration_' + id_question + '_' + id_item + '_1"'
-                +'                          id="youtube-duration_' + id_question + '_' + id_item + '_1">'
-                +'                  </div>'
-                +'              </div>'
-                +'              <a href="#remove-course-popup" title="Delete"'
-                +'                  class="delete-youtube-link">'
-                +'                  <img src="../../../img/corp/icons/trash.png"'
-                +'                      alt="Delete">'
-                +'              </a>'
-                +'          </div>'
-                +'          <a href="#" class="circle-add add-answer add-new-youtube-link" >+</a>'
+                // +'          <div class="youtube-link-item">'
+                // +'              <div class="youtube-link-wrapper">'
+                // +'                  <div class="input-group youtube-link">'
+                // +'                      <input type="text"'
+                // +'                          class="input-shdw"'
+                // +'                          value=""'
+                // +'                          name="youtube-link_' + id_question + '_' + id_item + '_1"'
+                // +'                          id="youtube-link_' + id_question + '_' + id_item + '_1"'
+                // +'                          placeholder="Укажите ссылку на видео с сервиса YouTube">'
+                // +'                      <input type="hidden"'
+                // +'                          class="input-shdw youtube-duration"'
+                // +'                          value="0"'
+                // +'                          name="youtube-duration_' + id_question + '_' + id_item + '_1"'
+                // +'                          id="youtube-duration_' + id_question + '_' + id_item + '_1">'
+                // +'                  </div>'
+                // +'              </div>'
+                // +'              <a href="#remove-course-popup" title="Delete"'
+                // +'                  class="delete-youtube-link">'
+                // +'                  <img src="../../../img/corp/icons/trash.png"'
+                // +'                      alt="Delete">'
+                // +'              </a>'
+                // +'          </div>'
+                +'          <a href="#" class="circle-add add-answer add-new-youtube-link" >Добавить видео</a>'
                 +'      </div>'+
                 '    </div>' +
                 '    <div class="vac-settings__block vac-settings__materials">' +
@@ -670,6 +828,7 @@ jQuery(function ($) {
                 '       </h4>' +
                 '       <div class="vac-settings__block-content"  style="display: none;">' +
                 '   </div>' +
+                '   </div>' +
                 '    <div class="vac-settings__block">' +
                 '    <h4 class="title tools-title">' +
                 '        Тест' +
@@ -687,13 +846,49 @@ jQuery(function ($) {
                 '</div>' +
                 '</div>';
             $(el).attr('data-item', id_item);
-            $(newItem).insertBefore($(el));
+            let elParents = $(el).parents('.question-item-cont');
+            $(newItem).appendTo(elParents);
             // $('.default-add-section').remove();
             $('.vac-test__descr select').customSelect();
+
+            // //drag question
+            $('.constructor-course-table .custom-table__body').sortable(
+                {
+                    appendTo: ".custom-table__body",
+                    cancel: ".title, .circle-add, input, select, label, .constructor-course-table .custom-table__body .vac-settings__block-content, textarea",
+                    axis: "y",
+                    deactivate: function (event, ui) {
+                        RefreshQuestion();
+                    }
+                }
+            );
+            $( ".question-item-cont .lesson-wrap" ).draggable({
+                cursor: "move",
+                connectToSortable: ".question-item-cont",
+                containment: '.constructor-course-table',
+                cancel: ".title, .circle-add, input, select, label, .constructor-course-table .custom-table__body .vac-settings__block-content, textarea",
+                stop: function( event, ui ) {
+                    let el = $(event.target);
+                    // el.style('width', 'auto');
+                    el.width('auto');
+                    el.height('auto');
+                    el.css('top', 'auto');
+                    el.css('left', 'auto');
+                    let blockIdOld = el.find('.table-list .lesson-name').attr('name').split('_')[1];
+                    let blockIdNew = el.parents('.question-cont').find('.course-content-name .lesson-name').attr('name').split('_')[1];
+                    if(blockIdNew !== blockIdOld) {
+                        changeBlockId(blockIdNew, el);
+                    }
+                    RefreshQuestion();
+                }
+            });
         }
 
         $('.vacancy-settings').on('click', '.vac-settings__hw .tools-title .checkbox', function(e){
             if($(this).is(':checked')){
+                if($(this).parents('.lesson-info').find('.lessons-test').is(':checked')){
+                    $(this).parents('.lesson-info').find('.lessons-test').click();
+                }
                 if($(this).parents('.tools-title').next().find('.hw-notice').length==0){
                     var id_question = $(this).attr('name').split('_')[1];
                     var id_item = $(this).attr('name').split('_')[2];
@@ -759,22 +954,23 @@ jQuery(function ($) {
                 }
             }
         });
-        
         $('.vacancy-settings').on('click', '.vac-settings__materials .tools-title .checkbox', function(e){
             if($(this).is(':checked')){
                 if($(this).parents('.tools-title').next().find('.add-inputfile').length==0){
                     var id_question = $(this).attr('name').split('_')[1];
                     var id_item = $(this).attr('name').split('_')[2];
                     var material = 
-                    '<a href="#" class="circle-add add-answer add-inputfile" data-inputfile="1" data-lesson="' + id_item + '" data-block="' + id_question + '">+</a>';
+                    '<a href="#" class="circle-add add-answer add-inputfile" data-inputfile="1" data-lesson="' + id_item + '" data-block="' + id_question + '">Добавить материал</a>';
                     $(material).appendTo($(this).parents('.tools-title').next());
                     $('.vac-test__descr select').customSelect();
                 }
             }
         });
         $('.vacancy-settings').on('click', '.lessons-test', function(e){
-            console.log($(this).is(':checked'));
             if($(this).is(':checked')){
+                if($(this).parents('.lesson-info').find('.vac-settings__hw .tools-title .checkbox').is(':checked')){
+                    $(this).parents('.lesson-info').find('.vac-settings__hw .tools-title .checkbox').click();
+                }
                 if($(this).parents('.tools-title').next().find('.course-test-settings').length==0){
                     var id_question = $(this).attr('name').split('_')[1];
                     var id_item = $(this).attr('name').split('_')[2];
@@ -784,7 +980,7 @@ jQuery(function ($) {
                     '                <p>Ограничить время прохождения теста</p>' +
                     '                <div class="form-group field-testdata-time_limit">' +
                     '                    <select  class="limit-time-test"  id="time_' + id_question + '_' + id_item + '" class="form-control" name="time_' + id_question + '_' + id_item + '" >' +
-                    '                        <option value="0">10:00</option>' +
+                    '                        <option value="0" checked="checked">10:00</option>' +
                     '                        <option value="1">15:00</option>' +
                     '                        <option value="2">20:00</option>' +
                     '                        <option value="3">30:00</option>' +
@@ -888,6 +1084,25 @@ jQuery(function ($) {
             }
             else {
                 $(this).parents('.tools-title').next().html(' ');
+                var id_item = $(this).attr('name').split('_')[2];
+                if(id_item){
+                    console.log('lesson_id: ' + id_item);
+                    $.ajax ({
+                        type: 'POST',
+                        url: "/corporate/ajax/unset-test",
+                        dataType: "json",
+                        data: {
+                            lesson_id: id_item,
+                        },
+                    }).done(function (data) {
+                        console.log(data);
+                        console.log('Тест отключен');
+                    }).fail(function (data) {
+                        // не удалось выполнить запрос к серверу
+                        console.log(data);
+                        console.log('Запрос не принят');
+                    });
+                }
             }
         });
         $('.vacancy-settings').on('click', '.edit-lesson', function () {
@@ -904,7 +1119,7 @@ jQuery(function ($) {
             var url = $(this).val();
             var vidid = youtube_parser(url);
             var YOUR_API_KEY = "AIzaSyBNhDxp4JZ1B6RHz3YT3yZo_R-yfINbw0o";
-            var inDuration = $(this).next('input');
+            var inDuration = $(this).parents('.youtube-link').find('.youtube-duration');
             var youTubeText ;
             if($(this).parents('.youtube-link').parent().find('.text-youtube').length>0){
                 youTubeText = $(this).parents('.youtube-link').parent().find('.text-youtube');

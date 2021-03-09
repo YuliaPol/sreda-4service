@@ -218,6 +218,7 @@
                                 <div class="custom-table__cell">73</div>
                                 <div class="custom-table__cell">Активен</div>
                                 <div class="rating-question-info" style="display: none;">
+
                                     <div class="table-wrap test-details-wrap" id="done-test02">
                                         <div class="custom-table test-details">
                                             <div class="custom-table__header flex j-s-b">
@@ -319,6 +320,11 @@
                                     </div>
                                 </div>
                                 <div class="courses-members-info" style="display: none;">
+                                    <div class="excel-icon-wrap">
+                                        <a href="#">
+                                            <img src="../../img/corp/icons/excel.png" alt="Excel">
+                                        </a>
+                                    </div>
                                     <div class="table-wrap test-details-wrap">
                                         <div class="custom-table ratings-courses-details-table">
                                             <div class="custom-table__header flex j-s-b">
@@ -327,6 +333,7 @@
                                                 <div class="custom-table__col">Локация</div>
                                                 <div class="custom-table__col">Дата прохождения</div>
                                                 <div class="custom-table__col">Использование попыток</div>
+                                                <div class="custom-table__col">Запрос дополнительного теста</div>
                                                 <div class="custom-table__col">Результат</div>
                                                 <div class="custom-table__col">Статус</div>
                                             </div>
@@ -337,6 +344,15 @@
                                                     <div class="custom-table__cell">Театральный пр-д, 5/1</div>
                                                     <div class="custom-table__cell">01.01.2019</div>
                                                     <div class="custom-table__cell">1/2</div>
+                                                    <div class="custom-table__cell">
+                                                        <div class="checkbox-view-wrapper">
+                                                            <div class="request-extra-test checkbox-view" data-testId="2">
+                                                            </div>
+                                                        </div>
+                                                        <!-- <div class="request-extra-test a-btn blue-gradient-background box-shadow" data-testId="2">
+                                                            Разрешить
+                                                        </div> -->
+                                                    </div>
                                                     <div class="custom-table__cell">97%<span
                                                             class="result-dot green"></span></div>
                                                     <div class="custom-table__cell">Пройден<span
@@ -348,6 +364,11 @@
                                                     <div class="custom-table__cell">Театральный пр-д, 5/1</div>
                                                     <div class="custom-table__cell">01.02.2019</div>
                                                     <div class="custom-table__cell">2/4</div>
+                                                    <div class="custom-table__cell">
+                                                        <div class="request-extra-test a-btn  box-shadow"  data-testId="2">
+                                                            Запретить
+                                                        </div>
+                                                    </div>
                                                     <div class="custom-table__cell">75/100<span
                                                             class="result-dot yellow"></span></div>
                                                     <div class="custom-table__cell">Пройден<span
@@ -359,6 +380,11 @@
                                                     <div class="custom-table__cell">Театральный пр-д, 5/1</div>
                                                     <div class="custom-table__cell">01.02.2019</div>
                                                     <div class="custom-table__cell">1/3</div>
+                                                    <div class="custom-table__cell">
+                                                        <!-- <div class="request-extra-test a-btn box-shadow"  data-testId="2">
+                                                            Запретить
+                                                        </div> -->
+                                                    </div>
                                                     <div class="custom-table__cell">37%<span
                                                             class="result-dot red"></span></div>
                                                     <div class="custom-table__cell">Не пройден<span
@@ -1170,6 +1196,31 @@
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
     <script src="../../script/common.js"></script>
     <script>
+        $('.content-container').on('click', '.request-extra-test', function(e){
+            e.preventDefault();
+            let request_id = $(this).attr('data-testId');
+            $(this).toggleClass('active');
+            if(request_id){
+                console.log("request_id: " + request_id);
+                $.ajax ({
+                    type: 'POST',
+                    url: "/ajax/approve-test-request",
+                    dataType: "json",
+                    data: {
+                        request_id: request_id,
+                    },
+                }).done(function (data) {
+                    console.log(data);
+                    console.log('Запрос принят');
+                }).fail(function (data) {
+                    // не удалось выполнить запрос к серверу
+                    console.log(data);
+                    console.log('Запрос не принят');
+                });
+            }
+        });
+    </script>
+    <script>
         $(document).ready(function () {
             $(function () {
                 $('.date-filter').on('change paste keyup', function () {
@@ -1261,6 +1312,18 @@
                         );
                     }
                     else {
+                        if($(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').click();
+                        }
+                        if($(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').length > 0){
+                            $(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').click();
+                        }
+                        if($(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').length > 0){
+                            $(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').click();
+                        }
+                        if($(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').length > 0){
+                            $(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').click();
+                        }
                         if ($(this).parents('.custom-table__row').find('.courses-members-info-toggle').hasClass('active')) {
                             $(this).parents('.custom-table__row').find('.courses-members-info-toggle').removeClass('active');
                             $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
@@ -1366,6 +1429,18 @@
                     );
                 }
                 else {
+                    if($(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').click();
+                    }
                     if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
                         $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
                         $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
@@ -1474,6 +1549,18 @@
                     );
                 }
                 else {
+                    if($(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').click();
+                    }
                     if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
                         $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
                         $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
@@ -1578,6 +1665,18 @@
                     );
                 }
                 else {
+                    if($(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-not-passed-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.courses-members-info-toggle.active').click();
+                    }
+                    if($(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').length > 0){
+                        $(this).parents('.tests-wrap').find('.rating-question-info-toggle.active').click();
+                    }
                     if ($(this).parents('.custom-table__row').find('.rating-question-info-toggle').hasClass('active')) {
                         $(this).parents('.custom-table__row').find('.rating-question-info-toggle').removeClass('active');
                         $(this).parents('.custom-table').next('.table-clone-info').fadeOut();
@@ -1656,6 +1755,7 @@
                     $('.table-clone-info').find('.courses-not-passed-info').fadeIn();
                 }
             });
+
         });
 
     </script>

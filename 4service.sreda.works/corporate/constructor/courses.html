@@ -140,7 +140,7 @@
         <!-- Filters Select Start -->
         <div class="filters-wrapper test-members-designate-sort flex f-w">
             <div class="filter cust-select-wrap custom-select-filter custom-filter-date-picker">
-                <select>
+                <select class="selector-filter">
                     <option value="1">Сегодня</option>
                     <option value="2">Последние 7 дней</option>
                     <option value="3">Последние 30 дней</option>
@@ -150,7 +150,7 @@
                 <input type="text" class="date-filter" value="08-05-2020 - 08-05-2020">
             </div>
             <div class="filter cust-select-wrap custom-select-filter">
-                <select>
+                <select class="selector-filter">
                     <option value="0">Категория</option>
                     <option value="1">Категория 1</option>
                     <option value="2">Категория 2</option>
@@ -158,7 +158,7 @@
                 </select>
             </div>
             <div class="filter cust-select-wrap custom-select-filter">
-                <select>
+                <select class="selector-filter">
                     <option value="0">Длительность</option>
                     <option value="1">Длительность 1</option>
                     <option value="2">Длительность 2</option>
@@ -322,7 +322,9 @@
         $(function () {
             $('.custom-filter-date-picker .date-filter').on('change paste keyup', function () {
                 $('.custom-filter-date-picker').find('.custom-select__option--value').html($(this).val());
+                $("#selector-filter-form").submit()
             });
+
             $('.custom-filter-date-picker .date-filter').daterangepicker({
                 opens: 'rigth',
                 locale: {
@@ -343,15 +345,22 @@
     jQuery(function ($) {
         $(document).ready(function () {
             $('.custom-filter-date-picker.cust-select-wrap select').customSelect({
-                    placeholder: '<span>Период</span>',
-                    hideCallback: function () {
-                        var $value = $(this).find('[class$="value"]');
-                        if ($value.text() == 'Произвольный выбор') {
-                            console.log($value);
-                            $('.custom-filter-date-picker .date-filter').click();
-                        }
+                placeholder: '<span>Период</span>',
+                hideCallback: function () {
+                    var $value = $(this).find('[class$="value"]');
+                    if ($value.text() == 'Произвольный выбор') {
+                        $('.custom-filter-date-picker .date-filter').click();
                     }
-                });
+                }
+            });
+            
+            $('select.selector-filter').change(function () {
+                var value = $(this).val();
+                if (value != '4') {
+                    $("#selector-filter-form").submit();
+                }
+            });
+        
             $('.select-search select').customSelect({
                 search: true
             });

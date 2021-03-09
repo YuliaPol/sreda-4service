@@ -84,9 +84,9 @@ jQuery(function ($) {
 
         
         // //drag question
-        $('.test-table-constructor .custom-table__body .lesson-test-questions-wrapper').sortable(
+        $('.test-table-constructor .custom-table__body').sortable(
             {
-                appendTo: ".lesson-test-questions-wrapper",
+                appendTo: ".custom-table__body",
                 cancel: ".title, .circle-add, input, select, label",
                 axis: "y",
                 items: "> .custom-table__edit-row",
@@ -108,106 +108,25 @@ jQuery(function ($) {
             }
         );
 
-        $('.test-table-constructor .custom-table__body .lesson-test-questions-wrapper .custom-table__edit-row').draggable({
-            cursor: "move",
-            connectToSortable: ".lesson-test-questions-wrapper",
-            // containment: '.test-edit-constructor',
-            cancel: ".title, .circle-add, input, select, label",
-            stop: function( event, ui ) {
-                let el = $(event.target);
-                el.width('auto');
-                el.height('auto');
-                el.css('top', 'auto');
-                el.css('left', 'auto');
-                let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[3];
-                let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[3];
-                if(chapterIdOld !== chapterIdNew) {
-                    changeChapterId(chapterIdNew, el);
-                }
-                let lessonIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[2];
-                let lessonIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[2];
-                if(lessonIdOld !== lessonIdNew) {
-                    let blockIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[1];
-                    changeLessonId(lessonIdNew, blockIdNew, el);
-                }
-                RefreshQuestionCostructor(event);
-            }
-        });
-        function changeLessonId(lessonIdNew, blockIdNew,element){
-            if($(element).find('.title span').next('.answer').length>0){
-                prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
-                prevName[2] = lessonIdNew;
-                newName = prevName.join('_');
-                $(element).find('.title span').next('.answer').attr('name', newName);
-                $(element).find('.title span').next('.answer').attr('id', newName);
-            }
-            if($(element).find('.title span').next('.answer').length>0){
-                prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
-                prevName[1] = blockIdNew;
-                newName = prevName.join('_');
-                $(element).find('.title span').next('.answer').attr('name', newName);
-                $(element).find('.title span').next('.answer').attr('id', newName);
-            }
-            var inputs = $(element).find('input');
-            inputs.each(function (index, input) {
-                prevName = $(input).attr('name').split("_");
-                prevName[2] = lessonIdNew;
-                newName = prevName.join('_');
-                $(input).attr('name', newName);
-                $(input).attr('id', newName);
-            });
-            var inputs = $(element).find('input');
-            inputs.each(function (index, input) {
-                prevName = $(input).attr('name').split("_");
-                prevName[1] = blockIdNew;
-                newName = prevName.join('_');
-                $(input).attr('name', newName);
-                $(input).attr('id', newName);
-            });
-            var labels = $(element).find('label');
-            labels.each(function (index, label) {
-                if($(label).attr('for')){
-                    prevName = $(label).attr('for').split("_");
-                    prevName[2] = lessonIdNew;
-                    newName = prevName.join('_');
-                    $(label).attr('for', newName);
-                }
-            });
-            var labels = $(element).find('label');
-            labels.each(function (index, label) {
-                if($(label).attr('for')){
-                    prevName = $(label).attr('for').split("_");
-                    prevName[1] = blockIdNew;
-                    newName = prevName.join('_');
-                    $(label).attr('for', newName);
-                }
-            });
-            var Selects = $(element).find('select');
-            Selects.each(function (index, select) {
-                prevName = $(select).attr('name').split("_");
-                prevName[2] = lessonIdNew;
-                newName = prevName.join('_');
-                $(select).attr('name', newName);
-                $(select).attr('id', newName);
-            });
-            var Selects = $(element).find('select');
-            Selects.each(function (index, select) {
-                prevName = $(select).attr('name').split("_");
-                prevName[1] = blockIdNew;
-                newName = prevName.join('_');
-                $(select).attr('name', newName);
-                $(select).attr('id', newName);
-            });
-            var Links = $(element).find('.add-questions-item');
-            Links.each(function (index, link) {
-                $(link).attr('data-blockitem', lessonIdNew);
-            });
-            var Links = $(element).find('.add-questions-item-check');
-            Links.each(function (index, link) {
-                $(link).attr('data-block', chapterIdNew);
-            });
-
-        }
+        // $('.test-table-constructor .custom-table__body .custom-table__edit-row').draggable({
+        //     cursor: "move",
+        //     connectToSortable: ".custom-table__body",
+        //     containment: '.test-edit-constructor',
+        //     cancel: ".title, .circle-add, input, select, label",
+        //     stop: function( event, ui ) {
+        //         let el = $(event.target);
+        //         el.width('auto');
+        //         el.height('auto');
+        //         el.css('top', 'auto');
+        //         el.css('left', 'auto');
+        //         let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[3];
+        //         let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[3];
+        //         if(chapterIdOld !== chapterIdNew) {
+        //             changeChapterId(chapterIdNew, el);
+        //         }
+        //         RefreshQuestionCostructor(event);
+        //     }
+        // });
         function changeChapterId(chapterIdNew, element){
             if($(element).find('.title span').next('.answer').length>0){
                 prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
@@ -264,27 +183,24 @@ jQuery(function ($) {
             var sectionOrder = 1;
             Sections.each(function (index, section) {
                 questions = 0;
-                // var Questions = $(section).children();
-                var Questions =  $(section).find('.lesson-test-questions-wrapper').children();
-                if($(section).find('.add-chapter-question').length>0){
-                    $(section).find('.add-chapter-question').attr('data-section', sectionOrder);
-                }
-                if ($(section).find('.title span')) {
-                    $(section).find('.title span').text('Раздел ' + sectionOrder + ': ');
-                }
-                if($(section).find('.title span').next('.answer').length>0){
-                    var prevName = $(section).find('.title span').next('.answer').attr('name').split("_");
-                    if(prevName.length==5){
-                        prevName[4] = sectionOrder;
-                    }
-                    else {
-                        prevName.push(sectionOrder);
-                    }
-                    var newName = prevName.join('_');
-                    $(section).find('.title span').next('.answer').attr('name', newName);
-                    $(section).find('.title span').next('.answer').attr('id', newName);
-                }
+                var Questions = $(section).children();
                 Questions.each(function (index, element) {
+                    if ($(element).find('.title span')) {
+                        $(element).find('.title span').text('Раздел ' + sectionOrder + ': ');
+                    }
+
+                    if($(element).find('.title span').next('.answer').length>0){
+                        var prevName = $(element).find('.title span').next('.answer').attr('name').split("_");
+                        if(prevName.length==5){
+                            prevName[4] = sectionOrder;
+                        }
+                        else {
+                            prevName.push(sectionOrder);
+                        }
+                        var newName = prevName.join('_');
+                        $(element).find('.title span').next('.answer').attr('name', newName);
+                        $(element).find('.title span').next('.answer').attr('id', newName);
+                    }
                     if($(element).hasClass('add-chapter-question')){
                         $(element).attr('data-section', sectionOrder);
                     }
@@ -334,7 +250,7 @@ jQuery(function ($) {
         //add  questions item (radio)
         $('.content-container').on('click', '.add-questions-item', function () {
             var section = $(this).attr('data-section');
-            var chapterId = $(this).parents('.custom-table__edit-row').parents('.lesson-test-questions-wrapper').parent('.custom-table__body').find('.title .answer').attr('name').split('_')[3];
+            var chapterId = $(this).parents('.custom-table__edit-row').parent('.custom-table__body').find('.title .answer').attr('name').split('_')[3];
             var question = $(this).attr('data-question');
             // var questionId = $(this).parents('.custom-table__edit-row').find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[4];
             // var item = 1 + parseInt($(this).attr('data-item'));
@@ -348,10 +264,6 @@ jQuery(function ($) {
                 // addQuestionsItemAjax(section, question, item, block, blockItem, thisEl, 850, chapterId, questionId);
 
                 if(questionId){
-
-                    // var itemID = Math.floor(Math.random() * 10000);
-                    // addQuestionsItemAjax(section, question, item, block, blockItem, thisEl, itemID, chapterId, questionId);
-
                     $.ajax ({
                         type: 'POST',
                         url: "/corporate/ajax/create-test-item",
@@ -461,7 +373,7 @@ jQuery(function ($) {
         //add  questions item (check)
         $('.content-container').on('click', '.add-questions-item-check', function () {
             var section = $(this).attr('data-section');
-            var chapterId = $(this).parents('.custom-table__edit-row').parents('.lesson-test-questions-wrapper').parent('.custom-table__body').find('.title .answer').attr('name').split('_')[3];
+            var chapterId = $(this).parents('.custom-table__edit-row').parent('.custom-table__body').find('.title .answer').attr('name').split('_')[3];
             var question = $(this).attr('data-question');
             var item = 1 + $(this).prev('ul').find('li').length;
             var block = parseInt($(this).attr('data-block'));
@@ -471,9 +383,6 @@ jQuery(function ($) {
                 var questionId = $(this).parents('.custom-table__row.custom-table__edit-row').find('.delete-sections-question').data('item');
                 // AddAjaxItemCheck(section, question, item, block, blockItem, thisEl, 850, chapterId, questionId);
                 if(questionId){
-                    // var itemID = Math.floor(Math.random() * 10000);
-                    // AddAjaxItemCheck(section, question, item, block, blockItem, thisEl, itemID, chapterId, questionId);
-
                     $.ajax ({
                         type: 'POST',
                         url: "/corporate/ajax/create-test-item",
@@ -585,12 +494,6 @@ jQuery(function ($) {
                 // var item = [1,2];
                 // AddTestsQuestionAjax(section,question, block, blockItem, thisEl, 150, chapterId, item);
                 if(idChapter){
-                    // qustionId = Math.floor(Math.random() * 10000);;
-                    // var item = [1,2];
-                    // item[0] = Math.floor(Math.random() * 10000);
-                    // item[1] = Math.floor(Math.random() * 10000);
-                    // AddTestsQuestionAjax(section,question, block, blockItem, thisEl, qustionId, chapterId, item);
-
                     $.ajax ({
                         type: 'POST',
                         url: "/corporate/ajax/create-test-question",
@@ -689,17 +592,19 @@ jQuery(function ($) {
                 $(newQuestion).insertBefore($(this));
                 $(this).attr('data-question', question);
                 $('.test-table-constructor select').customSelect();
-                $('.test-table-constructor .custom-table__body .lesson-test-questions-wrapper').sortable(
-                    {
-                        appendTo: ".lesson-test-questions-wrapper",
-                        cancel: ".title, .circle-add, input, select, label",
-                        axis: "y",
-                        items: "> .custom-table__edit-row",
-                        deactivate: function (event, ui) {
-                            RefreshQuestionCostructor(event);
-                        }
-                    }
-                );
+                // if(question == 1 ){
+                //     $('.test-table-constructor .custom-table__body').sortable(
+                //         {
+                //             appendTo: ".custom-table__body",
+                //             cancel: ".title, .circle-add, input, select, label",
+                //             axis: "y",
+                //             items: "> .custom-table__edit-row",
+                //             deactivate: function (event, ui) {
+                //                 RefreshQuestionCostructor(event);
+                //             }
+                //         }
+                //     );
+                // }
             }
         });
 
@@ -788,14 +693,12 @@ jQuery(function ($) {
             '        </a>' +
             '    </div>' +
             '</div>';
-            // $(newQuestion).insertBefore($(thisEl));
-            $(newQuestion).appendTo($(thisEl).prev('.lesson-test-questions-wrapper'));
+            $(newQuestion).insertBefore($(thisEl));
             $(thisEl).attr('data-question', question);
             $('.test-table-constructor select').customSelect();
-            RefreshOnStart();
-            $('.test-table-constructor .custom-table__body .lesson-test-questions-wrapper').sortable(
+            $('.test-table-constructor .custom-table__body').sortable(
                 {
-                    appendTo: ".lesson-test-questions-wrapper",
+                    appendTo: ".custom-table__body",
                     cancel: ".title, .circle-add, input, select, label",
                     axis: "y",
                     items: "> .custom-table__edit-row",
@@ -804,31 +707,26 @@ jQuery(function ($) {
                     }
                 }
             );
-            $('.test-table-constructor .custom-table__body .custom-table__edit-row').draggable({
-                cursor: "move",
-                connectToSortable: ".lesson-test-questions-wrapper",
-                // containment: '.test-edit-constructor',
-                cancel: ".title, .circle-add, input, select, label",
-                stop: function( event, ui ) {
-                    let el = $(event.target);
-                    el.width('auto');
-                    el.height('auto');
-                    el.css('top', 'auto');
-                    el.css('left', 'auto');
-                    let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[3];
-                    let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[3];
-                    if(chapterIdOld !== chapterIdNew) {
-                        changeChapterId(chapterIdNew, el);
-                    }
-                    let lessonIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[2];
-                    let lessonIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[2];
-                    if(lessonIdOld !== lessonIdNew) {
-                        let blockIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[1];
-                        changeLessonId(lessonIdNew, blockIdNew, el);
-                    }
-                    RefreshQuestionCostructor(event);
-                }
-            });
+            // $('.test-table-constructor .custom-table__body .custom-table__edit-row').draggable({
+            //     cursor: "move",
+            //     connectToSortable: ".custom-table__body",
+            //     containment: '.test-edit-constructor',
+            //     cancel: ".title, .circle-add, input, select, label",
+            //     stop: function( event, ui ) {
+            //         let el = $(event.target);
+            //         el.width('auto');
+            //         el.height('auto');
+            //         el.css('top', 'auto');
+            //         el.css('left', 'auto');
+            //         let chapterIdOld = el.find('.input-cont-constructor-test .input-shdw').attr('name').split('_')[3];
+            //         let chapterIdNew = $(el.parents('.custom-table__body')[0]).find('.title .input-shdw').attr('name').split('_')[3];
+            //         if(chapterIdOld !== chapterIdNew) {
+            //             changeChapterId(chapterIdNew, el);
+            //         }
+            //         RefreshQuestionCostructor(event);
+            //     }
+            // });
+            RefreshOnStart();
         }
 
         //delete question item
@@ -905,8 +803,6 @@ jQuery(function ($) {
             if(block && blockItem){
                 var thisEl = this;
                 // AddNewChapterAjax(block, blockItem, section, thisEl, Math.floor(Math.random() * 100000))
-                // chapterId = Math.floor(Math.random() * 10000);
-                // AddNewChapterAjax(block, blockItem, section, thisEl, chapterId)
                 $.ajax ({
                     type: 'POST',
                     url: "/corporate/ajax/create-test-chapter",
@@ -947,7 +843,6 @@ jQuery(function ($) {
                 '              </div>' +
                 '         </h4>' +
                 '    </div>' +
-                '    <div class="lesson-test-questions-wrapper"></div>'+
                 '    <a href="#" class="circle-add add-chapter-question" data-section="' + section + '" data-question="0">+</a>' +
                 '</div>';
                 $(newChapter).insertBefore($(this).parents('.custom-table__body'));
@@ -1007,17 +902,17 @@ jQuery(function ($) {
                     section++;
                 });
             }
-            $('.test-table-constructor .custom-table__body .lesson-test-questions-wrapper').sortable(
-                {
-                    appendTo: ".lesson-test-questions-wrapper",
-                    cancel: ".title, .circle-add, input, select, label",
-                    axis: "y",
-                    items: "> .custom-table__edit-row",
-                    deactivate: function (event, ui) {
-                        RefreshQuestionCostructor(event);
-                    }
-                }
-            );
+            // $('.test-table-constructor .custom-table__body').sortable(
+            //     {
+            //         appendTo: ".custom-table__body",
+            //         cancel: ".title, .circle-add, input, select, label",
+            //         axis: "y",
+            //         items: "> .custom-table__edit-row",
+            //         deactivate: function (event, ui) {
+            //             RefreshQuestionCostructor(event);
+            //         }
+            //     }
+            // );
         });
 
         function AddNewChapterAjax(block, blockItem, section, thisEl, chapterId){
@@ -1046,7 +941,6 @@ jQuery(function ($) {
             '              </div>' +
             '         </h4>' +
             '    </div>' +
-            '    <div class="lesson-test-questions-wrapper"></div>'+
             '    <a href="#" class="circle-add add-chapter-question" data-block="'+ block +'" data-blockitem="'+ blockItem +'" data-section="' + section + '" data-question="0">+</a>' +
             '</div>';
             $(newChapter).insertAfter($(thisEl).parents('.lesson-info .custom-table__body'));
@@ -1062,7 +956,7 @@ jQuery(function ($) {
             $('.test-table-constructor').sortable(
                 {
                     appendTo: ".test-table-constructor",
-                    cancel: ".circle-add, input, select, label",
+                    cancel: ".circle-add, input, select, label, .delete-chapter",
                     axis: "y",
                     items: "> .custom-table__body",
                     deactivate: function (event, ui) {

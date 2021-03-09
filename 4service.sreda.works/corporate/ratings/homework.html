@@ -1,0 +1,415 @@
+<html lang="ru">
+
+<head>
+
+    <meta charset="UTF-8">
+    <meta name="viewport"
+        content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Рейтинги - курсы</title>
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="../../style/libs/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <link rel="stylesheet" href="../../style/style.css">
+    <link rel="stylesheet" href="../../style/roman.css">
+    <link rel="stylesheet" href="../../style/i-style/style.css">
+    <link rel="stylesheet" href="../../style/media.css">
+    <!-- Styles -->
+    <script src="https://code.jquery.com/jquery-3.4.0.min.js"></script>
+
+</head>
+
+<body>
+    <div id="background" class="bg-blue"></div>
+    <div id="papa">
+        <header id="header">
+            <div class="logo">
+                <a href="../../courses.html"><img src="../../img/logo.png" alt=""></a>
+                <div id="menu-3-lines" class="menu-absolute">
+                    <div class="line top-line"></div>
+                    <div class="line mid-line"></div>
+                    <div class="line bot-line"></div>
+                </div>
+            </div>
+            <div class="right-block flex a-c">
+                <nav class="header-navigation" id="left-menu">
+                    <ul class="menu">
+                        <li><a class="active-menu menu-item" href="">Обучение</a></li>
+                        <li><a class="menu-item" href="">Консалтинг</a></li>
+                        <li><a class="menu-item" href="">О нас</a></li>
+                        <li><a class="menu-item" href="">Контакты</a></li>
+                    </ul>
+                </nav>
+                <div id="header-bell" class="bell p-r">
+                    <div class="bell-notifications">3</div>
+                    <a href="../../notifications.html"><i class="bell-img i-bell"></i></a>
+                </div>
+            </div>
+        </header>
+        <aside id="left-side-bar">
+            <div id="mobile-menu">
+            </div>
+            <div class="top-pearson-info flex j-c a-c f-d-c m-a mt-40">
+                <div class="pearson-photo">
+                    <img src="../../img/corp/avatar.png" alt="">
+                </div>
+                <div class="pearson-name">
+                    Протасова Александра
+                </div>
+            </div>
+            <nav id="pearson-nav">
+                <ul>
+                    <li>
+                        <a href="general.html">
+                            <img src="../../img/corp/icons/ratings.png" alt="icon" class="icon-li">
+                            <span class="active-menu">Рейтинги</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../constructor/courses.html">
+                            <img src="../../img/corp/icons/settings.png" alt="icon" class="icon-li">
+                            <span>Конструктор</span>
+                        </a>
+                    </li>
+                    <li style="display: none;">
+                        <a href="#">
+                            <img src="../../img/corp/icons/team.png" alt="icon" class="icon-li">
+                            <span>Корпоративное обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../courses.html">
+                            <img src="../../img/icon/book.png" alt="icon" class="icon-li">
+                            <span>Мое обучение</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../vacancies/vacancies.html">
+                            <img src="../../img/corp/icons/vacancies.png" alt="icon" class="icon-li">
+                            <span>Вакансии</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../payment-rent.html">
+                            <img src="../../img/icon/money.png" alt="icon" class="icon-li">
+                            <span>Оплата</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../faq.html">
+                            <img src="../../img/icon/info.png" alt="icon" class="icon-li">
+                            <span>Помощь</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../profile/data.html">
+                            <img src="../../img/icon/user.png" alt="icon" class="icon-li">
+                            <span>Профиль</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../communication/students.html">
+                            <img src="../../img/corp/icons/discussion.png" alt="icon" class="icon-li">
+                            <span>Общение</span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+        </aside>
+        <main id="main">
+
+            <!-- Top Buttons Container Start -->
+            <div class="top-buttons-wrappper flex f-w">
+                <a href="general.html" class="a-btn box-shadow">
+                    Общие
+                </a>
+                <a href="region.html" class="a-btn box-shadow">
+                    Регион
+                </a>
+                <a href="tests.html" class="a-btn box-shadow">
+                    Тесты
+                </a>
+                <a href="courses.html" class="a-btn blue-gradient-background box-shadow">
+                    Курсы
+                </a>
+                <a href="staff.html" class="a-btn box-shadow">
+                    Сотрудники
+                </a>
+            </div>
+            <!--  Top Buttons Container End  -->
+
+            <!--  Filters start  -->
+            <div class="filters-wrapper flex f-w test-members-designate-sort">
+                <div class="filter cust-select-wrap custom-select-filter custom-filter-date-picker">
+                    <select>
+                        <option value="1">Сегодня</option>
+                        <option value="2">Последние 7 дней</option>
+                        <option value="3">Последние 30 дней</option>
+                        <option value="4">Последние 90 дней</option>
+                        <option value="4">Произвольный выбор</option>
+                    </select>
+                    <input type="text" class="date-filter" value="08-05-2020 - 08-05-2020">
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Регион</option>
+                        <option value="1">Регион 1</option>
+                        <option value="2">Регион 2</option>
+                        <option value="3">Регион 3</option>
+                    </select>
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Локация</option>
+                        <option value="1">Локация 1</option>
+                        <option value="2">Локация 2</option>
+                    </select>
+                </div>
+                <div class="filter cust-select-wrap custom-select-filter">
+                    <select>
+                        <option value="0">Курс</option>
+                        <option value="1">Курс 1</option>
+                        <option value="2">Курс 2</option>
+                    </select>
+                </div>
+
+            </div>
+            <!--  Filters end  -->
+
+            <div class="content-container">
+                <div class="user-vacancies-wrap">
+                    <div class="user-vacancies notification-hw custom-table">
+                        <div class="user-vacancies__header">
+                            <div class="user-vacancies__header-col">
+                                ФИО
+                            </div>
+                            <div class="user-vacancies__header-col">
+                                Результат
+                            </div>
+                            <div class="user-vacancies__header-col">
+                                Курс
+                            </div>
+                            <div class="user-vacancies__header-col">
+                            </div>
+                        </div>
+
+                        <div class="user-vacancies__block">
+                            <div class="user-vacancies__row">
+                                <div class="user-vacancies__row_left">
+                                    <a href="#" class="user-vacancies__name">Вертяков Валентин Владимирович</a>
+                                </div>
+                                <div class="user-vacancies__row_center"> Принято </div>
+                                <div class="user-vacancies__row_right">
+                                    КУРС: Координатор-валидатор
+                                </div>
+                                <div class="user-vacancies__row_right">
+                                    <a href="#" download="download">Скачать файл</a>
+                                </div>
+                            </div>
+                            <div class="user-vacancies__row-content">
+                                <div class="students-answer">
+                                    <p class="bold">Комментарий студента:</p>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea deleniti dolores illo hic quidem quam blanditiis, eius ad nihil nam necessitatibus tenetur fugiat doloremque officia nesciunt ipsum, voluptate consequuntur ducimus.
+                                    </p>
+                                </div>
+                                <p class="bold">Ваша обратная связь:</p>
+                                <div class="your-answer">
+                                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Aliquid cumque consequuntur, esse quia est voluptate corrupti repudiandae temporibus, ut explicabo fuga incidunt. Omnis vero asperiores nemo voluptas fugiat qui quisquam.
+                                </div>
+                                <!-- <form action="#" class="homework-form">
+                                    <div class="input-group">
+                                        <textarea name="HomeworkToStudent"></textarea>
+                                        <p class="alert-error" style="display: none;">Заполните, пожалуйста, поле</p>
+                                        <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/
+                                                300 </span></h6>
+                                    </div>
+                                    <div class="hw-approve">
+                                        <button class="box-shadow btn-main btn-accept" data-homework="256">Зачтено</button>
+                                        <button class="box-shadow btn-main  btn-return" data-homework="256">Не зачтено</button>
+                                    </div>
+                                </form> -->
+                            </div>
+                        </div>
+                        <div class="user-vacancies__block">
+                            <div class="user-vacancies__row">
+                                <div class="user-vacancies__row_left">
+                                    <a href="#" class="user-vacancies__name">Ветер Иван Анатольевич</a>
+                                </div>
+                                <div class="user-vacancies__row_center"> Не принято </div>
+                                <div class="user-vacancies__row_right">
+                                    КУРС: Координатор-валидатор
+                                </div>
+                                <div class="user-vacancies__row_right">
+                                    <a href="./../../img/certificate.png" download="download">Скачать файл</a>
+                                </div>
+                            </div>
+                            <div class="user-vacancies__row-content">
+                                <div class="students-answer">
+                                    <p class="bold">Комментарий студента:</p>
+                                    <p>
+                                        Lorem ipsum, dolor sit amet consectetur adipisicing elit. Ea deleniti dolores illo hic quidem quam blanditiis, eius ad nihil nam necessitatibus tenetur fugiat doloremque officia nesciunt ipsum, voluptate consequuntur ducimus.
+                                    </p>
+                                </div>
+
+                                <p class="bold">Ваша обратная связь:</p>
+                                <div class="your-answer"></div>
+                                <form action="#" class="homework-form">
+                                    <div class="input-group">
+                                        <textarea name="HomeworkToStudent"></textarea>
+                                        <p class="alert-error" style="display: none;">Заполните, пожалуйста, поле</p>
+                                        <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/
+                                                300 </span></h6>
+                                    </div>
+                                    <div class="hw-approve">
+                                        <button class="box-shadow btn-main btn-accept" data-homework="256">Зачтено</button>
+                                        <button class="box-shadow btn-main  btn-return" data-homework="256">Не зачтено</button>
+                                    </div>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </main>
+    </div>
+
+    <script src="../../script/libs/jquery.custom-select.js"></script>
+    <script src="../../script/inner.js"></script>
+    <script src="../../script/resp-menu.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/momentjs/latest/moment.min.js"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.min.js"></script>
+    <script src="../../script/common.js"></script>
+    <script>
+        $(document).ready(function () {
+            $(function () {
+                $('.notification-hw').on('click', '.btn-accept', function(e){
+                    e.preventDefault();
+                    if($(this).parents('form').find('textarea').val()){
+                        var comment = $(this).parents('form').find('textarea').val();
+                        var homework_id = $(this).attr('data-homework');
+                        $(this).parents('.user-vacancies__row-content').find('.your-answer').html(comment);
+                        $.ajax ({
+                            type: 'POST',
+                            url: "/corporate/ajax/",
+                            processData: false,
+                            contentType: false,
+                            dataType: "json",
+                            data: {
+                                comment: comment,
+                                homework_id: homework_id,
+                                result: "OK"
+                            },
+                        }).done(function (data) {
+                            console.log(data);
+                            console.log('ДЗ принято');
+                        }).fail(function (data) {
+                            // не удалось выполнить запрос к серверу
+                            console.log(data);
+                            console.log('Запрос не принят');
+                        });
+                        $(this).parents('form').remove();
+                    }
+                    else {
+                        $(this).parents('form').find('.input-group').addClass('has-error');
+                        $(this).parents('form').find('.alert-error').fadeIn(300);
+                        $(this).parents('form').find('textarea').focus(function(e){
+                            $(this).parents('form').find('.input-group').removeClass('has-error');
+                            $(this).parents('form').find('.alert-error').fadeOut(300);
+                        });
+                    }
+                });
+                $('.notification-hw').on('click', '.btn-return', function(e){
+                    e.preventDefault();
+                    if($(this).parents('form').find('textarea').val()){
+                        var comment = $(this).parents('form').find('textarea').val();
+                        var homework_id = $(this).attr('data-homework');
+                        $(this).parents('.user-vacancies__row-content').find('.your-answer').html(comment);
+                        $.ajax ({
+                            type: 'POST',
+                            url: "/corporate/ajax/",
+                            processData: false,
+                            contentType: false,
+                            dataType: "json",
+                            data: {
+                                comment: comment,
+                                homework_id: homework_id,
+                                result: "NO"
+                            },
+                        }).done(function (data) {
+                            console.log(data);
+                            console.log('ДЗ не принято');
+                        }).fail(function (data) {
+                            // не удалось выполнить запрос к серверу
+                            console.log(data);
+                            console.log('Запрос не принят');
+                        });
+                        $(this).parents('form').remove();
+                    }
+                    else {
+                        $(this).parents('form').find('.input-group').addClass('has-error');
+                        $(this).parents('form').find('.alert-error').fadeIn(300);
+                        $(this).parents('form').find('textarea').focus(function(e){
+                            $(this).parents('form').find('.input-group').removeClass('has-error');
+                            $(this).parents('form').find('.alert-error').fadeOut(300);
+                        });
+                    }
+                });
+
+                $('.date-filter').on('change paste keyup', function () {
+                    $('.custom-filter-date-picker').find('.custom-select__option--value').html($(this).val());
+                });
+                $('.date-filter').daterangepicker({
+                    opens: 'rigth',
+                    locale: {
+                        format: 'DD-MM-YYYY',
+                        applyLabel: 'Принять',
+                        cancelLabel: 'Отмена',
+                        invalidDateLabel: 'Выберите дату',
+                        daysOfWeek: ['Вт', 'Ср', 'Чт', 'Пт', 'Сб', 'Вс', 'Пн'],
+                        monthNames: ['Январь', 'Февраль', 'Март', 'Апрель', 'Май', 'Июнь', 'Июль', 'Август', 'Сентябрь', 'Октябрь', 'Ноябрь', 'Декабрь'],
+                        firstDay: 1
+                    }
+                }, function (start, end, label) {
+                });
+            });
+        });
+    </script>
+    <script>
+        jQuery(function ($) {
+            $(document).ready(function () {
+                $('.select-search select').customSelect({
+                    search: true
+                });
+                $('.custom-filter-date-picker.cust-select-wrap select').customSelect({
+                    placeholder: '<span>Период</span>',
+                    hideCallback: function () {
+                        var $value = $(this).find('[class$="value"]');
+                        if ($value.text() == 'Произвольный выбор') {
+                            console.log($value);
+                            $('.custom-filter-date-picker .date-filter').click();
+                        }
+                    }
+                });
+                $('.cust-select-wrap select').customSelect(
+                    {
+                        hideCallback: function () {
+                            var $value = $(this).find('[class$="value"]');
+                            console.log($value.text());
+
+                            if ($value.text() == 'Произвольный выбор') {
+                                console.log($value);
+                                $('.date-filter').click();
+                            }
+                        }
+                    }
+                );
+            });
+        });
+    </script>
+
+</body>
+
+</html>

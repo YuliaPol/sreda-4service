@@ -1,12 +1,22 @@
 jQuery(function ($) {
     $(document).ready(function () {
-        $('.user-vacancies__row_left .user-vacancies__name').click(function(e) {
+        $('.content-container').on('click', '.user-vacancies__row_left .user-vacancies__name', function(e){
+        // $('.user-vacancies__row_left .user-vacancies__name').click(function(e) {
             e.preventDefault();
             $(this).toggleClass('active');
             if($(this).parents('.user-vacancies__block').find('.user-vacancies__row-content').is(':visible')) {
                 $(this).parents('.user-vacancies__block').find('.user-vacancies__row-content').slideUp(300);
                 $(this).siblings('.popup-profile-link').fadeOut(300);
             } else {
+                let siblings = $(this).parents('.notification-hw').find('.user-vacancies__row-content');
+                if(siblings.length > 0){
+                    for (let i = 0; i < siblings.length; i++) {
+                        if($(siblings[i]).is(':visible')){
+                            $(siblings[i]).slideUp(300);
+                            $(siblings[i]).parents('.user-vacancies__block').find('.user-vacancies__name').removeClass('active');
+                        }
+                    }
+                }
                 $(this).parents('.user-vacancies__block').find('.user-vacancies__row-content').slideDown(300);
                 $(this).siblings('.popup-profile-link').fadeIn(300);
             }
@@ -329,7 +339,7 @@ jQuery(function ($) {
 
         //Check all table's checkboxes
         $('.check-all').change(function() {
-            $('.custom-table').find('.custom-table__body input[type="checkbox"]').prop('checked', $(this).is(':checked'));
+            $(this).parents('.custom-table').find('.custom-table__body input[type="checkbox"]').prop('checked', $(this).is(':checked'));
         });
 
         //Test after webinar checkbox change

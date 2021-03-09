@@ -177,7 +177,8 @@
                                     <textarea placeholder="Введите условия прохождения сертификации"
                                         data-reqired="reqired"></textarea>
                                     <p class="alert-error" style="display: none;">Заполните, пожалуйста, поле</p>
-                                    <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/ 300
+                                    <h6 class="the-count"><span class="current-count">0</span> <span class="max-count">/
+                                            300
                                         </span></h6>
                                 </div>
                             </div>
@@ -244,6 +245,8 @@
                                                         <option value="1">15:00</option>
                                                         <option value="2">20:00</option>
                                                         <option value="3">30:00</option>
+                                                        <option data-myoption="true" value="myoption">Свой вариант
+                                                        </option>
                                                     </select>
                                                     <div class="help-block"></div>
                                                 </div>
@@ -323,7 +326,7 @@
                                                 <div class="custom-table__col">Баллы</div>
                                                 <div class="custom-table__col"></div>
                                             </div>
-                                            <div class="custom-table__body">
+                                            <!-- <div class="custom-table__body">
                                                 <div class="custom-table__row flex j-s-b">
                                                     <div class="title">
                                                         <span>Раздел 1: </span>
@@ -724,9 +727,9 @@
                                                     </div>
                                                 </div><a href="#" class="circle-add add-chapter-question"
                                                     data-section="1" data-question="5">+</a>
-                                            </div>
+                                            </div> -->
                                             <!-- Chapter 2 -->
-                                            <div class="custom-table__body">
+                                            <!-- <div class="custom-table__body">
                                                 <div class="custom-table__row flex j-s-b">
                                                     <h4 class="title add-chapter">
                                                         <a href="#" class="circle-add add-chapter-constructor">
@@ -849,6 +852,36 @@
                                                     <a href="#" class="circle-add add-chapter-question" data-section="2"
                                                         data-question="1">+</a>
                                                 </div>
+                                            </div> -->
+                                            <div class="custom-table__body ui-sortable ui-sortable-handle">
+                                                <div class="custom-table__row flex j-s-b">
+                                                    <h4 class="title add-chapter">
+                                                        <a href="#" class="circle-add add-chapter-constructor"
+                                                            data-blockitem="688">
+                                                            <!-- $chapterContent->id -->
+                                                            <img src="/img/corp/icons/chapter-img02.png" alt="">
+                                                        </a>
+                                                        <div class="title">
+                                                            <span>Раздел 1: </span>
+                                                            <input type="text" class="answer input-shdw" value=""
+                                                                id="chapter_770" name="chapter_770"
+                                                                data-reqired="reqired">
+                                                        </div>
+                                                        <div class="delete-chapter-cont">
+                                                            <a href="#" title="Delete" data-chapter="770"
+                                                                class="delete-chapter" style="display: none;">
+                                                                <img src="/img/corp/icons/trash.png" alt="Delete">
+                                                            </a>
+                                                            <a href="#" title="Delete" class="move-chapter">
+                                                                <img src="../../../img/corp/icons/movetest.png"
+                                                                    alt="Move">
+                                                            </a>
+                                                        </div>
+                                                    </h4>
+                                                </div>
+                                                <div class="test-quetions-wrappper"></div>
+                                                <a href="#" class="circle-add add-chapter-question" data-section="1"
+                                                    data-question="0" data-blockitem="688">+</a>
                                             </div>
                                         </div>
                                         <h4 class="title">Условия прохождения сертификации</h4>
@@ -882,6 +915,7 @@
                                     </h4>
 
                                     <div class="vac-settings__block-content">
+                                        <input type="hidden" class="test-id" value="688">
                                         <div class="input-group has-error">
                                             <textarea placeholder="Введите вступительное слово"
                                                 data-reqired="reqired"></textarea>
@@ -893,8 +927,7 @@
                                         <div class="vac-test__descr hw-notice-descr">
                                             <p class="hw-notice">Крайний срок подачи</p>
                                             <div class="form-group field-certificationcoursework-hw_deadline">
-                                                <select id="certificationcoursework-hw_deadline"
-                                                    class="form-control"
+                                                <select id="certificationcoursework-hw_deadline" class="form-control"
                                                     name="CertificationCoursework[hw_deadline]">
                                                     <option value="1">1</option>
                                                     <option value="2">2</option>
@@ -913,22 +946,22 @@
                                         </div>
                                         <div class="blck-chk-wrap course-hw-chk">
                                             <label class="test-radio">
-                                                <input type="hidden" name="hw01" value="off"/>
-                                                <input type="checkbox" name="hw01"/>
+                                                <input type="hidden" name="hw01" value="off" />
+                                                <input type="checkbox" name="hw01" />
                                                 <div class="test-radio__answer"><span class="answer">ДЗ
                                                         предусматривает
                                                         загрузку файла</span></div>
                                             </label>
                                             <label class="test-radio">
-                                                <input type="hidden" name="hw02"  value="off"/>
+                                                <input type="hidden" name="hw02" value="off" />
                                                 <input type="checkbox" name="hw02" />
                                                 <div class="test-radio__answer"><span class="answer">ДЗ
                                                         предусматривает
                                                         текстовый комментарий</span></div>
                                             </label>
                                             <label class="test-radio">
-                                                <input type="hidden" name="hw03"  value="off"/>
-                                                <input type="checkbox" name="hw03"/>
+                                                <input type="hidden" name="hw03" value="off" />
+                                                <input type="checkbox" name="hw03" />
                                                 <div class="test-radio__answer"><span class="answer">ДЗ
                                                         предусматривает
                                                         обратную связь</span></div>
@@ -1042,10 +1075,10 @@
     </script>
     <script>
         //Certificate tools title
-        $('.cert-title.tools-title .vac-tools input').change(function() {
-            if($(this).is(':checked')) {
+        $('.cert-title.tools-title .vac-tools input').change(function () {
+            if ($(this).is(':checked')) {
                 $('.certification-top').show();
-                if($('.cert-type-wrap select').val() == 0) {
+                if ($('.cert-type-wrap select').val() == 0) {
                     console.log("certificatopn");
                     $('.course-certification').show();
                     $('.test-certification').hide();
@@ -1190,7 +1223,7 @@
                                 }
                             }
                             else {
-                                if ($(el[i]).parents('.test-certification')==0) {
+                                if ($(el[i]).parents('.test-certification') == 0) {
                                     erroreArrayElemnts.push(el[i]);
                                     if ($(el[i]).parents('.input-group').find('.alert-error').length > 0) {
                                         $(el[i]).parents('.input-group').addClass('has-error');
@@ -1218,9 +1251,8 @@
                 });
             });
         });
-        $('.form-valid').submit(function(event){
+        $('.form-valid').submit(function (event) {
             console.log($(this).serialize());
-            alert("sdf")
         });
         $(document).on('click', '.popup-modal-dismiss', function (e) {
             e.preventDefault();

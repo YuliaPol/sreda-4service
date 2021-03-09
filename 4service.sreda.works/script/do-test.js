@@ -19,7 +19,6 @@ $('#do_test').on( 'click', function () {
     // Show Quiz First Block
     // before unload page
     window.addEventListener('beforeunload', (event) => {
-        console.log($('body').hasClass('submit'));
         if(!$('body').hasClass('submit')){
             event.preventDefault();
             event.returnValue = '';
@@ -27,7 +26,6 @@ $('#do_test').on( 'click', function () {
     });
     
     const timer = new NITimer( '#timer', 1200, function () {
-        // console.log(2222);
     } );
     $('#do_test').fadeOut();
     globalTestBlockIndex = 0;
@@ -52,7 +50,6 @@ $('#do_test').on( 'click', function () {
             window.removeEventListener('beforeunload', beforeLoad);
             $('body').addClass('submit');
             $('#form-test').submit();
-            console.log('submit1');
     } );
 
 });
@@ -64,7 +61,6 @@ $('#main').on('click', '.lesson-info-do-test', function () {
     let timerTime = 1200;
     // before unload page
     window.addEventListener('beforeunload', (event) => {
-        console.log($('body').hasClass('submit'));
         if(!$('body').hasClass('submit')){
             event.preventDefault();
             event.returnValue = '';
@@ -73,12 +69,11 @@ $('#main').on('click', '.lesson-info-do-test', function () {
     
     if(timerEl.data('timer')){
         let timerTimeAr = timerEl.data('timer').split(':');
-        console.log(timerTimeAr);
         timerTime = parseInt(timerTimeAr[0])*60*60 + parseInt(timerTimeAr[1])*60 + parseInt(timerTimeAr[2]);
-        console.log(timerTime);
     }
     const timer = new NITimerLesson( timerEl, timerTime, function () {
-    } );
+    });
+
     $(this).fadeOut();
     globalTestBlockIndex = 0;
     testEl.removeClass('hide');
@@ -118,27 +113,53 @@ $('#main').on('click', '.send-question_btn, button', function(e){
         if (el[i].tagName === 'INPUT'){
             if($(el[i]).attr('type') == 'radio' || $(el[i]).attr('type') == 'text'){
                 var name = el[i].getAttribute('name');
-                if (document.querySelectorAll('[name=' + name + ']:checked').length === 0){
-                    erroreArrayElemnts.push(el[i]);
-                    $(el[i]).on('click', function () {
-                        $(this).parents('.main-test_question-block').find('.error-block').hide();
-                        $(this).parents('.main-test_question-block').removeClass('has-error');
-                    })
-                    $(el[i]).parents('.main-test_question-block').find('.error-block').show();
-                    $(el[i]).parents('.main-test_question-block').addClass('has-error');
+                if($(el[i]).parents('.range_1-10').length > 0){
+                    if($(el[i]).parents('.range_1-10').find('input:checked').length == 0){
+                        erroreArrayElemnts.push(el[i]);
+                        $(el[i]).on('click', function () {
+                            $(this).parents('.main-test_question-block').find('.error-block').hide();
+                            $(this).parents('.main-test_question-block').removeClass('has-error');
+                        })
+                        $(el[i]).parents('.main-test_question-block').find('.error-block').show();
+                        $(el[i]).parents('.main-test_question-block').addClass('has-error');
+                    }
+                }
+                else {
+                    if (document.querySelectorAll('[name=' + name + ']:checked').length === 0){
+                        erroreArrayElemnts.push(el[i]);
+                        $(el[i]).on('click', function () {
+                            $(this).parents('.main-test_question-block').find('.error-block').hide();
+                            $(this).parents('.main-test_question-block').removeClass('has-error');
+                        })
+                        $(el[i]).parents('.main-test_question-block').find('.error-block').show();
+                        $(el[i]).parents('.main-test_question-block').addClass('has-error');
+                    }
                 }
             }
             else if($(el[i]).attr('type') == 'checkbox'){
                 var name = el[i].getAttribute('name');
-                if ($(el[i]).parents('.main-test_question-block').find('input:checked').length === 0){
-                    erroreArrayElemnts.push(el[i]);
-                    $(el[i]).on('click', function () {
-                        $(this).parents('.main-test_question-block').find('.error-block').hide();
-                        $(this).parents('.main-test_question-block').removeClass('has-error');
-                    })
-                    $(el[i]).parents('.main-test_question-block').find('.error-block').show();
-                    $(el[i]).parents('.main-test_question-block').addClass('has-error');
-                } 
+                if($(el[i]).parents('.range_1-10').length > 0){
+                    if($(el[i]).parents('.range_1-10').find('input:checked').length == 0){
+                        erroreArrayElemnts.push(el[i]);
+                        $(el[i]).on('click', function () {
+                            $(this).parents('.main-test_question-block').find('.error-block').hide();
+                            $(this).parents('.main-test_question-block').removeClass('has-error');
+                        })
+                        $(el[i]).parents('.main-test_question-block').find('.error-block').show();
+                        $(el[i]).parents('.main-test_question-block').addClass('has-error');
+                    }
+                }
+                else {
+                    if ($(el[i]).parents('.main-test_question-block').find('input:checked').length === 0){
+                        erroreArrayElemnts.push(el[i]);
+                        $(el[i]).on('click', function () {
+                            $(this).parents('.main-test_question-block').find('.error-block').hide();
+                            $(this).parents('.main-test_question-block').removeClass('has-error');
+                        })
+                        $(el[i]).parents('.main-test_question-block').find('.error-block').show();
+                        $(el[i]).parents('.main-test_question-block').addClass('has-error');
+                    } 
+                }
             }
         }
     }
@@ -153,6 +174,7 @@ $('#main').on('click', '.send-question_btn, button', function(e){
     });
     if(erroreArrayElemnts.length>0){
         console.log('Valid error');
+        console.log(erroreArrayElemnts);
         erroreArrayElemnts.sort(function(a, b){
             return parseInt($(a).parents('.main-test_question-block').offset().top)-parseInt($(b).parents('.main-test_question-block').offset().top)
         });
@@ -165,8 +187,131 @@ $('#main').on('click', '.send-question_btn, button', function(e){
         testForm.submit();
     }
 });
+$('.lesson-test-cont form').submit(function(e){
+    e.preventDefault();
+    e.stopImmediatePropagation();
+    if($(this).parents('.lesson-course-cont').length > 0){
+        var formData = new FormData(this);
+        var currentTry = parseInt($(this).parents('.lesson-test').find('.current-try').html()) + 1;
+        var allTry = parseInt($(this).parents('.lesson-test').find('.all-try').html());
+        $(this).parents('.lesson-test').find('.lesson-timer').addClass('stop-timer');
+        $(this).parents('.lesson-test-cont').addClass('hide');
+        $(this).parents('.lesson-test').find('.lesson-info-do-test').fadeIn(300);
+        var formData = new FormData(this);
+        // Display the key/value pairs
+        $.ajax ({
+            type: 'POST',
+            url: "/ajax/course-test",
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            data: formData
+        }).done(function (data) {
+            console.log(data);
+            var evaluation = data.result;
+            var percent = data.resultPercent;
+            var maxEvaluation = data.maxResult;
+            var minPercent = data.minResult;
+            $('.test-result-overlay').find('.evaluation').html(evaluation);
+            $('.test-result-overlay').find('.percent').html(percent);
+            $('.test-result-overlay').find('.max-evaluation').html(maxEvaluation);
+            $('.test-result-overlay').find('.min-result-cont .min-percent').html(minPercent)
+            if(minPercent <= percent) {
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').html('Поздравляем!');
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').css('color', 'green')
+                $(this).parents('.lesson-test').find('.test-seen').val(true);
+                $(this).parents('.lesson-test').fadeOut(300);
+            }
+            else {
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').html('Тест не пройден!');
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').css('color', 'red')
+            }
+            $('.test-result-overlay').css('display', 'flex');
+            console.log('Тест отправлен');
+        }).fail(function (data) {
+            // не удалось выполнить запрос к серверу
+            console.log(data);
+            console.log('Запрос не принят');
+        });
+    
+        if(currentTry > allTry){
+            // $('#test_request').parents('.main-test_btn-wrapper').removeClass('hide-btn');
+            $(this).parents('.lesson-test').find('.all-try').parent().fadeOut(0);
+            $(this).parents('.lesson-test').find('.lesson-info-do-test ').fadeOut(0);
+            $(this).remove();
+        }
+        else {
+            $(this).parents('.lesson-test').find('.current-try').html(currentTry);
+        }
+        $(this).trigger("reset");
+    }
+    else {
+        var formData = new FormData(this);
+        var currentTry = parseInt($(this).parents('.lesson-test').find('.current-try').html()) + 1;
+        var allTry = parseInt($(this).parents('.lesson-test').find('.all-try').html());
+        $(this).parents('.lesson-test').find('.lesson-timer').addClass('stop-timer');
+        $(this).parents('.lesson-test-cont').addClass('hide');
+        $(this).parents('.lesson-test').find('.lesson-info-do-test').fadeIn(300);
+        var thisCont = this;
+        var formData = new FormData(this);
+        // Display the key/value pairs
+    
+        $.ajax ({
+            type: 'POST',
+            url: "/ajax/test",
+            processData: false,
+            contentType: false,
+            dataType: "json",
+            data: formData
+        }).done(function (data) {
+            console.log(data);
+            var evaluation = data.result;
+            var percent = data.resultPercent;
+            var maxEvaluation = data.maxResult;
+            var minPercent = data.minResult;
+            $('.test-result-overlay').find('.evaluation').html(evaluation);
+            $('.test-result-overlay').find('.percent').html(percent);
+            $('.test-result-overlay').find('.max-evaluation').html(maxEvaluation);
+            $('.test-result-overlay').find('.min-result-cont .min-percent').html(minPercent)
+            if(minPercent <= percent) {
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').html('Поздравляем!');
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').css('color', 'green')
+                $(thisCont).parents('.lesson-test').find('.test-seen').val('true');
+                $(thisCont).parents('.lesson-test').fadeOut(300);
+                checkPassedLesson($(thisCont).parents('.contents_paragraphs_item'));
+            }
+            else {
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').html('Тест не пройден!');
+                $('.test-result-overlay').find('.result-information p:nth-child(1)').css('color', 'red')
+            }
+            $('.test-result-overlay').css('display', 'flex');
+            console.log('Тест отправлен');
+        }).fail(function (data) {
+            // не удалось выполнить запрос к серверу
+            console.log(data);
+            console.log('Запрос не принят');
+        });
+    
+        if(currentTry > allTry){
+            $(this).parents('.contents_paragraphs_item').find('.test_request').parents('.main-test_btn-wrapper').removeClass('hide-btn');
+            $(this).parents('.lesson-test').find('.all-try').parent().fadeOut(0);
+            $(this).parents('.lesson-test').find('.lesson-info-do-test ').fadeOut(0);
+        }
+        else {
+            $(this).parents('.lesson-test').find('.current-try').html(currentTry);
+        }
+        $(this).trigger("reset");
+    }
+    return false;
+});
 
 
+$('.test-result-overlay').click(function(e){
+    $(this).fadeOut(300);
+});
+$('.test-result-overlay .close').click(function(e){
+    $(this).parents('.test-result-overlay').fadeOut(300);
+});
 /**
  * Test switch
  * Full list or step-by-step

@@ -6360,11 +6360,13 @@ body #papa aside#left-side-bar ~ main#main .feedback .feedback-container .owl-ca
 }
 
 .youtube-link .input-shdw {
-  width: 100%;
+  width: 100% !important;
   -webkit-box-shadow: 0px 5px 13px 2px #e5e5e5;
           box-shadow: 0px 5px 13px 2px #e5e5e5;
   border: 1px solid #e5e5e5;
   display: block;
+  opacity: 1 !important;
+  height: 40px !important;
 }
 
 .question-cont {
